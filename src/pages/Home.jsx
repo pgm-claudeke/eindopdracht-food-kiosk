@@ -18,7 +18,7 @@ const TextBox = styled.div`
     background-color: ${colors.primary};
 
     color: ${colors.base};
-    font-weight: bold;
+    font-weight: 900;
     font-size: 5rem;
     text-align: center;
 

@@ -3,10 +3,10 @@ import styled from 'styled-components'
 import { colors } from '../constants/styles';
 import { GiKnifeFork } from 'react-icons/gi';
 import { RiShoppingBag2Line } from 'react-icons/ri';
-import ROUTES from '../constants/routes';
+
 
 const Options = styled.div` 
-    height: 82vh;
+    height: 81vh;
     margin: 0rem 6.25rem;
 
     display: flex;
@@ -15,29 +15,42 @@ const Options = styled.div`
     align-items: center;
 `;
 const Option = styled.a`
-    height: 32rem;
-    width: 29rem;
+    height: 36rem;
+    width: 33rem;
     background-color: ${colors.primary};
     border-radius: 1.5rem;
 
     text-decoration: none;
     color: ${colors.base};
-    font-size: 18rem;
+    font-size: 3rem;
+    font-weight: bold;
+    text-transform: uppercase;
 
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
 `;
 
-const DineOption = () => {
+const IconContainer = styled.div`
+    font-size: 18rem;
+    height: 18rem;
+`;
+
+const DineOption = ({optionOne, optionTwo, iconOne, iconTwo, linkOne, linkTwo}) => {
   return (
     <Options>
-        <Option href={ROUTES.MENU}>
-            <GiKnifeFork/>
+        <Option href={linkOne}>
+            <IconContainer>
+                <GiKnifeFork/>
+            </IconContainer>
+            <p>{optionOne}</p>
         </Option>
-        <Option href={ROUTES.MENU}>
-            <RiShoppingBag2Line/>
+        <Option href={linkTwo}>
+            <IconContainer>
+                <RiShoppingBag2Line/>
+            </IconContainer>
+            <p>{optionTwo}</p>
         </Option>
     </Options>
   )

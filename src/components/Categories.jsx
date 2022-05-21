@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const CateggoryContainer = styled.div`
+const CategoryContainer = styled.button`
 
 `;
 
@@ -15,7 +15,13 @@ const CategoryItem = styled.li`
 
 const Categories = () => {
   return (
-    <div>Categories</div>
+    <CategoryList>
+        <CategoryItem>
+            <CategoryContainer>
+                Tenders
+            </CategoryContainer>
+        </CategoryItem>
+    </CategoryList>
   )
 }
 

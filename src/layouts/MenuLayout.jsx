@@ -1,7 +1,7 @@
 import React from 'react';
 import { Header } from '../components';
 
-const BaseLayout = () => {
+const MenuLayout = () => {
   return (
     <>
         <Header></Header>
@@ -9,4 +9,4 @@ const BaseLayout = () => {
   )
 }
 
-export default BaseLayout
+export default MenuLayout

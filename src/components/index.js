@@ -1,11 +1,13 @@
 import Header from "./Header";
-import DineOption from "./DineOption";
+import DineOption from "./Options";
 import Footer from "./Footer";
 import Categories from "./Categories";
+import CurrentOrder from "./CurrentOrder";
 
 export {
   Header, 
   DineOption, 
   Footer,
-  Categories
+  Categories,
+  CurrentOrder
 }
