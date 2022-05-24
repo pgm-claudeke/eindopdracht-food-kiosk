@@ -1,0 +1,134 @@
+[
+    {
+        "name": "6 Piece Chickenjoy Bucket",
+        "category": "buckets"
+    },
+    {
+        "name": "8 Piece Chickenjoy Bucket",
+        "category": "buckets"
+    },
+    {
+        "name": "12 Piece Chickenjoy Bucket",
+        "category": "buckets"
+    },
+    {
+        "name": "Chicken Sandwich",
+        "category": "chicken sandwich"
+    },
+    {
+        "name": "Chicken Sandwich Meal",
+        "category": "chicken sandwich"
+    },
+    {
+        "name": "Spicy Chicken Sandwich",
+        "category": "chicken sandwich"
+    },
+    {
+        "name": "Tropical Chicken Sandwich",
+        "category": "chicken sandwich"
+    },
+    {
+        "name": "Tropical Chicken Sandwich Meal",
+        "category": "chicken sandwich"
+    },
+    {
+        "name": "Double Chicken Sandwich",
+        "category": "chicken sandwich"
+    },
+    {
+        "name": "Double Chicken Sandwich Meal",
+        "category": "chicken sandwich"
+    },
+    {
+        "name": "3 Piece Chicken Tenders",
+        "category": "chicken tenders"
+    },
+    {
+        "name": "5 Piece Chicken Tenders",
+        "category": "chicken tenders"
+    },
+    {
+        "name": "3 Piece Chicken Tenders Meal",
+        "category": "chicken tenders"
+    },
+    {
+        "name": "5 Piece Chicken Tenders Meal",
+        "category": "chicken tenders"
+    },
+    {
+        "name": "Chicken Wrap",
+        "category": "wraps and bowls"
+    },
+    {
+        "name": "Chicken Rice Bowl",
+        "category": "wraps and bowls"
+    },
+    {
+        "name": "Yumburger",
+        "category": "classics"
+    },
+    {
+        "name": "Yumburger with Cheese",
+        "category": "classics"
+    },
+    {
+        "name": "Double Yumburger with Cheese",
+        "category": "classics"
+    },
+    {
+        "name": "Jolly Spaghetti",
+        "category": "classics"
+    },
+    {
+        "name": "Siracha Chicken",
+        "category": "loaded fries"
+    },
+    {
+        "name": "Gravy Chicken",
+        "category": "loaded fries"
+    },
+    {
+        "name": "Ice Cream",
+        "category": "loaded fries"
+    },
+    {
+        "name": "Fries",
+        "category": "sides"
+    },
+    {
+        "name": "Plain Rice",
+        "category": "sides"
+    },
+    {
+        "name": "Mango Coconut Sundae",
+        "category": "desserts"
+    },
+    {
+        "name": "Chocolate Coconut Sundae",
+        "category": "desserts"
+    },
+    {
+        "name": "Cookies 'n Cream Sundae",
+        "category": "desserts"
+    },
+    {
+        "name": "Siracha Mayonnaise",
+        "category": "dipping sauces"
+    },
+    {
+        "name": "Sweet Chilli Sauce",
+        "category": "dipping sauces"
+    },
+    {
+        "name": "Asian Ginger Chilli Sauce",
+        "category": "dipping sauces"
+    },
+    {
+        "name": "Gravy",
+        "category": "dipping sauces"
+    },
+    {
+        "name": "Big Bucket Gravy",
+        "category": "dipping sauces"
+    }
+]

@@ -2,14 +2,22 @@ import React from 'react';
 import styled from 'styled-components';
 import { colors } from '../constants/styles';
 import ROUTES from '../constants/routes';
+import posterOne from '../assets/images/posters/Poster_01.png';
+import logo from '../assets/images/logos/Logo.jpg';
 
 const HomeContainer = styled.a`
     text-decoration: none;
 `;
 
+const Logo = styled.img`
+    width: 32rem;
+    position: fixed;
+    top: 5rem;
+    left: 6rem;
+`;
+
 const ImgBox = styled.div`
     height: 86vh;
-    background-color: ${colors.secondary}
 `;
 
 const TextBox = styled.div`
@@ -27,12 +35,17 @@ const TextBox = styled.div`
     align-items: center;
 `;
 
+const PosterImage = styled.img`
+    width: 100%;
+`;
+
 const Home = () => {
   return (
     <>
         <HomeContainer  href={ROUTES.DINE}>
+            <Logo src={logo}/>
             <ImgBox>
-        
+                <PosterImage src={posterOne}/>
             </ImgBox>
             <TextBox>Tab the screen to order</TextBox>
         </HomeContainer>
