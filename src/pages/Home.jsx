@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { colors } from '../constants/styles';
+import { colors, fontsWeights } from '../constants/styles';
 import ROUTES from '../constants/routes';
 import posterOne from '../assets/images/posters/Poster_01.png';
 import logo from '../assets/images/logos/Logo.jpg';
@@ -26,7 +26,7 @@ const TextBox = styled.div`
     background-color: ${colors.primary};
 
     color: ${colors.base};
-    font-weight: 900;
+    font-weight: ${fontsWeights.bold};
     font-size: 5rem;
     text-align: center;
 

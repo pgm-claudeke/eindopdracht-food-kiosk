@@ -1,9 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { colors } from '../constants/styles';
-import { GiKnifeFork } from 'react-icons/gi';
-import { RiShoppingBag2Line } from 'react-icons/ri';
-
+import { colors, fontsWeights, radius } from '../constants/styles';
 
 const Options = styled.div` 
     height: 81vh;
@@ -18,18 +15,23 @@ const Option = styled.a`
     height: 36rem;
     width: 33rem;
     background-color: ${colors.primary};
-    border-radius: 1.5rem;
+    border-radius: ${radius.main};
 
     text-decoration: none;
     color: ${colors.base};
     font-size: 3rem;
-    font-weight: bold;
+    font-weight: ${fontsWeights.bold};
     text-transform: uppercase;
 
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    gap: 1.2rem;
+
+    p {
+        margin: 0;
+    }
 `;
 
 const IconContainer = styled.div`
@@ -42,13 +44,13 @@ const DineOption = ({optionOne, optionTwo, iconOne, iconTwo, linkOne, linkTwo}) 
     <Options>
         <Option href={linkOne}>
             <IconContainer>
-                <GiKnifeFork/>
+                {iconOne}
             </IconContainer>
             <p>{optionOne}</p>
         </Option>
         <Option href={linkTwo}>
             <IconContainer>
-                <RiShoppingBag2Line/>
+                {iconTwo}
             </IconContainer>
             <p>{optionTwo}</p>
         </Option>

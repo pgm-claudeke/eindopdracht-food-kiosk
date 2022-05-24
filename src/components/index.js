@@ -4,6 +4,10 @@ import Footer from "./Footer";
 import Categories from "./Categories";
 import CurrentOrder from "./CurrentOrder";
 import Meals from "./Meals";
+import Question from "./Question";
+import OrderList from "./OrderList";
+import AmountCounter from "./AmountCounter";
+import OrderTotal from "./OrderTotal"
 
 export {
   Header, 
@@ -11,5 +15,9 @@ export {
   Footer,
   Categories,
   CurrentOrder, 
-  Meals
+  Meals,
+  Question,
+  OrderList,
+  AmountCounter,
+  OrderTotal
 }

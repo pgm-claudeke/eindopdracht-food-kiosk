@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import { colors } from '../constants/styles';
 import { FaChevronRight } from 'react-icons/fa';
 import Button from './Button';
+import ButtonLink from './ButtonLink';
 
 const OrderContainer = styled.section`
     height: 18vh;
@@ -50,11 +51,13 @@ const OrderBox = styled.div`
     align-items: center;
 `;
 
-const OrderShowBox = styled.div`
+const OrderShowBox = styled.a`
     display: flex;
     flex-direction: row;
     gap: 1rem;
     align-items: baseline;
+    text-decoration: none;
+    color: ${colors.primary}
 `;
 
 const BtnBox = styled.div`
@@ -65,7 +68,7 @@ const BtnBox = styled.div`
     width: 90%;
 `;
 
-const btnWidth = "49.5%"
+const btnWidth = "49%"
 
 const CurrentOrder = () => {
   return (
@@ -76,14 +79,14 @@ const CurrentOrder = () => {
         <OrderBox>
             <p>Total: € 2,00</p>
             <p>Amount: 1</p>
-            <OrderShowBox>
-                <p>Show order</p>
+            <OrderShowBox href='/order'>
+                Show order
                 <FaChevronRight style={{fontSize:"2rem"}}/>
             </OrderShowBox>
         </OrderBox>
         <BtnBox>
-            <Button btnName="Cancel order" btnColor={colors.secondary} btnWidth={btnWidth}/>
-            <Button btnName="Validate order" btnColor={colors.primary} btnWidth={btnWidth}/>
+            <Button btnColor={colors.secondary} btnWidth={btnWidth}>Cancel order</Button>
+            <ButtonLink href='/order' btnColor={colors.primary} btnWidth={btnWidth}>Validate order</ButtonLink>
         </BtnBox>
     </OrderContainer>
   )

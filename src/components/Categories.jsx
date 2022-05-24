@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import styled from 'styled-components';
-import { colors } from '../constants/styles';
+import { colors, fontsWeights, radius } from '../constants/styles';
 import tenders from '../assets/images/categories/chicken_tenders.png'
 
 const CategoryList = styled.ul`
@@ -22,13 +22,13 @@ const CategoryBtn = styled.button`
     width: 100%;
     background-color: ${colors.primary};
     border: none;
-    border-radius: 0rem 1.5rem 1.5rem 0rem;
+    border-radius: 0rem ${radius.main} ${radius.main} 0rem;
     padding: 0;
     margin: 0;
 
     color: ${colors.base};
     font-size: 2rem;
-    font-weight: 600;
+    font-weight: ${fontsWeights.regular};
 `;
 
 const CategoryContainer = styled.div`

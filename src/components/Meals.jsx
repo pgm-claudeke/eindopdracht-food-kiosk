@@ -3,13 +3,13 @@
 
 import React from 'react';
 import styled from 'styled-components';
-import { colors } from '../constants/styles';
+import { colors, radius } from '../constants/styles';
 
 const MealsContainer = styled.div`
     width: 70%;
     height: fit-content;
     background-color: ${colors.secondary};
-    border-radius: 1.5rem 0rem 0rem 1.5rem;
+    border-radius: ${radius.main} 0rem 0rem ${radius.main};
     padding: 2.8rem;
 
 `;
