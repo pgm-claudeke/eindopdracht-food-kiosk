@@ -68,7 +68,7 @@ const Meals = ({category, filter}) => {
         <MealsList>
             {
                 filteredData.map(data => 
-                    <Meal key={data.name}>
+                    <Meal key={data.id}>
                         <MealImageBox>
 
                         </MealImageBox>

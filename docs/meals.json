@@ -1,166 +1,176 @@
 [
     {
-        "name": "6 Piece",
+        "label": "6 Piece",
+        "name":"6 Piece Bucket",
         "category": "buckets",
         "id": 1
     },
     {
-        "name": "8 Piece",
+        "label": "8 Piece",
+        "name":"8 Piece Bucket",
         "category": "buckets",
         "id": 2
     },
     {
-        "name": "12 Piece",
+        "label": "12 Piece",
+        "name":"12 Piece Bucket",
         "category": "buckets",
         "id": 3
     },
     {
-        "name": "Basic",
+        "label": "Basic",
+        "name":"Chicken Sandwich",
         "category": "chicken sandwich",
-        "id": 4
+        "id": 4,
+        "options": [
+            {
+                "label": "meal"
+            }
+        ]
     },
     {
-        "name": " Meal",
+        "label": "Meal",
+        "name":"Chicken Sandwich",
         "category": "chicken sandwich",
         "id": 5
     },
     {
-        "name": "Spicy",
+        "label": "Spicy",
         "category": "chicken sandwich",
         "id": 6
     },
     {
-        "name": "Tropical",
+        "label": "Tropical",
         "category": "chicken sandwich",
         "id": 7
     },
     {
-        "name": "Tropical Meal",
+        "label": "Tropical Meal",
         "category": "chicken sandwich",
         "id": 8
     },
     {
-        "name": "Double Chicken",
+        "label": "Double Chicken",
         "category": "chicken sandwich",
         "id": 9
     },
     {
-        "name": "Double Chicken Meal",
+        "label": "Double Chicken Meal",
         "category": "chicken sandwich",
         "id": 10
     },
     {
-        "name": "3 Piece",
+        "label": "3 Piece",
         "category": "chicken tenders",
         "id": 11
     },
     {
-        "name": "5 Piece",
+        "label": "5 Piece",
         "category": "chicken tenders",
         "id": 12
     },
     {
-        "name": "3 Piece",
+        "label": "3 Piece",
         "category": "chicken tenders",
         "id": 13
     },
     {
-        "name": "5 Piece",
+        "label": "5 Piece",
         "category": "chicken tenders",
         "id": 14
     },
     {
-        "name": "Chicken Wrap",
+        "label": "Chicken Wrap",
         "category": "wraps & bowls",
         "id": 15
     },
     {
-        "name": "Chicken Rice Bowl",
+        "label": "Chicken Rice Bowl",
         "category": "wraps & bowls",
         "id": 16
     },
     {
-        "name": "Yumburger",
+        "label": "Yumburger",
         "category": "classics",
         "id": 17
     },
     {
-        "name": "Yumburger with Cheese",
+        "label": "Yumburger with Cheese",
         "category": "classics",
         "id": 18
     },
     {
-        "name": "Double Yumburger with Cheese",
+        "label": "Double Yumburger with Cheese",
         "category": "classics",
         "id": 19
     },
     {
-        "name": "Jolly Spaghetti",
+        "label": "Jolly Spaghetti",
         "category": "classics",
         "id": 20
     },
     {
-        "name": "Siracha Chicken",
+        "label": "Siracha Chicken",
         "category": "loaded fries",
         "id": 21
     },
     {
-        "name": "Gravy Chicken",
+        "label": "Gravy Chicken",
         "category": "loaded fries",
         "id": 22
     },
     {
-        "name": "Ice Cream",
+        "label": "Ice Cream",
         "category": "loaded fries",
         "id": 23
     },
     {
-        "name": "Fries",
+        "label": "Fries",
         "category": "sides",
         "id": 24
     },
     {
-        "name": "Plain Rice",
+        "label": "Plain Rice",
         "category": "sides",
         "id": 25
     },
     {
-        "name": "Mango Coconut Sundae",
+        "label": "Mango Coconut Sundae",
         "category": "desserts",
         "id": 26
     },
     {
-        "name": "Chocolate Coconut Sundae",
+        "label": "Chocolate Coconut Sundae",
         "category": "desserts",
         "id": 27
     },
     {
-        "name": "Cookies 'n Cream Sundae",
+        "label": "Cookies 'n Cream Sundae",
         "category": "desserts",
         "id": 28
     },
     {
-        "name": "Siracha Mayonnaise",
+        "label": "Siracha Mayonnaise",
         "category": "dipping sauces",
         "id": 29
     },
     {
-        "name": "Sweet Chilli Sauce",
+        "label": "Sweet Chilli Sauce",
         "category": "dipping sauces",
         "id": 30
     },
     {
-        "name": "Asian Ginger Chilli Sauce",
+        "label": "Asian Ginger Chilli Sauce",
         "category": "dipping sauces",
         "id": 31
     },
     {
-        "name": "Gravy",
+        "label": "Gravy",
         "category": "dipping sauces",
         "id": 32
     },
     {
-        "name": "Big Bucket Gravy",
+        "label": "Big Bucket Gravy",
         "category": "dipping sauces",
         "id": 33
     }
