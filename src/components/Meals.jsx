@@ -32,11 +32,11 @@ const MealsList = styled.ul`
 
 const Meal = styled.li`
     color: ${colors.base};
-    font-size: 2rem;
+    font-size: 2.5rem;
     font-weight: ${fontsWeights.bold};
     text-align: center;
 
-    width: 16rem;
+    width: 18rem;
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
@@ -48,8 +48,8 @@ const Meal = styled.li`
 
 const MealImageBox = styled.div`
     background-color: ${colors.base};
-    width 14.5rem;
-    height: 14.5rem;
+    width 16rem;
+    height: 16rem;
     border-radius: ${radius.main};
 `;
 
