@@ -1,43 +1,28 @@
 import React, { useState, useEffect } from "react";
+import axios from 'axios';
 
-const ApiFetcher = (api) => {
+const useFetch = (url) => {
   const [data, setData] = useState(null);
-  const [isLoading, setIsLoading] = useState(true);
-  const [error, setError] = useState(null);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState();
 
-  useEffect((api) => {
-    fetch(api)
-    .then(response => {
-      if(!response.ok) {
-        throw Error(response.statusText);
-      }
+  useEffect(() => {
+    setLoading(true);
 
-      return response.json();
+    axios
+      .get(url)
+      .then((res) => {
+        setData(res.data);
+      })
+      .catch((err) => {
+        setError(err);
+      })
+      .finally(() => {
+        setLoading(false);
+      })
+  }, [url]);
 
-    })
-    .then(data => {
-      setData(data)
-    })
-    .catch(error => {
-      console.error("Error fetching data: ", error);
-      setError(error.message);
-    })
-    .finally(() => {
-      setIsLoading(false);
-    });
-  }, []);
-
-  return (
-    <>
-      {
-        error ? <div>{error}</div> : 
-        isLoading || !data ? <div/> :
-        <div>
-          {data}
-        </div>
-      }
-    </>
-  );
+  return {data, loading, error}
 };
 
-export default ApiFetcher;
+export default useFetch;

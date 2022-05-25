@@ -1,30 +1,30 @@
 [
     {
-        "categoryName": "Buckets"
+        "name": "Buckets"
     },
     {
-        "categoryName": "Chicken Sandwich"
+        "name": "Chicken Sandwich"
     },
     {
-        "categoryName": "Chickenjoy"
+        "name": "Chickenjoy"
     },
     {
-        "categoryName": "Dessert"
+        "name": "Dessert"
     },
     {
-        "categoryName": "Loaded fries"
+        "name": "Loaded fries"
     },
     {
-        "categoryName": "Sides"
+        "name": "Sides"
     },
     {
-        "categoryName": "Tenders"
+        "name": "Tenders"
     },
     {
-        "categoryName": "Wraps & Bowls"
+        "name": "Wraps & Bowls"
     },
     {
-        "categoryName": "Hotdogs"
+        "name": "Hotdogs"
     }
 
 ]

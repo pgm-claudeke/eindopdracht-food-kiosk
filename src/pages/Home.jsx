@@ -1,9 +1,13 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import { colors, fontsWeights } from '../constants/styles';
 import ROUTES from '../constants/routes';
 import posterOne from '../assets/images/posters/Poster_01.png';
 import logo from '../assets/images/logos/Logo.jpg';
+
+import ApiFetcher from '../hooks/fetch';
+
+
 
 const HomeContainer = styled.a`
     text-decoration: none;
@@ -40,6 +44,7 @@ const PosterImage = styled.img`
 `;
 
 const Home = () => {
+
   return (
     <>
         <HomeContainer  href={ROUTES.DINE}>

@@ -1,7 +1,9 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import { colors, fontsWeights, radius } from '../constants/styles';
-import tenders from '../assets/images/categories/chicken_tenders.png'
+import tenders from '../assets/images/categories/chicken_tenders.png';
+import useFetch from '../hooks/fetch';
+
 
 const CategoryList = styled.ul`
     width: 20%;
@@ -54,8 +56,15 @@ const ImageContainer = styled.div`
 
 
 const Categories = () => {
+    const { data, loading, error } = useFetch('https://pgm-claudeke.github.io/eindopdracht-food-kiosk/categories.json');
+
+    if (loading) return <h1>LOADING...</h1>
+
+    if (error) console.log(error)
+
   return (
     <CategoryList>
+        {data}
         <CategoryItem>
             <CategoryBtn>
                 <CategoryContainer>
