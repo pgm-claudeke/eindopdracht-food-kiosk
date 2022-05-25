@@ -3,22 +3,54 @@
 
 import React from 'react';
 import styled from 'styled-components';
-import { colors, radius } from '../constants/styles';
+import { colors, fontsWeights, radius } from '../constants/styles';
 import useFetch from '../hooks/fetch';
 
 const MealsContainer = styled.div`
-    width: 70%;
-    height: fit-content;
+    width: 74%;
+    max-height: 90%;
     background-color: ${colors.secondary};
     border-radius: ${radius.main} 0rem 0rem ${radius.main};
-    padding: 2.8rem;
-
+    padding: 3rem 4rem;
 `;
 
 const MealsTitle = styled.p`
     color: ${colors.base};
     font-size: 5rem;
     font-weight: 900;
+    margin-bottom: 4rem;
+`;
+
+const MealsList = styled.ul`
+    list-style: none;
+    overflow: scroll;
+
+    display: grid;
+    grid-template-columns: repeat(3, 33%);
+    justify-items: start;
+`;
+
+const Meal = styled.li`
+    color: ${colors.base};
+    font-size: 2rem;
+    font-weight: ${fontsWeights.bold};
+    text-align: center;
+
+    width: 16rem;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    gap: 1rem;
+    align-items: center;
+
+    margin-bottom: 2rem;
+`;
+
+const MealImageBox = styled.div`
+    background-color: ${colors.base};
+    width 14.5rem;
+    height: 14.5rem;
+    border-radius: ${radius.main};
 `;
 
 const Meals = ({category, filter}) => {
@@ -33,13 +65,18 @@ const Meals = ({category, filter}) => {
   return (
     <MealsContainer>
         <MealsTitle>{category}</MealsTitle>
-        <ul>
+        <MealsList>
             {
                 filteredData.map(data => 
-                    <li key={data.name}>{data.name}</li>
+                    <Meal key={data.name}>
+                        <MealImageBox>
+
+                        </MealImageBox>
+                        <p>{data.name}</p>
+                    </Meal>
                 )
             }
-        </ul>
+        </MealsList>
     </MealsContainer>
   )
 }
