@@ -6,10 +6,10 @@
         "name": "Chicken Sandwich"
     },
     {
-        "name": "Chickenjoy"
+        "name": "Chicken Tenders"
     },
     {
-        "name": "Dessert"
+        "name": "Desserts"
     },
     {
         "name": "Loaded fries"
@@ -18,13 +18,13 @@
         "name": "Sides"
     },
     {
-        "name": "Tenders"
-    },
-    {
         "name": "Wraps & Bowls"
     },
     {
-        "name": "Hotdogs"
+        "name": "Classics"
+    },
+    {
+        "name": "Dipping Suaces"
     }
 
 ]

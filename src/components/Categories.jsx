@@ -12,7 +12,10 @@ const CategoryList = styled.ul`
 
     display: flex;
     flex-direction: column;
-    gap: 1rem
+    gap: 1rem;
+    height: 90%;
+
+    overflow: scroll;
 `;
 
 const CategoryItem = styled.li`
@@ -21,20 +24,28 @@ const CategoryItem = styled.li`
 
 const CategoryBtn = styled.button`
     min-height: 13.3rem;
-    width: 100%;
+    width: 98%;
     background-color: ${colors.primary};
     border: none;
     border-radius: 0rem ${radius.main} ${radius.main} 0rem;
-    padding: 0;
+    padding: 0rem 0rem 2rem 0rem;
     margin: 0;
 
     color: ${colors.base};
     font-size: 2rem;
-    font-weight: ${fontsWeights.regular};
+    font-weight: ${fontsWeights.bold};
+
+    p {
+        margin: 0;
+    }
+
+    > * {
+        pointer-events: none;
+    }
 `;
 
 const CategoryContainer = styled.div`
-    margin-left: 4rem;
+    margin: 0rem 1rem;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -55,7 +66,7 @@ const ImageContainer = styled.div`
 
 
 
-const Categories = () => {
+const Categories = ({handleMenu}) => {
     const { data, loading, error } = useFetch('https://pgm-claudeke.github.io/eindopdracht-food-kiosk/categories.json');
 
     if (loading) return <h1>LOADING...</h1>
@@ -64,17 +75,21 @@ const Categories = () => {
 
   return (
     <CategoryList>
-        {data}
-        <CategoryItem>
-            <CategoryBtn>
-                <CategoryContainer>
-                    <ImageContainer>
-                        <CategoryImage src={tenders}/>
-                    </ImageContainer>
-                    Tenders
-                </CategoryContainer>
-            </CategoryBtn>
-        </CategoryItem>
+        {
+            data.map(data => 
+            <CategoryItem key={data.name}>
+                <CategoryBtn onClick={handleMenu} value={data.name}>
+                    <CategoryContainer>
+                        <ImageContainer>
+                            <CategoryImage src={tenders}/>
+                        </ImageContainer>
+                        <p>{data.name}</p>
+                    </CategoryContainer>
+                </CategoryBtn>
+            </CategoryItem>
+            )
+        }
+        
     </CategoryList>
   )
 }
