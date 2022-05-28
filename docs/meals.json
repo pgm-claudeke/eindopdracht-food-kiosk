@@ -2,7 +2,7 @@
     {
         "label": "6 Piece",
         "name":"6 Piece Bucket",
-        "image": "buckets/6_piece_bucket.jpeg",
+        "image": "buckets/6_piece_bucket.jpg",
         "category": "buckets",
         "id": 1,
         "price": 11.75,
@@ -11,7 +11,7 @@
     {
         "label": "8 Piece",
         "name":"8 Piece Bucket",
-        "image": "buckets/8_piece_bucket.jpeg",
+        "image": "buckets/8_piece_bucket.jpg",
         "category": "buckets",
         "id": 2,
         "price": 15.6,
@@ -20,7 +20,7 @@
     {
         "label": "12 Piece",
         "name":"12 Piece Bucket",
-        "image": "buckets/12_piece_bucket.jpeg",
+        "image": "buckets/12_piece_bucket.jpg",
         "category": "buckets",
         "id": 3,
         "price": 22.2,
