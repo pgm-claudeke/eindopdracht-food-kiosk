@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import { colors, fontsWeights, radius } from '../constants/styles';
-import tenders from '../assets/images/categories/chicken_tenders.png';
 import useFetch from '../hooks/fetch';
 
 
@@ -28,7 +27,7 @@ const CategoryBtn = styled.button`
     background-color: ${colors.primary};
     border: none;
     border-radius: 0rem ${radius.main} ${radius.main} 0rem;
-    padding: 0rem 0rem 2rem 0rem;
+    padding: 2rem 0rem;
     margin: 0;
 
     color: ${colors.base};
@@ -50,17 +49,18 @@ const CategoryContainer = styled.div`
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    gap: 0.5rem;
 `;
 
 const CategoryImage = styled.img`
-    width: 100%;
+    height: 100%;
     object-fit: cover;
     object-position: center;
 `;
 
 const ImageContainer = styled.div`
     width: 9.6rem;
-    height: 8.25rem;
+    height: 9.6rem;
     overflow: hidden; 
 `;
 

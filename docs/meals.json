@@ -297,21 +297,21 @@
     {
         "label": "Siracha Mayonnaise",
         "name": "Siracha Mayonnaise",
-        "image": "sauces/siracha_mayonnaise.jpeg",
+        "image": "sauces/siracha_mayonnaise.jpg",
         "category": "dipping sauces",
         "id": 20
     },
     {
         "label": "Sweet Chilli Sauce",
         "name": "Sweet Chilli Sauce",
-        "image": "sauces/sweet_chilli.jpeg",
+        "image": "sauces/sweet_chilli.jpg",
         "category": "dipping sauces",
         "id": 21
     },
     {
         "label": "Asian Ginger Chilli Sauce",
         "name": "Asian Ginger Chilli Sauce",
-        "image": "sauces/asian_ginger_chilli.jpeg",
+        "image": "sauces/asian_ginger_chilli.jpg",
         "category": "dipping sauces",
         "id": 22
     },

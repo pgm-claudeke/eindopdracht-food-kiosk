@@ -51,6 +51,16 @@ const MealImageBox = styled.div`
     width 16rem;
     height: 16rem;
     border-radius: ${radius.main};
+
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+`;
+
+const MealImage = styled.img`
+    height: 70%;
+    object-fit: cover;
+    object-position: center;
 `;
 
 const Meals = ({category, filter}) => {
@@ -67,14 +77,17 @@ const Meals = ({category, filter}) => {
         <MealsTitle>{category}</MealsTitle>
         <MealsList>
             {
-                filteredData.map(data => 
+                filteredData.map(data => {
+                    const image = require("../assets/images/meals/" + data.image);
+                    return(
                     <Meal key={data.id}>
                         <MealImageBox>
-
+                            <MealImage src={image}/>
                         </MealImageBox>
                         <p>{data.label}</p>
                     </Meal>
-                )
+                    )
+                })
             }
         </MealsList>
     </MealsContainer>
