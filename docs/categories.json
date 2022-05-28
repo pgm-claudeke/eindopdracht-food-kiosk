@@ -1,33 +1,43 @@
 [
     {
-        "name": "Buckets"
+        "name": "Buckets",
+        "image": "buckets.png"
     },
     {
-        "name": "Chicken Sandwich"
+        "name": "Chicken Sandwich",
+        "image": "chicken_sandwich.png"
     },
     {
-        "name": "Chicken Tenders"
+        "name": "Chicken Tenders",
+        "image": "chicken_tenders.png"
     },
     {
-        "name": "Desserts"
+        "name": "Desserts",
+        "image": "desserts.png"
     },
     {
-        "name": "Loaded fries"
+        "name": "Loaded fries",
+        "image": "loaded_fries.png"
     },
     {
-        "name": "Sides"
+        "name": "Sides",
+        "image": "sides.png"
     },
     {
-        "name": "Wraps & Bowls"
+        "name": "Wraps & Bowls",
+        "image": "bowls.png"
     },
     {
-        "name": "Classics"
+        "name": "Classics",
+        "image": "classics.png"
     },
     {
-        "name": "Dipping Sauces"
+        "name": "Dipping Sauces",
+        "image": "dipping_sauces.png"
     },
     {
-        "name": "Drinks"
+        "name": "Drinks",
+        "image": "buckets.png"
     }
 
 ]
