@@ -5,6 +5,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { colors, fontsWeights, radius } from '../constants/styles';
 import useFetch from '../hooks/fetch';
+import logo from '../assets/images/logos/Logo.jpg';
 
 const MealsContainer = styled.div`
     width: 74%;
@@ -79,6 +80,11 @@ const Meals = ({category, filter}) => {
             {
                 filteredData.map(data => {
                     const image = require("../assets/images/meals/" + data.image);
+
+                    if(!image) {
+                        return logo
+                    }
+
                     return(
                     <Meal key={data.id}>
                         <MealImageBox>
