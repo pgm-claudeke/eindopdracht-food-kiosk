@@ -3,175 +3,272 @@
         "label": "6 Piece",
         "name":"6 Piece Bucket",
         "category": "buckets",
-        "id": 1
+        "id": 1,
+        "price": 11.75
     },
     {
         "label": "8 Piece",
         "name":"8 Piece Bucket",
         "category": "buckets",
-        "id": 2
+        "id": 2,
+        "price": 15.6
     },
     {
         "label": "12 Piece",
         "name":"12 Piece Bucket",
         "category": "buckets",
-        "id": 3
+        "id": 3,
+        "price": 22.2
     },
     {
         "label": "Basic",
         "name":"Chicken Sandwich",
         "category": "chicken sandwich",
         "id": 4,
-        "options": [
+        "types": [
             {
-                "label": "meal"
+                "label": "Sandwich Only",
+                "name": "Chicken Sandwich",
+                "price": 3.99,
+                "drinks": false,
+                "side": false
+            },
+            {
+                "label": "Menu",
+                "name": "Chicken Sandwich Menu",
+                "price": 4.99,
+                "drinks": true,
+                "side": true
             }
         ]
     },
     {
-        "label": "Meal",
-        "name":"Chicken Sandwich",
-        "category": "chicken sandwich",
-        "id": 5
-    },
-    {
         "label": "Spicy",
+        "name":"Spicy Chicken Sandwich",
         "category": "chicken sandwich",
-        "id": 6
+        "id": 5,
+        "types": [
+            {
+                "label": "Sandwich Only",
+                "name": "Spicy Chicken Sandwich",
+                "price": 4.19,
+                "drinks": false,
+                "side": false
+            },
+            {
+                "label": "Menu",
+                "name": "Spicy Chicken Sandwich Menu",
+                "price": 5.19,
+                "drinks": true,
+                "side": true
+            }
+        ]
     },
     {
         "label": "Tropical",
+        "name": "Tropical Chicken Sandwich",
         "category": "chicken sandwich",
-        "id": 7
-    },
-    {
-        "label": "Tropical Meal",
-        "category": "chicken sandwich",
-        "id": 8
+        "id": 6,
+        "types": [
+            {
+                "label": "Sandwich Only",
+                "name": "Tropical Chicken Sandwich",
+                "price": 6.2,
+                "drinks": false,
+                "side": false
+            },
+            {
+                "label": "Menu",
+                "name": "Tropical Chicken Sandwich Menu",
+                "price": 8.8,
+                "drinks": true,
+                "side": true
+            }
+        ]
     },
     {
         "label": "Double Chicken",
+        "name": "Double Chicken Sandwich",
         "category": "chicken sandwich",
-        "id": 9
-    },
-    {
-        "label": "Double Chicken Meal",
-        "category": "chicken sandwich",
-        "id": 10
+        "id": 7,
+        "types": [
+            {
+                "label": "Sandwich Only",
+                "name": "Double Chicken Sandwich",
+                "price": 6.4,
+                "drinks": false,
+                "side": false
+            },
+            {
+                "label": "Menu",
+                "name": "Double Chicken Sandwich Menu",
+                "price": 9.5,
+                "drinks": true,
+                "side": true
+            }
+        ]
     },
     {
         "label": "3 Piece",
+        "name": "3 Piece Chicken Tenders",
         "category": "chicken tenders",
-        "id": 11
+        "id": 8, 
+        "types": [
+            {
+                "label": "Tenders Only",
+                "name": "3 Piece Chicken Tenders",
+                "price": 4.4,
+                "drinks": false,
+                "side": false
+            },
+            {
+                "label": "Menu",
+                "name": "3 Piece Chicken Tenders Menu",
+                "price": 7,
+                "drinks": true,
+                "side": true
+            }
+        ]
     },
     {
         "label": "5 Piece",
+        "name": "5 Piece Chicken Tenders",
         "category": "chicken tenders",
-        "id": 12
-    },
-    {
-        "label": "3 Piece",
-        "category": "chicken tenders",
-        "id": 13
-    },
-    {
-        "label": "5 Piece",
-        "category": "chicken tenders",
-        "id": 14
+        "id": 9, 
+        "types": [
+            {
+                "label": "Tenders Only",
+                "name": "5 Piece Chicken Tenders",
+                "price": 5.7,
+                "drinks": false,
+                "side": false
+            },
+            {
+                "label": "Menu",
+                "name": "5 Piece Chicken Tenders Menu",
+                "price": 8.45,
+                "drinks": true,
+                "side": true
+            }
+        ]
     },
     {
         "label": "Chicken Wrap",
+        "name": "Chicken Wrap",
         "category": "wraps & bowls",
-        "id": 15
+        "id": 10,
+        "price": 5
     },
     {
         "label": "Chicken Rice Bowl",
+        "name": "Chicken Rice Bowl",
         "category": "wraps & bowls",
-        "id": 16
+        "id": 11,
+        "price": 5
     },
     {
         "label": "Yumburger",
         "category": "classics",
-        "id": 17
-    },
-    {
-        "label": "Yumburger with Cheese",
-        "category": "classics",
-        "id": 18
-    },
-    {
-        "label": "Double Yumburger with Cheese",
-        "category": "classics",
-        "id": 19
+        "id": 12,
+        "types": [
+            {
+                "label": "Classic",
+                "name": "Yumburger Classic",
+                "price": 2.10
+            },
+            {
+                "label": "Cheese",
+                "name": "Yumburger with Cheese",
+                "price": 2.20
+            },
+            {
+                "label": "Double with Cheese",
+                "name": "Double Yumburger with Cheese",
+                "price": 8.45
+            }
+        ]
     },
     {
         "label": "Jolly Spaghetti",
         "category": "classics",
-        "id": 20
+        "id": 13,
+        "price": 4.6
     },
     {
         "label": "Siracha Chicken",
         "category": "loaded fries",
-        "id": 21
+        "id": 14, 
+        "price": 3.99
     },
     {
         "label": "Gravy Chicken",
         "category": "loaded fries",
-        "id": 22
+        "id": 15,
+        "price": 3.99
     },
     {
         "label": "Ice Cream",
         "category": "loaded fries",
-        "id": 23
+        "id": 16,
+        "price": 3.99
     },
     {
         "label": "Fries",
         "category": "sides",
-        "id": 24
+        "id": 17,
+        "price": 2.3
     },
     {
         "label": "Plain Rice",
         "category": "sides",
-        "id": 25
+        "id": 18,
+        "price": 1.75
     },
     {
-        "label": "Mango Coconut Sundae",
+        "label": "Sundae",
         "category": "desserts",
-        "id": 26
-    },
-    {
-        "label": "Chocolate Coconut Sundae",
-        "category": "desserts",
-        "id": 27
-    },
-    {
-        "label": "Cookies 'n Cream Sundae",
-        "category": "desserts",
-        "id": 28
+        "id": 19,
+        "types": [
+            {
+                "label": "Mango Coconut",
+                "name": "Mango Coconut Sundae",
+                "price": 2.5
+            },
+            {
+                "label": "Chocolate Coconut",
+                "name": "Chocolate Coconut Sundae",
+                "price": 2.5
+            },
+            {
+                "label": "Cookies 'n Cream",
+                "name": "Cookies 'n Cream Sundae",
+                "price": 2.5
+            }
+        ]
     },
     {
         "label": "Siracha Mayonnaise",
         "category": "dipping sauces",
-        "id": 29
+        "id": 20
     },
     {
         "label": "Sweet Chilli Sauce",
         "category": "dipping sauces",
-        "id": 30
+        "id": 21
     },
     {
         "label": "Asian Ginger Chilli Sauce",
         "category": "dipping sauces",
-        "id": 31
+        "id": 22
     },
     {
         "label": "Gravy",
         "category": "dipping sauces",
-        "id": 32
+        "id": 23
     },
     {
         "label": "Big Bucket Gravy",
         "category": "dipping sauces",
-        "id": 33
+        "id": 24
     }
 ]

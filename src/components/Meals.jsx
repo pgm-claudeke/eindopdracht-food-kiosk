@@ -72,7 +72,7 @@ const Meals = ({category, filter}) => {
                         <MealImageBox>
 
                         </MealImageBox>
-                        <p>{data.name}</p>
+                        <p>{data.label}</p>
                     </Meal>
                 )
             }
