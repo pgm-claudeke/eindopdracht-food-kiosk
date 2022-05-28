@@ -168,6 +168,7 @@
     },
     {
         "label": "Yumburger",
+        "name": "Yumburger",
         "category": "classics",
         "id": 12,
         "types": [
@@ -190,42 +191,49 @@
     },
     {
         "label": "Jolly Spaghetti",
+        "name": "Jolly Spaghetti",
         "category": "classics",
         "id": 13,
         "price": 4.6
     },
     {
         "label": "Siracha Chicken",
+        "name": "Siracha Chicken loaded fries",
         "category": "loaded fries",
         "id": 14, 
         "price": 3.99
     },
     {
         "label": "Gravy Chicken",
+        "name": "Gravy Chicken loaded fries",
         "category": "loaded fries",
         "id": 15,
         "price": 3.99
     },
     {
         "label": "Ice Cream",
+        "name": "Ice Cream loaded fries",
         "category": "loaded fries",
         "id": 16,
         "price": 3.99
     },
     {
         "label": "Fries",
+        "name": "Fries",
         "category": "sides",
         "id": 17,
         "price": 2.3
     },
     {
         "label": "Plain Rice",
+        "name": "Plain Rice",
         "category": "sides",
         "id": 18,
         "price": 1.75
     },
     {
         "label": "Sundae",
+        "name": "Sundae",
         "category": "desserts",
         "id": 19,
         "types": [
@@ -248,26 +256,31 @@
     },
     {
         "label": "Siracha Mayonnaise",
+        "name": "Siracha Mayonnaise",
         "category": "dipping sauces",
         "id": 20
     },
     {
         "label": "Sweet Chilli Sauce",
+        "name": "Sweet Chilli Sauce",
         "category": "dipping sauces",
         "id": 21
     },
     {
         "label": "Asian Ginger Chilli Sauce",
+        "name": "Asian Ginger Chilli Sauce",
         "category": "dipping sauces",
         "id": 22
     },
     {
         "label": "Gravy",
+        "name": "Gravy",
         "category": "dipping sauces",
         "id": 23
     },
     {
         "label": "Big Bucket Gravy",
+        "name": "Big Bucket Gravy",
         "category": "dipping sauces",
         "id": 24
     }
