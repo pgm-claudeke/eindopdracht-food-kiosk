@@ -76,18 +76,22 @@ const Categories = ({handleMenu}) => {
   return (
     <CategoryList>
         {
-            data.map(data => 
+            data.map(data => {
+            const image = require('../assets/images/categories/' + data.image)
+            
+            return(
             <CategoryItem key={data.name}>
                 <CategoryBtn onClick={handleMenu} value={data.name}>
                     <CategoryContainer>
                         <ImageContainer>
-                            <CategoryImage src={tenders}/>
+                            <CategoryImage src={image}/>
                         </ImageContainer>
                         <p>{data.name}</p>
                     </CategoryContainer>
                 </CategoryBtn>
             </CategoryItem>
             )
+            })
         }
         
     </CategoryList>
