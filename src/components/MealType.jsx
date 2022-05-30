@@ -65,7 +65,7 @@ const CloseBtn = styled.button`
     align-items: center;
 `;
 
-const MealType = ({handleClose, data, mealName}) => {
+const MealType = ({handleClose, data, mealName, handleFunction}) => {
   return (
     <MealTypeContainer>
         <MealTypeBox>
@@ -80,7 +80,7 @@ const MealType = ({handleClose, data, mealName}) => {
                         console.log(image);
                     
                         return(
-                            <Meal key={data.name}  src={image} name={data.label}/>
+                            <Meal key={data.name}  src={image} name={data.label} handleFunction={handleFunction}/>
                         )
                     })
                 }

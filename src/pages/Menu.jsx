@@ -1,7 +1,8 @@
 import React, {useState} from 'react'
 import styled from 'styled-components';
-import { Categories, Header, CurrentOrder, Meals, MealType } from '../components';
+import { Categories, Header, CurrentOrder, Meals, MealType, MealOption } from '../components';
 import useFetch from '../hooks/fetch';
+import ROUTES from '../constants/routes';
 
 const MenuContainer = styled.div`
     display: flex;
@@ -12,7 +13,7 @@ const MenuContainer = styled.div`
     height: 70vh;
 `;
 
-const Menu = () => {
+const Menu = ({order}) => {
     const [category, setCategory] = useState(null);
     const [menu, setMenu] = useState(null);
     const [filter, setFilter] = useState(null);
@@ -28,15 +29,22 @@ const Menu = () => {
         setFilter(e.target.value.toLowerCase())
     }
 
-    const handleMealType = (e) => {
+    const handleMeal = (e) => {
         const selectedMeal = data.find(data => data.id == e.target.id);
-
         setTypes(selectedMeal.types);
         setSelectedMeal(selectedMeal.name)
+
+        if(!selectedMeal.types){
+            return window.location.href=ROUTES.MEAL
+        }
     }
 
     const handleClose = () => {
         setTypes(null)
+    }
+
+    const handleRedirect = () => {
+        return window.location.href=ROUTES.MEAL
     }
 
   return (
@@ -44,16 +52,16 @@ const Menu = () => {
         <Header/>
         <MenuContainer>
             <Categories handleMenu={handleMenu}/>
-            <Meals category={category} filter={filter}  handleMealType={handleMealType}/>
+            <Meals category={category} filter={filter}  handleFunction={handleMeal}/>
             {
                 types
                 ?
-                <MealType handleClose={handleClose} data={types} mealName={selectedMeal}/>
+                <MealType handleClose={handleClose} data={types} mealName={selectedMeal} handleFunction={handleRedirect}/>
                 :
                 <></>
             }
+            
         </MenuContainer>
-
         <CurrentOrder/>
     </>
   )

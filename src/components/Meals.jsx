@@ -33,7 +33,7 @@ const MealsList = styled.ul`
     row-gap: 2rem;
 `;
 
-const Meals = ({category, filter, handleMealType}) => {
+const Meals = ({category, filter, handleFunction}) => {
     const {data, loading, error} = useFetch('https://pgm-claudeke.github.io/eindopdracht-food-kiosk/meals.json');
     if (loading) return <h1>LOADING...</h1>
     if (error) console.log(error)
@@ -54,7 +54,7 @@ const Meals = ({category, filter, handleMealType}) => {
                     }
 
                     return(
-                    <Meal key={data.id} image={image}  name={data.label} handleMealType={handleMealType} id={data.id}/>
+                    <Meal key={data.id} image={image}  name={data.label} handleFunction={handleFunction} id={data.id}/>
                     )
                 })
             }

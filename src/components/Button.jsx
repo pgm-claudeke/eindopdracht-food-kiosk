@@ -10,7 +10,9 @@ const Btn = styled.button`
     font-size: 3rem;
     font-weight: 600;
     text-transform: uppercase;
-    color: ${colors.base}
+    color: ${colors.base};
+
+    padding: 0 2rem;
 `;
 
 const Button = ({children, btnColor, btnWidth}) => {

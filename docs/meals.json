@@ -1,6 +1,6 @@
 [
     {
-        "label": "6 Piece",
+        "label": "6 Pieces",
         "name":"6 Piece Bucket",
         "image": "buckets/6_piece_bucket.jpg",
         "category": "buckets",
@@ -9,7 +9,7 @@
         "sauce": true
     },
     {
-        "label": "8 Piece",
+        "label": "8 Pieces",
         "name":"8 Piece Bucket",
         "image": "buckets/8_piece_bucket.jpg",
         "category": "buckets",
@@ -18,7 +18,7 @@
         "sauce": true
     },
     {
-        "label": "12 Piece",
+        "label": "12 Pieces",
         "name":"12 Piece Bucket",
         "image": "buckets/12_piece_bucket.jpg",
         "category": "buckets",

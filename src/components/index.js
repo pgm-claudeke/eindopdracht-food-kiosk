@@ -10,6 +10,7 @@ import AmountCounter from "./AmountCounter";
 import OrderTotal from "./OrderTotal";
 import MealOption from "./MealOption";
 import MealType from "./MealType";
+import Button from "./Button";
 
 export {
   Header, 
@@ -23,5 +24,6 @@ export {
   AmountCounter,
   OrderTotal,
   MealOption, 
-  MealType
+  MealType,
+  Button
 }

@@ -3,7 +3,8 @@ const ROUTES = Object.freeze({
   DINE: '/dine-options',
   MENU: '/menu',
   PAY: '/pay-options',
-  ORDER: '/order'
+  ORDER: '/order',
+  MEAL: '/meal-options'
 });
 
 export default ROUTES
