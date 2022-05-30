@@ -7,7 +7,9 @@ import Meals from "./Meals";
 import Question from "./Question";
 import OrderList from "./OrderList";
 import AmountCounter from "./AmountCounter";
-import OrderTotal from "./OrderTotal"
+import OrderTotal from "./OrderTotal";
+import MealOption from "./MealOption";
+import MealType from "./MealType";
 
 export {
   Header, 
@@ -19,5 +21,7 @@ export {
   Question,
   OrderList,
   AmountCounter,
-  OrderTotal
+  OrderTotal,
+  MealOption, 
+  MealType
 }

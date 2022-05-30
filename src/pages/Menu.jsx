@@ -1,6 +1,6 @@
 import React, {useState} from 'react'
 import styled from 'styled-components';
-import { Categories, Header, CurrentOrder, Meals } from '../components';
+import { Categories, Header, CurrentOrder, Meals, MealType } from '../components';
 import useFetch from '../hooks/fetch';
 
 const MenuContainer = styled.div`
@@ -31,6 +31,7 @@ const Menu = () => {
             <Categories handleMenu={handleMenu}></Categories>
             <Meals category={category} filter={filter}></Meals>
         </MenuContainer>
+
         <CurrentOrder/>
     </>
   )

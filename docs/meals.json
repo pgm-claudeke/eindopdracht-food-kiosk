@@ -230,7 +230,7 @@
     {
         "label": "Siracha Chicken",
         "name": "Siracha Chicken loaded fries",
-        "image": "loaded_fries/siracha_chicken_loaded_fries.jpeg",
+        "image": "loaded_fries/siracha_chicken_loaded_fries.jpg",
         "category": "loaded fries",
         "id": 14, 
         "price": 3.99
@@ -238,7 +238,7 @@
     {
         "label": "Gravy Chicken",
         "name": "Gravy Chicken loaded fries",
-        "image": "loaded_fries/gravy_loaded_fries.jpeg",
+        "image": "loaded_fries/gravy_loaded_fries.jpg",
         "category": "loaded fries",
         "id": 15,
         "price": 3.99
@@ -246,7 +246,7 @@
     {
         "label": "Ice Cream",
         "name": "Ice Cream loaded fries",
-        "image": "loaded_fries/ice_cream_loaded_fries.jpeg",
+        "image": "loaded_fries/ice_cream_loaded_fries.jpg",
         "category": "loaded fries",
         "id": 16,
         "price": 3.99
