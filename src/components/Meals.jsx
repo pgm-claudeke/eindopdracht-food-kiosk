@@ -1,12 +1,13 @@
 //display: grid;
 //grid-template-columns: repeat(3, 1fr);
 
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
-import { colors, fontsWeights, radius } from '../constants/styles';
+import { colors, radius } from '../constants/styles';
 import useFetch from '../hooks/fetch';
 import logo from '../assets/images/logos/Logo.jpg';
 import Meal from './Meal';
+import MealType from './MealType';
 
 const MealsContainer = styled.div`
     width: 74%;
@@ -25,14 +26,13 @@ const MealsTitle = styled.p`
 
 const MealsList = styled.ul`
     list-style: none;
-    overflow: scroll;
 
     display: grid;
     grid-template-columns: repeat(3, 33%);
     justify-items: start;
 `;
 
-const Meals = ({category, filter}) => {
+const Meals = ({category, filter, handleMealType}) => {
     const {data, loading, error} = useFetch('https://pgm-claudeke.github.io/eindopdracht-food-kiosk/meals.json');
     if (loading) return <h1>LOADING...</h1>
     if (error) console.log(error)
@@ -40,6 +40,8 @@ const Meals = ({category, filter}) => {
 
     const filteredData = data.filter(data => data.category === filter);
     console.log(filteredData)
+
+    
 
   return (
     <MealsContainer>
@@ -54,7 +56,7 @@ const Meals = ({category, filter}) => {
                     }
 
                     return(
-                    <Meal key={data.id} image={image}  name={data.label} />
+                    <Meal key={data.id} image={image}  name={data.label} handleMealType={handleMealType} id={data.id}/>
                     )
                 })
             }

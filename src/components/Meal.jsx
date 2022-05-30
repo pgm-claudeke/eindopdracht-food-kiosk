@@ -22,7 +22,9 @@ const MealBtn = styled.button`
     gap: 1rem;
     align-items: center;
 
-    margin-bottom: 2rem;
+    > * {
+        pointer-events: none;
+    }
 `;
 
 const MealImageBox = styled.div`
@@ -34,6 +36,8 @@ const MealImageBox = styled.div`
     display: flex;
     justify-content: center; 
     align-items: center;
+
+    overflow: hidden;
 `;
 
 const MealImage = styled.img`
@@ -42,10 +46,10 @@ const MealImage = styled.img`
     object-position: center;
 `;
 
-const Meal = ({key, image, name, handleFunction}) => {
+const Meal = ({key, image, name, handleMealType, id}) => {
   return (
-    <MealContainer key={key} onClick={handleFunction}>
-        <MealBtn>
+    <MealContainer>
+        <MealBtn key={key} onClick={handleMealType} id={id}>
             <MealImageBox>
                 <MealImage src={image}/>
             </MealImageBox>

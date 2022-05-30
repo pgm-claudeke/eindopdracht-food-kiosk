@@ -12,7 +12,7 @@ const CategoryList = styled.ul`
     display: flex;
     flex-direction: column;
     gap: 1rem;
-    height: 90%;
+    height: 94%;
 
     overflow: scroll;
 `;
