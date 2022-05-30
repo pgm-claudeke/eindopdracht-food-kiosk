@@ -3,7 +3,7 @@
 
 import React, { useState } from 'react';
 import styled from 'styled-components';
-import { colors, radius } from '../constants/styles';
+import { colors, fontsWeights, radius } from '../constants/styles';
 import useFetch from '../hooks/fetch';
 import logo from '../assets/images/logos/Logo.jpg';
 import Meal from './Meal';
@@ -20,7 +20,7 @@ const MealsContainer = styled.div`
 const MealsTitle = styled.p`
     color: ${colors.base};
     font-size: 5rem;
-    font-weight: 900;
+    font-weight: ${fontsWeights.bold};
     margin-bottom: 4rem;
 `;
 
@@ -30,6 +30,7 @@ const MealsList = styled.ul`
     display: grid;
     grid-template-columns: repeat(3, 33%);
     justify-items: start;
+    row-gap: 2rem;
 `;
 
 const Meals = ({category, filter, handleMealType}) => {
@@ -37,11 +38,7 @@ const Meals = ({category, filter, handleMealType}) => {
     if (loading) return <h1>LOADING...</h1>
     if (error) console.log(error)
 
-
     const filteredData = data.filter(data => data.category === filter);
-    console.log(filteredData)
-
-    
 
   return (
     <MealsContainer>
@@ -50,6 +47,7 @@ const Meals = ({category, filter, handleMealType}) => {
             {
                 filteredData.map(data => {
                     const image = require("../assets/images/meals/" + data.image);
+                    console.log(image)
 
                     if(!image) {
                         return logo

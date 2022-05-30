@@ -11,7 +11,7 @@ const MealBtn = styled.button`
     border: none; 
 
     color: ${colors.base};
-    font-size: 2.5rem;
+    font-size: 2rem;
     font-weight: ${fontsWeights.bold};
     text-align: center;
 

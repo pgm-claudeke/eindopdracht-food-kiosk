@@ -17,7 +17,7 @@ const Menu = () => {
     const [menu, setMenu] = useState(null);
     const [filter, setFilter] = useState(null);
     const [types, setTypes] = useState(null);
-    const [mealId, setMealId] = useState(null);
+    const [selectedMeal, setSelectedMeal] = useState(null);
 
     const {data, loading, error} = useFetch('https://pgm-claudeke.github.io/eindopdracht-food-kiosk/meals.json');
     if (loading) return <h1>LOADING...</h1>
@@ -28,18 +28,11 @@ const Menu = () => {
         setFilter(e.target.value.toLowerCase())
     }
 
-    console.log(filter)
-
     const handleMealType = (e) => {
-        console.log('clicked');
-        console.log(e.target.id);
+        const selectedMeal = data.find(data => data.id == e.target.id);
 
-        const mealTypes = data.find(data => data.id == e.target.id);
-        const types = mealTypes.types;
-
-        console.log(mealTypes);
-        setTypes(types);
-        setMealId(e.target.id)
+        setTypes(selectedMeal.types);
+        setSelectedMeal(selectedMeal.name)
     }
 
     const handleClose = () => {
@@ -55,7 +48,7 @@ const Menu = () => {
             {
                 types
                 ?
-                <MealType handleClose={handleClose} data={types}/>
+                <MealType handleClose={handleClose} data={types} mealName={selectedMeal}/>
                 :
                 <></>
             }

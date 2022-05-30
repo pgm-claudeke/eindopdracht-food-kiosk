@@ -11,6 +11,7 @@ import ApiFetcher from '../hooks/fetch';
 
 const HomeContainer = styled.a`
     text-decoration: none;
+    height: 100vh;
 `;
 
 const Logo = styled.img`
@@ -48,8 +49,8 @@ const Home = () => {
   return (
     <>
         <HomeContainer  href={ROUTES.DINE}>
-            <Logo src={logo}/>
             <ImgBox>
+                <Logo src={logo}/>
                 <PosterImage src={posterOne}/>
             </ImgBox>
             <TextBox>Tab the screen to order</TextBox>

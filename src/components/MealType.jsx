@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
-import { colors, radius } from '../constants/styles';
+import { colors, fontsWeights, radius } from '../constants/styles';
 import Meal from './Meal';
 import { CgClose } from 'react-icons/cg';
 
 const MealTypeContainer = styled.div`
-    backdrop-filter: blur(12px);
+    backdrop-filter: blur(12px)  grayscale(15%);
     height: 69vh;
     width: 100%;
 
@@ -18,26 +18,40 @@ const MealTypeContainer = styled.div`
     align-items: center;
 `;
 
-const MealsList = styled.ul`
+const MealTypeBox = styled.div`
     min-height: 20rem;
-    width: 70rem;
+    min-width: 20rem;
     border-radius: ${radius.main};
     background-color: ${colors.primary};
-    padding: 2rem;
+    color: ${colors.base};
+    position: absolute;
+    padding: 4rem;
+`;
 
+const MealName = styled.p`
+    font-size: 4rem;
+    font-weight: ${fontsWeights.bold};
+    margin-bottom: 4rem;
+    background-color: ${colors.secondary};
+    border-radius: ${radius.main};
+    padding: 1rem 1.5rem;
+    width: fit-content;
+`;
+
+const TypesList = styled.ul`
     list-style: none;
 
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 4rem;
+    gap: 1.5rem;
 `;
 
 const CloseBtn = styled.button`
     background-color: ${colors.secondary};
     border-radius: ${radius.main}; 
-    border: none; 
+    border: solid ${colors.base} 0.25rem; 
     position: absolute;
     top: -1.8rem;
     right: -1.8rem;
@@ -51,23 +65,28 @@ const CloseBtn = styled.button`
     align-items: center;
 `;
 
-const MealType = ({handleClose, data}) => {
+const MealType = ({handleClose, data, mealName}) => {
   return (
     <MealTypeContainer>
-        <MealsList>
+        <MealTypeBox>
             <CloseBtn>
                 <CgClose onClick={handleClose}/>
             </CloseBtn>
-            {
-                data.map(data => {
-                    const image = require("../assets/images/meals/" + data.image);
-
-                    return(
-                        <Meal key={data.name}  src={image} name={data.label}/>
-                    )
-                })
-            }
-        </MealsList>
+            <MealName>{mealName}</MealName>
+            <TypesList>
+                {
+                    data.map(data => {
+                        const image = require("../assets/images/meals/" + data.image);
+                        console.log(image);
+                    
+                        return(
+                            <Meal key={data.name}  src={image} name={data.label}/>
+                        )
+                    })
+                }
+            </TypesList>
+        </MealTypeBox>
+        
     </MealTypeContainer>
   )
 }
