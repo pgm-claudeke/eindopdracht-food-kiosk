@@ -4,6 +4,7 @@ import { colors } from '../constants/styles';
 import { FaChevronRight } from 'react-icons/fa';
 import Button from './Button';
 import ButtonLink from './ButtonLink';
+import { Link } from 'react-router-dom';
 
 const OrderContainer = styled.section`
     height: 18vh;
@@ -51,7 +52,7 @@ const OrderBox = styled.div`
     align-items: center;
 `;
 
-const OrderShowBox = styled.a`
+const OrderShowBox = styled(Link)`
     display: flex;
     flex-direction: row;
     gap: 1rem;
@@ -79,14 +80,14 @@ const CurrentOrder = () => {
         <OrderBox>
             <p>Total: € 2,00</p>
             <p>Amount: 1</p>
-            <OrderShowBox href='/order'>
+            <OrderShowBox to='/order'>
                 Show order
                 <FaChevronRight style={{fontSize:"2rem"}}/>
             </OrderShowBox>
         </OrderBox>
         <BtnBox>
             <Button btnColor={colors.secondary} btnWidth={btnWidth}>Cancel order</Button>
-            <ButtonLink href='/order' btnColor={colors.primary} btnWidth={btnWidth}>Validate order</ButtonLink>
+            <ButtonLink link='/order' btnColor={colors.primary} btnWidth={btnWidth}>Validate order</ButtonLink>
         </BtnBox>
     </OrderContainer>
   )

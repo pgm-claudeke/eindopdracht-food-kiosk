@@ -3,11 +3,24 @@ import ROUTES from '../constants/routes';
 import { Header, DineOption, Footer } from '../components';
 import { FaCreditCard, FaQrcode } from 'react-icons/fa';
 
+const LINKS = [
+    {
+        label: 'Payconiq',
+        icon: <FaQrcode/>,
+        route: ROUTES.MENU
+    },
+    {
+        label: 'Bancontact',
+        icon: <FaCreditCard />,
+        route: ROUTES.MENU
+    },
+]
+
 const PayOptions = () => {
   return (
     <>
     <Header/>
-    <DineOption iconOne={<FaQrcode/>} optionOne="Payconiq" linkOne={ROUTES.MENU} iconTwo={<FaCreditCard/>} optionTwo="Bancontact" linkTwo={ROUTES.MENU}/>
+    <DineOption links={LINKS}/>
     <Footer/>
     </>
   )

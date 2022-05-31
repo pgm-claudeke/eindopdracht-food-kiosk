@@ -35,8 +35,8 @@ const OrderTotal = () => {
     <Container>
         <p>Total: € 4,9</p>
         <BtnContainer>
-            <ButtonLink href='/menu' btnColor={colors.secondary} btnWidth={btnWidth}>Go Back</ButtonLink>
-            <ButtonLink href='/pay-options' btnColor={colors.secondary} btnWidth={btnWidth}>Pay</ButtonLink>
+            <ButtonLink link='/menu' btnColor={colors.secondary} btnWidth={btnWidth}>Go Back</ButtonLink>
+            <ButtonLink link='/pay-options' btnColor={colors.secondary} btnWidth={btnWidth}>Pay</ButtonLink>
         </BtnContainer>
     </Container>
   )

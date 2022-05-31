@@ -4,12 +4,13 @@ import { colors, fontsWeights } from '../constants/styles';
 import ROUTES from '../constants/routes';
 import posterOne from '../assets/images/posters/Poster_01.png';
 import logo from '../assets/images/logos/Logo.jpg';
+import { Link } from 'react-router-dom';
 
-import ApiFetcher from '../hooks/fetch';
+import useFetch from '../hooks/fetch';
 
 
 
-const HomeContainer = styled.a`
+const HomeContainer = styled(Link)`
     text-decoration: none;
     height: 100vh;
 `;
@@ -48,7 +49,7 @@ const Home = () => {
 
   return (
     <>
-        <HomeContainer  href={ROUTES.DINE}>
+        <HomeContainer  to={ROUTES.DINE}>
             <ImgBox>
                 <Logo src={logo}/>
                 <PosterImage src={posterOne}/>

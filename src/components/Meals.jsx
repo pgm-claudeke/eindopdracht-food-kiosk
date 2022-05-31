@@ -8,8 +8,9 @@ import useFetch from '../hooks/fetch';
 import logo from '../assets/images/logos/Logo.jpg';
 import Meal from './Meal';
 import MealType from './MealType';
+import { motion } from "framer-motion"
 
-const MealsContainer = styled.div`
+const MealsContainer = styled(motion.div)`
     width: 74%;
     max-height: 90%;
     background-color: ${colors.secondary};
@@ -46,8 +47,7 @@ const Meals = ({category, filter, handleFunction}) => {
         <MealsList>
             {
                 filteredData.map(data => {
-                    const image = require("../assets/images/meals/" + data.image);
-                    console.log(image)
+                    const image = require(`../assets/images/meals/${data.image}`);
 
                     if(!image) {
                         return logo

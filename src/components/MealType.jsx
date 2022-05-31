@@ -76,11 +76,11 @@ const MealType = ({handleClose, data, mealName, handleFunction}) => {
             <TypesList>
                 {
                     data.map(data => {
-                        const image = require("../assets/images/meals/" + data.image);
+                        const image = require(`../assets/images/meals/${data.image}`);
                         console.log(image);
                     
                         return(
-                            <Meal key={data.name}  src={image} name={data.label} handleFunction={handleFunction}/>
+                            <Meal key={data.name}  image={image} name={data.label} handleFunction={handleFunction}/>
                         )
                     })
                 }

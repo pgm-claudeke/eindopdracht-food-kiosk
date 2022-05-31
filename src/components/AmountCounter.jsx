@@ -44,6 +44,7 @@ const Amount = styled.div`
     min-width: 5.6rem;
     outline: ${colors.primary} solid 1px;
     outline-offset: -1px;
+    background-color: ${colors.base};
 
     font-size: 3rem;
     font-weight: ${fontsWeights.bold};
@@ -54,12 +55,12 @@ const Amount = styled.div`
     justify-content: center;
 `;
 
-const AmountCounter = () => {
+const AmountCounter = ({color}) => {
   return (
     <Container>
-        <BtnSubtract><FaMinus/></BtnSubtract>
-        <Amount>1</Amount>
-        <BtnAdd><FaPlus/></BtnAdd>
+        <BtnSubtract style={{backgroundColor: color}}><FaMinus/></BtnSubtract>
+        <Amount style={{outline: color}}>1</Amount>
+        <BtnAdd style={{backgroundColor: color}}><FaPlus/></BtnAdd>
     </Container>
   )
 }

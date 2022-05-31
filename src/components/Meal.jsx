@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { colors, fontsWeights, radius } from '../constants/styles';
+import { AnimateSharedLayout, AnimatePresence } from "framer-motion";
 
 const MealContainer = styled.li`
 
@@ -46,16 +47,16 @@ const MealImage = styled.img`
     object-position: center;
 `;
 
-const Meal = ({key, image, name, handleFunction, id}) => {
+const Meal = ({key, image, name, handleFunction, id, scale}) => {
   return (
     <MealContainer>
         <MealBtn key={key} onClick={handleFunction} id={id}>
-            <MealImageBox>
+            <MealImageBox style={{height: scale, width: scale}}>
                 <MealImage src={image}/>
             </MealImageBox>
             {name}
         </MealBtn>
-    </MealContainer>
+    </MealContainer> 
   )
 }
 

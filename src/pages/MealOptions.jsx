@@ -1,8 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
-import { MealOption } from '../components';
+import { AmountCounter, MealOption } from '../components';
 import { radius, colors, fontsWeights } from '../constants/styles';
 import { Button } from '../components';
+import ButtonLink from '../components/ButtonLink';
 
 const MealOptionContainer = styled.div`
     background-color: ${colors.primary};
@@ -72,8 +73,8 @@ const MealOptions = () => {
 
     </MealOption>
     <ButtonsContainer>
+        <ButtonLink link="/menu" btnColor={colors.secondary}>Cancel</ButtonLink>
         <Button btnColor={colors.secondary}>Add</Button>
-        <Button btnColor={colors.secondary}>Cancel</Button>
     </ButtonsContainer>
 </MealOptionContainer>
   )

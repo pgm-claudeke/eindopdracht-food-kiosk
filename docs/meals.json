@@ -6,7 +6,12 @@
         "category": "buckets",
         "id": 1,
         "price": 11.75,
-        "sauce": true
+        "types":{},       
+        "options":{
+            "side": false,
+            "sauce": 3,
+            "drink": false
+        }
     },
     {
         "label": "8 Pieces",
@@ -15,7 +20,12 @@
         "category": "buckets",
         "id": 2,
         "price": 15.6,
-        "sauce": true
+        "types":{},       
+        "options":{
+            "side": false,
+            "sauce": 4,
+            "drink": false
+        }
     },
     {
         "label": "12 Pieces",
@@ -24,7 +34,12 @@
         "category": "buckets",
         "id": 3,
         "price": 22.2,
-        "sauce": true
+        "types":{},       
+        "options":{
+            "side": false,
+            "sauce": 6,
+            "drink": false
+        }
     },
     {
         "label": "Classic",
@@ -37,17 +52,18 @@
                 "label": "Burger Only",
                 "name": "Chicken Burger",
                 "image": "chicken_burger/chicken_burger.jpeg",
-                "price": 3.99,
-                "drinks": false,
-                "side": false
+                "price": 3.99
             },
             {
                 "label": "Menu",
                 "name": "Chicken Burger Menu",
                 "image": "chicken_burger/chicken_burger_menu.jpeg",
                 "price": 4.99,
-                "drinks": true,
-                "side": true
+                "options":{
+                    "side": true,
+                    "sauce": 0,
+                    "drink": true
+                }
             }
         ]
     },
@@ -62,17 +78,18 @@
                 "label": "Burger Only",
                 "name": "Spicy Chicken Burger",
                 "image": "chicken_burger/spicy_chicken_burger.jpeg",
-                "price": 4.19,
-                "drinks": false,
-                "side": false
+                "price": 4.19
             },
             {
                 "label": "Menu",
                 "name": "Spicy Chicken Burger Menu",
                 "image": "chicken_burger/spicy_chicken_burger_menu.jpeg",
                 "price": 5.19,
-                "drinks": true,
-                "side": true
+                "options":{
+                    "side": true,
+                    "sauce": 0,
+                    "drink": true
+                }
             }
         ]
     },
@@ -87,17 +104,18 @@
                 "label": "Burger Only",
                 "name": "Tropical Chicken Burger",
                 "image": "chicken_burger/tropical_chicken_burger.jpeg",
-                "price": 6.2,
-                "drinks": false,
-                "side": false
+                "price": 6.2
             },
             {
                 "label": "Menu",
                 "name": "Tropical Chicken Burger Menu",
                 "image": "chicken_burger/tropical_chicken_burger_menu.jpeg",
                 "price": 8.8,
-                "drinks": true,
-                "side": true
+                "options":{
+                    "side": true,
+                    "sauce": 0,
+                    "drink": true
+                }
             }
         ]
     },
@@ -112,17 +130,18 @@
                 "label": "Burger Only",
                 "name": "Double Chicken Burger",
                 "image": "chicken_burger/double_chicken_burger.jpeg",
-                "price": 6.4,
-                "drinks": false,
-                "side": false
+                "price": 6.4
             },
             {
                 "label": "Menu",
                 "name": "Double Chicken Burger Menu",
                 "image": "chicken_burger/double_chicken_burger_menu.jpeg",
                 "price": 9.5,
-                "drinks": true,
-                "side": true
+                "options":{
+                    "side": true,
+                    "sauce": 0,
+                    "drink": true
+                }
             }
         ]
     },
@@ -137,17 +156,18 @@
                 "label": "Tenders Only",
                 "name": "3 Piece Chicken Tenders",
                 "image": "tenders/3_piece_tender.jpeg",
-                "price": 4.4,
-                "drinks": false,
-                "side": false
+                "price": 4.4
             },
             {
                 "label": "Menu",
                 "name": "3 Piece Chicken Tenders Menu",
                 "image": "tenders/3_piece_tender_menu.jpeg",
                 "price": 7,
-                "drinks": true,
-                "side": true
+                "options":{
+                    "side": true,
+                    "sauce": 0,
+                    "drink": true
+                }
             }
         ]
     },
@@ -162,17 +182,18 @@
                 "label": "Tenders Only",
                 "name": "5 Piece Chicken Tenders",
                 "image": "tenders/5_piece_tender.jpeg",
-                "price": 5.7,
-                "drinks": false,
-                "side": false
+                "price": 5.7
             },
             {
                 "label": "Menu",
                 "name": "5 Piece Chicken Tenders Menu",
                 "image": "tenders/5_piece_tender_menu.jpeg",
                 "price": 8.45,
-                "drinks": true,
-                "side": true
+                "options":{
+                    "side": true,
+                    "sauce": 0,
+                    "drink": true
+                }
             }
         ]
     },
