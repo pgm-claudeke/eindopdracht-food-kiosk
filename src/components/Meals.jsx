@@ -40,6 +40,7 @@ const Meals = ({category, filter, handleFunction}) => {
     if (error) console.log(error)
 
     const filteredData = data.filter(data => data.category === filter);
+    console.log(filteredData)
 
   return (
     <MealsContainer>

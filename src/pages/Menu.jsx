@@ -37,14 +37,14 @@ const Menu = ({ order }) => {
     "https://pgm-claudeke.github.io/eindopdracht-food-kiosk/meals.json"
   );
   if (loading) return <h1>LOADING...</h1>;
-  if (error) console.log(error);
+  if (error) console.log(error); // loading en error veranderen
 
-  const handleMenu = (e) => {
+  const handleMenuList = (e) => {
     setCategory(e.target.value);
     setFilter(e.target.value.toLowerCase());
   };
 
-  const handleMeal = (e) => {
+  const handleMealTypes = (e) => {
     const selectedMeal = data.find((data) => parseInt(data.id) === parseInt(e.target.id));
     setTypes(selectedMeal.types);
     setSelectedMeal(selectedMeal.name);
@@ -66,11 +66,11 @@ const Menu = ({ order }) => {
     <>
       <Header />
       <MenuContainer>
-        <Categories handleMenu={handleMenu} />
+        <Categories handleMenu={handleMenuList} />
         <Meals
           category={category}
           filter={filter}
-          handleFunction={handleMeal}
+          handleFunction={handleMealTypes}
         />
         {types && (
           <MealType 

@@ -5,8 +5,7 @@
         "image": "buckets/6_piece_bucket.jpg",
         "category": "buckets",
         "id": 1,
-        "price": 11.75,
-        "types":{},       
+        "price": 11.75,      
         "options":{
             "side": false,
             "sauce": 3,
@@ -19,8 +18,7 @@
         "image": "buckets/8_piece_bucket.jpg",
         "category": "buckets",
         "id": 2,
-        "price": 15.6,
-        "types":{},       
+        "price": 15.6,     
         "options":{
             "side": false,
             "sauce": 4,
@@ -33,8 +31,7 @@
         "image": "buckets/12_piece_bucket.jpg",
         "category": "buckets",
         "id": 3,
-        "price": 22.2,
-        "types":{},       
+        "price": 22.2,       
         "options":{
             "side": false,
             "sauce": 6,
