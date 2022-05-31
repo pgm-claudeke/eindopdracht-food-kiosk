@@ -52,7 +52,7 @@ const Menu = ({ order }) => {
   };
 
   const handleMealTypes = (e) => {
-    const selectedMeal = data.find((data) => parseInt(data.id) === parseInt(e.target.id));
+    const selectedMeal = data.find((data) => data.id === e.target.id);
     setTypes(selectedMeal.types);
     setSelectedMeal(selectedMeal.name);
     setSelectedMealId(e.target.id);
@@ -67,11 +67,11 @@ const Menu = ({ order }) => {
   };
 
   const handleRedirect = (e) => {
-    const selectedMeal = data.find((data) => parseInt(data.id) === parseInt(selectedMealId));
+    const selectedMeal = data.find((data) => data.id === selectedMealId);
     const mealTypes = selectedMeal.types;
     const selectedType = mealTypes.find((type) => type.id === e.target.id)
     
-    console.log(e.target.id);
+    setOptions(selectedType);
   };
 
   const handleCancel = () => {
@@ -84,11 +84,13 @@ const Menu = ({ order }) => {
       <Header />
       <MenuContainer>
         <Categories handleMenu={handleMenuList} />
+        {category && (
         <Meals
           category={category}
           filter={filter}
           handleFunction={handleMealTypes}
         />
+        )}
         {types && (
           <MealType 
             handleClose={handleClose}

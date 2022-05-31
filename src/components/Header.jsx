@@ -2,7 +2,8 @@ import React from 'react';
 import styled from 'styled-components';
 import { colors } from '../constants/styles';
 import logoInverted from '../assets/images/logos/Logo_inverted.png';
-import commercialOne from '../assets/images/commercercials/commercial_01.jpeg'
+import commercialOne from '../assets/images/commercercials/commercial_01.jpeg';
+import { motion } from "framer-motion";
 
 const HeaderContainer = styled.header`
     background-color: ${colors.primary};
@@ -28,7 +29,7 @@ const LogoContainer = styled.div`
     overflow: hidden; 
 `;
 
-const CommercialContainer = styled.div`
+const CommercialContainer = styled(motion.div)`
     background-color: #fff;
     height: 100%;
     width: 60%;
@@ -56,7 +57,7 @@ const Header = () => {
             <LogoImage src={logoInverted}/>
         </LogoContainer>
         
-        <CommercialContainer>
+        <CommercialContainer initial={{x: '100rem'}} animate={{x: 0}} transition={{duration: 0.8, type: 'spring', stiffness: 20}}>
             <CommercialImg src={commercialOne}/>
         </CommercialContainer>
     </HeaderContainer>

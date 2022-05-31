@@ -11,6 +11,7 @@ import MealType from './MealType';
 import { motion } from "framer-motion"
 
 const MealsContainer = styled(motion.div)`
+    overflow: hidden;
     width: 74%;
     max-height: 90%;
     background-color: ${colors.secondary};
@@ -43,7 +44,7 @@ const Meals = ({category, filter, handleFunction}) => {
     console.log(filteredData)
 
   return (
-    <MealsContainer>
+    <MealsContainer initial={{x: '100rem'}} animate={{x: 0}} transition={{duration: 0.2, delay: 0.2, type: 'spring', stiffness: 20}}>
         <MealsTitle>{category}</MealsTitle>
         <MealsList>
             {

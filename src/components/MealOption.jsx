@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import { colors, fontsWeights, radius } from '../constants/styles';
 import AmountCounter from './AmountCounter';
 import Button from './Button';
+import Meal from './Meal';
 
 const MealOptionContainer = styled.div`
     backdrop-filter: blur(12px)  grayscale(15%);
@@ -39,7 +40,7 @@ const MealInfoContainer = styled.div`
     display: flex;
     flex-direction: row;
     align-items: center;
-    gap: 6rem;
+    gap: 8rem;
 `;
 
 const MealImageBox = styled.div`
@@ -67,11 +68,30 @@ const MealPrice = styled.p`
     font-weight: ${fontsWeights.regular};
 `;
 
+const ButtonContainer = styled.div`
+    display: flex;
+    flex-direction: row;
+    gap: 4rem;
+    align-items: center;
+    justify-content: center;
+`;
+
+const btnwidth = "18rem";
+
+const OptionContainer = styled.div`
+`;
+
+const OptionList = styled.ul`
+    list-style: none;
+    padding-left: 0;
+`
+
 const MealOption = ({data, handleCancel}) => {
     const mealData = data;
-    console.log(mealData.image);
+    console.log(mealData.options);
 
     const image = require(`../assets/images/meals/${mealData.image}`);
+    
 
   return (
     <MealOptionContainer>
@@ -85,8 +105,18 @@ const MealOption = ({data, handleCancel}) => {
                     <MealPrice>€ {mealData.price}</MealPrice>
                 </MealInfoBox>
             </MealInfoContainer>
-            <Button btnColor={colors.secondary} handleFunction={handleCancel}>Cancel</Button>
-            <AmountCounter color={colors.secondary}/>
+            <OptionContainer>
+                <OptionList>
+                    <Meal scale="12rem">
+
+                    </Meal>
+                </OptionList>
+            </OptionContainer>
+            <ButtonContainer>
+                <Button btnColor={colors.secondary} handleFunction={handleCancel} btnWidth={btnwidth}>Cancel</Button>
+                <AmountCounter color={colors.secondary}/>
+                <Button btnColor={colors.secondary} btnWidth={btnwidth}>Add</Button>
+            </ButtonContainer>
         </MealOptionBox>
     </MealOptionContainer>
   )
