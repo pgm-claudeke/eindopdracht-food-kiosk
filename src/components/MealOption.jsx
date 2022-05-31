@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { colors, fontsWeights, radius } from '../constants/styles';
 import AmountCounter from './AmountCounter';
+import Button from './Button';
 
 const MealOptionContainer = styled.div`
     backdrop-filter: blur(12px)  grayscale(15%);
@@ -66,7 +67,7 @@ const MealPrice = styled.p`
     font-weight: ${fontsWeights.regular};
 `;
 
-const MealOption = ({data}) => {
+const MealOption = ({data, handleCancel}) => {
     const mealData = data;
     console.log(mealData.image);
 
@@ -84,7 +85,7 @@ const MealOption = ({data}) => {
                     <MealPrice>€ {mealData.price}</MealPrice>
                 </MealInfoBox>
             </MealInfoContainer>
-
+            <Button btnColor={colors.secondary} handleFunction={handleCancel}>Cancel</Button>
             <AmountCounter color={colors.secondary}/>
         </MealOptionBox>
     </MealOptionContainer>

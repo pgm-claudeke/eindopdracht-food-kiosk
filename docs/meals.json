@@ -4,7 +4,7 @@
         "name":"6 Piece Bucket",
         "image": "buckets/6_piece_bucket.jpg",
         "category": "buckets",
-        "id": 1,
+        "id": "1",
         "price": 11.75,      
         "options":{
             "side": false,
@@ -17,7 +17,7 @@
         "name":"8 Piece Bucket",
         "image": "buckets/8_piece_bucket.jpg",
         "category": "buckets",
-        "id": 2,
+        "id": "2",
         "price": 15.6,     
         "options":{
             "side": false,
@@ -30,7 +30,7 @@
         "name":"12 Piece Bucket",
         "image": "buckets/12_piece_bucket.jpg",
         "category": "buckets",
-        "id": 3,
+        "id": "3",
         "price": 22.2,       
         "options":{
             "side": false,
@@ -43,14 +43,14 @@
         "name":"Chicken Burger",
         "image": "chicken_burger/chicken_burger.jpeg",
         "category": "chicken burger",
-        "id": 4,
+        "id": "4",
         "types": [
             {
                 "label": "Burger Only",
                 "name": "Chicken Burger",
                 "image": "chicken_burger/chicken_burger.jpeg",
                 "price": 3.99,
-                "id": 4.1
+                "id": "4.1"
             },
             {
                 "label": "Menu",
@@ -62,7 +62,7 @@
                     "sauce": 0,
                     "drink": true
                 },
-                "id": 4.2
+                "id": "4.2"
             }
         ]
     },
@@ -71,14 +71,14 @@
         "name":"Spicy Chicken Burger",
         "image": "chicken_burger/spicy_chicken_burger.jpeg",
         "category": "chicken burger",
-        "id": 5,
+        "id": "5",
         "types": [
             {
                 "label": "Burger Only",
                 "name": "Spicy Chicken Burger",
                 "image": "chicken_burger/spicy_chicken_burger.jpeg",
                 "price": 4.19,
-                "id": 5.1
+                "id": "5.1"
             },
             {
                 "label": "Menu",
@@ -90,7 +90,7 @@
                     "sauce": 0,
                     "drink": true
                 },
-                "id": 5.2
+                "id": "5.2"
             }
         ]
     },
@@ -99,14 +99,14 @@
         "name": "Tropical Chicken Burger",
         "image": "chicken_burger/tropical_chicken_burger.jpeg",
         "category": "chicken burger",
-        "id": 6,
+        "id": "6",
         "types": [
             {
                 "label": "Burger Only",
                 "name": "Tropical Chicken Burger",
                 "image": "chicken_burger/tropical_chicken_burger.jpeg",
                 "price": 6.2,
-                "id": 6.1
+                "id": "6.1"
             },
             {
                 "label": "Menu",
@@ -118,7 +118,7 @@
                     "sauce": 0,
                     "drink": true
                 },
-                "id": 6.2
+                "id": "6.2"
             }
         ]
     },
@@ -127,14 +127,14 @@
         "name": "Double Chicken Burger",
         "image": "chicken_burger/double_chicken_burger.jpeg",
         "category": "chicken burger",
-        "id": 7,
+        "id": "7",
         "types": [
             {
                 "label": "Burger Only",
                 "name": "Double Chicken Burger",
                 "image": "chicken_burger/double_chicken_burger.jpeg",
                 "price": 6.4,
-                "id": 7.1
+                "id": "7.1"
             },
             {
                 "label": "Menu",
@@ -146,7 +146,7 @@
                     "sauce": 0,
                     "drink": true
                 },
-                "id": 7.2
+                "id": "7.2"
             }
         ]
     },
@@ -155,14 +155,14 @@
         "name": "3 Piece Chicken Tenders",
         "image": "tenders/3_piece_tender.jpeg",
         "category": "chicken tenders",
-        "id": 8, 
+        "id": "8", 
         "types": [
             {
                 "label": "Tenders Only",
                 "name": "3 Piece Chicken Tenders",
                 "image": "tenders/3_piece_tender.jpeg",
                 "price": 4.4,
-                "id": 8.1
+                "id": "8.1"
             },
             {
                 "label": "Menu",
@@ -174,7 +174,7 @@
                     "sauce": 0,
                     "drink": true
                 },
-                "id": 8.2
+                "id": "8.2"
             }
         ]
     },
@@ -183,14 +183,14 @@
         "name": "5 Piece Chicken Tenders",
         "image": "tenders/5_piece_tender.jpeg",
         "category": "chicken tenders",
-        "id": 9, 
+        "id": "9", 
         "types": [
             {
                 "label": "Tenders Only",
                 "name": "5 Piece Chicken Tenders",
                 "image": "tenders/5_piece_tender.jpeg",
                 "price": 5.7,
-                "id": 9.1
+                "id": "9.1"
             },
             {
                 "label": "Menu",
@@ -202,7 +202,7 @@
                     "sauce": 0,
                     "drink": true
                 },
-                "id": 9.2
+                "id": "9.2"
             }
         ]
     },
@@ -211,7 +211,7 @@
         "name": "Chicken Wrap",
         "image": "wraps_bowls/chicken_wrap.jpeg",
         "category": "wraps & bowls",
-        "id": 10,
+        "id": "10",
         "price": 5
     },
     {
@@ -219,7 +219,7 @@
         "name": "Chicken Rice Bowl",
         "image": "wraps_bowls/rice_bowl.jpeg",
         "category": "wraps & bowls",
-        "id": 11,
+        "id": "11",
         "price": 5
     },
     {
@@ -227,28 +227,28 @@
         "name": "Yumburger",
         "image": "classics/yamburger.jpeg",
         "category": "classics",
-        "id": 12,
+        "id": "12",
         "types": [
             {
                 "label": "Classic",
                 "name": "Yumburger Classic",
                 "image": "classics/yamburger.jpeg",
                 "price": 2.10,
-                "id": 12.1
+                "id": "12.1"
             },
             {
                 "label": "Cheese",
                 "name": "Yumburger with Cheese",
                 "image": "classics/yamburger_cheese.jpeg",
                 "price": 2.20,
-                "id": 12.2
+                "id": "12.2"
             },
             {
                 "label": "Double with Cheese",
                 "name": "Double Yumburger with Cheese",
                 "image": "classics/double_yamburger.jpeg",
                 "price": 8.45,
-                "id": 12.3
+                "id": "12.3"
             }
         ]
     },
@@ -257,7 +257,7 @@
         "name": "Jolly Spaghetti",
         "image": "classics/spaghetti.jpeg",
         "category": "classics",
-        "id": 13,
+        "id": "13",
         "price": 4.6
     },
     {
@@ -265,7 +265,7 @@
         "name": "Siracha Chicken loaded fries",
         "image": "loaded_fries/siracha_chicken_loaded_fries.jpg",
         "category": "loaded fries",
-        "id": 14, 
+        "id": "14", 
         "price": 3.99
     },
     {
@@ -273,7 +273,7 @@
         "name": "Gravy Chicken loaded fries",
         "image": "loaded_fries/gravy_loaded_fries.jpg",
         "category": "loaded fries",
-        "id": 15,
+        "id": "15",
         "price": 3.99
     },
     {
@@ -281,7 +281,7 @@
         "name": "Ice Cream loaded fries",
         "image": "loaded_fries/ice_cream_loaded_fries.jpg",
         "category": "loaded fries",
-        "id": 16,
+        "id": "16",
         "price": 3.99
     },
     {
@@ -289,7 +289,7 @@
         "name": "Fries",
         "image": "sides/fries.jpeg",
         "category": "sides",
-        "id": 17,
+        "id": "17",
         "price": 2.3
     },
     {
@@ -297,7 +297,7 @@
         "name": "Plain Rice",
         "image": "sides/rice.jpeg",
         "category": "sides",
-        "id": 18,
+        "id": "18",
         "price": 1.75
     },
     {
@@ -305,28 +305,28 @@
         "name": "Sundae",
         "image": "desserts/chocolate_coconut_sundae.png",
         "category": "desserts",
-        "id": 19,
+        "id": "19",
         "types": [
             {
                 "label": "Mango Coconut",
                 "name": "Mango Coconut Sundae",
                 "image": "desserts/mango_coconut_sundae.png",
                 "price": 2.5,
-                "id": 19.1
+                "id": "19.1"
             },
             {
                 "label": "Chocolate Coconut",
                 "name": "Chocolate Coconut Sundae",
                 "image": "desserts/chocolate_coconut_sundae.png",
                 "price": 2.5,
-                "id": 19.2
+                "id": "19.2"
             },
             {
                 "label": "Cookies 'n Cream",
                 "name": "Cookies 'n Cream Sundae",
                 "image": "desserts/cookies_cream_sundae.jpeg",
                 "price": 2.5,
-                "id": 19.3
+                "id": "19.3"
             }
         ]
     },
@@ -335,55 +335,55 @@
         "name": "Siracha Mayonnaise",
         "image": "sauces/siracha_mayonnaise.jpeg",
         "category": "dipping sauces",
-        "id": 20
+        "id": "20"
     },
     {
         "label": "Sweet Chilli Sauce",
         "name": "Sweet Chilli Sauce",
         "image": "sauces/sweet_chilli.jpeg",
         "category": "dipping sauces",
-        "id": 21
+        "id": "21"
     },
     {
         "label": "Asian Ginger Chilli Sauce",
         "name": "Asian Ginger Chilli Sauce",
         "image": "sauces/asian_ginger_chilli.jpeg",
         "category": "dipping sauces",
-        "id": 22
+        "id": "22"
     },
     {
         "label": "Gravy",
         "name": "Gravy",
         "image": "sauces/gravy.jpeg",
         "category": "dipping sauces",
-        "id": 23
+        "id": "23"
     },
     {
         "label": "Big Bucket Gravy",
         "name": "Big Bucket Gravy",
         "image": "sauces/gravy_big.jpeg",
         "category": "dipping sauces",
-        "id": 24
+        "id": "24"
     },
     {
         "label": "Pepsi Max",
         "name": "Pepsi Max 40cl",
         "image": "drinks/drink_brown.webp",
         "category": "drinks",
-        "id": 25
+        "id": "25"
     },
     {
         "label": "Pepsi",
         "name": "Pepsi 40cl",
         "image": "drinks/drink_brown.webp",
         "category": "drinks",
-        "id": 26
+        "id": "26"
     },
     {
         "label": "Iced Tea",
         "name": "Iced Tea 40cl",
         "image": "drinks/drink_brown.webp",
         "category": "drinks",
-        "id": 27
+        "id": "27"
     }
 ]

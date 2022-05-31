@@ -67,8 +67,17 @@ const Menu = ({ order }) => {
   };
 
   const handleRedirect = (e) => {
-    console.log(selectedMealId + e.target.key)
+    const selectedMeal = data.find((data) => parseInt(data.id) === parseInt(selectedMealId));
+    const mealTypes = selectedMeal.types;
+    const selectedType = mealTypes.find((type) => type.id === e.target.id)
+    
+    console.log(e.target.id);
   };
+
+  const handleCancel = () => {
+      setOptions(null);
+      setTypes(null)
+  }
 
   return (
     <>
@@ -91,7 +100,7 @@ const Menu = ({ order }) => {
       </MenuContainer>
       <CurrentOrder/>
       {options && (
-          <MealOption data={options}/>
+          <MealOption data={options} handleCancel={handleCancel}/>
       )
       }
     </>
