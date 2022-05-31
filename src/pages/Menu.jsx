@@ -24,13 +24,20 @@ const MenuContainer = styled.div`
 
 const Menu = ({ order }) => {
   const [category, setCategory] = useState(null);
-  const [menu, setMenu] = useState(null);
   const [filter, setFilter] = useState(null);
+
   const [types, setTypes] = useState(null);
+  const [selectedMeal, setSelectedMeal] = useState(null);
+  const [selectedMealId, setSelectedMealId] = useState(null);
+  
+  
+  const [menu, setMenu] = useState(null);
+  
+  
   const [totalPrice, setTotalPrice] = useState(null);
   const [totalAmount, setTotalAmount] = useState(null);
   const [options, setOptions] = useState(null);
-  const [selectedMeal, setSelectedMeal] = useState(null);
+  
   let navigate = useNavigate();
 
   const { data, loading, error } = useFetch(
@@ -48,6 +55,7 @@ const Menu = ({ order }) => {
     const selectedMeal = data.find((data) => parseInt(data.id) === parseInt(e.target.id));
     setTypes(selectedMeal.types);
     setSelectedMeal(selectedMeal.name);
+    setSelectedMealId(e.target.id);
 
     if(!selectedMeal.types){
         setOptions(selectedMeal);
@@ -59,7 +67,7 @@ const Menu = ({ order }) => {
   };
 
   const handleRedirect = (e) => {
-    console.log(e.target)
+    console.log(selectedMealId + e.target.key)
   };
 
   return (

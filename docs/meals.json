@@ -49,7 +49,8 @@
                 "label": "Burger Only",
                 "name": "Chicken Burger",
                 "image": "chicken_burger/chicken_burger.jpeg",
-                "price": 3.99
+                "price": 3.99,
+                "id": 4.1
             },
             {
                 "label": "Menu",
@@ -60,7 +61,8 @@
                     "side": true,
                     "sauce": 0,
                     "drink": true
-                }
+                },
+                "id": 4.2
             }
         ]
     },
@@ -75,7 +77,8 @@
                 "label": "Burger Only",
                 "name": "Spicy Chicken Burger",
                 "image": "chicken_burger/spicy_chicken_burger.jpeg",
-                "price": 4.19
+                "price": 4.19,
+                "id": 5.1
             },
             {
                 "label": "Menu",
@@ -86,7 +89,8 @@
                     "side": true,
                     "sauce": 0,
                     "drink": true
-                }
+                },
+                "id": 5.2
             }
         ]
     },
@@ -101,7 +105,8 @@
                 "label": "Burger Only",
                 "name": "Tropical Chicken Burger",
                 "image": "chicken_burger/tropical_chicken_burger.jpeg",
-                "price": 6.2
+                "price": 6.2,
+                "id": 6.1
             },
             {
                 "label": "Menu",
@@ -112,7 +117,8 @@
                     "side": true,
                     "sauce": 0,
                     "drink": true
-                }
+                },
+                "id": 6.2
             }
         ]
     },
@@ -127,7 +133,8 @@
                 "label": "Burger Only",
                 "name": "Double Chicken Burger",
                 "image": "chicken_burger/double_chicken_burger.jpeg",
-                "price": 6.4
+                "price": 6.4,
+                "id": 7.1
             },
             {
                 "label": "Menu",
@@ -138,7 +145,8 @@
                     "side": true,
                     "sauce": 0,
                     "drink": true
-                }
+                },
+                "id": 7.2
             }
         ]
     },
@@ -153,7 +161,8 @@
                 "label": "Tenders Only",
                 "name": "3 Piece Chicken Tenders",
                 "image": "tenders/3_piece_tender.jpeg",
-                "price": 4.4
+                "price": 4.4,
+                "id": 8.1
             },
             {
                 "label": "Menu",
@@ -164,7 +173,8 @@
                     "side": true,
                     "sauce": 0,
                     "drink": true
-                }
+                },
+                "id": 8.2
             }
         ]
     },
@@ -179,7 +189,8 @@
                 "label": "Tenders Only",
                 "name": "5 Piece Chicken Tenders",
                 "image": "tenders/5_piece_tender.jpeg",
-                "price": 5.7
+                "price": 5.7,
+                "id": 9.1
             },
             {
                 "label": "Menu",
@@ -190,7 +201,8 @@
                     "side": true,
                     "sauce": 0,
                     "drink": true
-                }
+                },
+                "id": 9.2
             }
         ]
     },
@@ -221,19 +233,22 @@
                 "label": "Classic",
                 "name": "Yumburger Classic",
                 "image": "classics/yamburger.jpeg",
-                "price": 2.10
+                "price": 2.10,
+                "id": 12.1
             },
             {
                 "label": "Cheese",
                 "name": "Yumburger with Cheese",
                 "image": "classics/yamburger_cheese.jpeg",
-                "price": 2.20
+                "price": 2.20,
+                "id": 12.2
             },
             {
                 "label": "Double with Cheese",
                 "name": "Double Yumburger with Cheese",
                 "image": "classics/double_yamburger.jpeg",
-                "price": 8.45
+                "price": 8.45,
+                "id": 12.3
             }
         ]
     },
@@ -296,19 +311,22 @@
                 "label": "Mango Coconut",
                 "name": "Mango Coconut Sundae",
                 "image": "desserts/mango_coconut_sundae.png",
-                "price": 2.5
+                "price": 2.5,
+                "id": 19.1
             },
             {
                 "label": "Chocolate Coconut",
                 "name": "Chocolate Coconut Sundae",
                 "image": "desserts/chocolate_coconut_sundae.png",
-                "price": 2.5
+                "price": 2.5,
+                "id": 19.2
             },
             {
                 "label": "Cookies 'n Cream",
                 "name": "Cookies 'n Cream Sundae",
                 "image": "desserts/cookies_cream_sundae.jpeg",
-                "price": 2.5
+                "price": 2.5,
+                "id": 19.3
             }
         ]
     },
