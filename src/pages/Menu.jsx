@@ -6,7 +6,7 @@ import {
   CurrentOrder,
   Meals,
   MealType,
-  MealOption,
+  MealOptions
 } from "../components";
 import useFetch from "../hooks/fetch";
 import ROUTES from "../constants/routes";
@@ -102,7 +102,7 @@ const Menu = ({ order }) => {
       </MenuContainer>
       <CurrentOrder/>
       {options && (
-          <MealOption data={options} handleCancel={handleCancel}/>
+          <MealOptions data={options} handleCancel={handleCancel}/>
       )
       }
     </>

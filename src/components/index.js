@@ -1,29 +1,29 @@
 import Header from "./Header";
-import DineOption from "./Options";
+import OrderOptions from "./OrderOptions";
 import Footer from "./Footer";
 import Categories from "./Categories";
 import CurrentOrder from "./CurrentOrder";
 import Meals from "./Meals";
-import Question from "./Question";
+import OrderQuestion from "./OrderQuestion";
 import OrderList from "./OrderList";
 import AmountCounter from "./AmountCounter";
 import OrderTotal from "./OrderTotal";
-import MealOption from "./MealOption";
+import MealOptions from "./MealOptions";
 import MealType from "./MealType";
 import Button from "./Button";
 
 export {
   Header, 
-  DineOption, 
+  OrderOptions, 
   Footer,
   Categories,
   CurrentOrder, 
   Meals,
-  Question,
+  OrderQuestion,
   OrderList,
   AmountCounter,
   OrderTotal,
-  MealOption, 
+  MealOptions, 
   MealType,
   Button
 }

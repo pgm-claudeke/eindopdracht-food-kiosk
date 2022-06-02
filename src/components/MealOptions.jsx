@@ -3,7 +3,10 @@ import styled from 'styled-components';
 import { colors, fontsWeights, radius } from '../constants/styles';
 import AmountCounter from './AmountCounter';
 import Button from './Button';
-import Meal from './Meal';
+import MealDrinks from './MealDrinks';
+import MealSauces from './MealSauces';
+import MealSides from './MealSides';
+
 
 const MealOptionContainer = styled.div`
     backdrop-filter: blur(12px)  grayscale(15%);
@@ -69,6 +72,7 @@ const MealPrice = styled.p`
 `;
 
 const ButtonContainer = styled.div`
+    margin-top: 2rem;
     display: flex;
     flex-direction: row;
     gap: 4rem;
@@ -86,9 +90,9 @@ const OptionList = styled.ul`
     padding-left: 0;
 `
 
-const MealOption = ({data, handleCancel}) => {
+const MealOptions = ({data, handleCancel}) => {
     const mealData = data;
-    console.log(mealData.options);
+    console.log(mealData?.options);
 
     const image = require(`../assets/images/meals/${mealData.image}`);
     
@@ -105,13 +109,18 @@ const MealOption = ({data, handleCancel}) => {
                     <MealPrice>€ {mealData.price}</MealPrice>
                 </MealInfoBox>
             </MealInfoContainer>
-            <OptionContainer>
-                <OptionList>
-                    <Meal scale="12rem">
-
-                    </Meal>
-                </OptionList>
-            </OptionContainer>
+                {
+                    mealData.options.side &&
+                    <MealSides/>
+                }
+                {
+                    mealData.options.sauce &&
+                    <MealSauces/>
+                }
+                {
+                    mealData.options.drink &&
+                    <MealDrinks/>
+                }
             <ButtonContainer>
                 <Button btnColor={colors.secondary} handleFunction={handleCancel} btnWidth={btnwidth}>Cancel</Button>
                 <AmountCounter color={colors.secondary}/>
@@ -122,4 +131,4 @@ const MealOption = ({data, handleCancel}) => {
   )
 }
 
-export default MealOption
+export default MealOptions

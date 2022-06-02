@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import ROUTES from '../constants/routes';
 import { colors, fontsWeights } from '../constants/styles';
 import Button from './Button';
 import ButtonLink from './ButtonLink';
@@ -30,13 +31,13 @@ const BtnContainer = styled.div`
 
 const btnWidth = '49%';
 
-const OrderTotal = () => {
+const OrderTotal = ({nav, navName}) => {
   return (
     <Container>
         <p>Total: € 4,9</p>
         <BtnContainer>
-            <ButtonLink link='/menu' btnColor={colors.secondary} btnWidth={btnWidth}>Go Back</ButtonLink>
-            <ButtonLink link='/pay-options' btnColor={colors.secondary} btnWidth={btnWidth}>Pay</ButtonLink>
+            <ButtonLink link={ROUTES.MENU} btnColor={colors.secondary} btnWidth={btnWidth}>Go Back</ButtonLink>
+            <ButtonLink link={nav} btnColor={colors.secondary} btnWidth={btnWidth}>{navName}</ButtonLink>
         </BtnContainer>
     </Container>
   )

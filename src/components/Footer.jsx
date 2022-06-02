@@ -7,7 +7,7 @@ const FooterContainer = styled.footer`
     height: 7vh;
     width: 100%;
 
-    position: fixed;
+    position: sticky;
     bottom: 0;
     left: 0
 `;

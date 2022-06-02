@@ -5,11 +5,12 @@ import { FaChevronRight } from 'react-icons/fa';
 import Button from './Button';
 import ButtonLink from './ButtonLink';
 import { Link } from 'react-router-dom';
+import ROUTES from '../constants/routes';
 
 const OrderContainer = styled.section`
     height: 18vh;
     width: 100%;
-    position: fixed;
+    position: sticky;
     left: 0;
     bottom: 0;
     background-color: ${colors.secondaryLight};
@@ -80,14 +81,14 @@ const CurrentOrder = () => {
         <OrderBox>
             <p>Total: € 2,00</p>
             <p>Amount: 1</p>
-            <OrderShowBox to='/order'>
+            <OrderShowBox to={ROUTES.ORDER}>
                 Show order
                 <FaChevronRight style={{fontSize:"2rem"}}/>
             </OrderShowBox>
         </OrderBox>
         <BtnBox>
             <Button btnColor={colors.secondary} btnWidth={btnWidth}>Cancel order</Button>
-            <ButtonLink link='/order' btnColor={colors.primary} btnWidth={btnWidth}>Validate order</ButtonLink>
+            <ButtonLink link={ROUTES.VALIDATE} btnColor={colors.primary} btnWidth={btnWidth}>Validate order</ButtonLink>
         </BtnBox>
     </OrderContainer>
   )

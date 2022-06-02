@@ -53,7 +53,8 @@ const OrderOptions = styled.div`
 
 const btnWidth = "30%"
 
-const OrderList = () => {
+const OrderList = ({option}) => {
+    const options = option;
   return (
     <ListContainer>
         <ListItem>
@@ -64,11 +65,14 @@ const OrderList = () => {
                     </OrderInfo>
                     <p>€ 2,45</p>
                 </OrderInfoBox>
-                <OrderOptions>
-                    <Button btnWidth={btnWidth} btnColor={colors.secondary}>Edit</Button>
-                    <AmountCounter></AmountCounter>
-                    <Button btnWidth={btnWidth} btnColor={colors.primary}>Delete</Button>
-                </OrderOptions>
+                { options &&
+                    <OrderOptions>
+                        <Button btnWidth={btnWidth} btnColor={colors.secondary}>Edit</Button>
+                        <AmountCounter></AmountCounter>
+                        <Button btnWidth={btnWidth} btnColor={colors.primary}>Delete</Button>
+                    </OrderOptions>
+                }
+                
         </ListItem>
     </ListContainer>
   )

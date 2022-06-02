@@ -4,6 +4,7 @@ const ROUTES = Object.freeze({
   MENU: '/menu',
   PAY: '/pay-options',
   ORDER: '/order',
+  VALIDATE: '/validate',
   MEAL: '/meal-options'
 });
 

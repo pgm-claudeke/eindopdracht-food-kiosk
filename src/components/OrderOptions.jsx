@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { colors, fontsWeights, radius } from "../constants/styles";
 import { Link } from 'react-router-dom';
+import { FaLinkedin } from "react-icons/fa";
 
 const Options = styled.div`
   height: 81vh;
@@ -40,11 +41,11 @@ const IconContainer = styled.div`
   height: 18rem;
 `;
 
-const DineOption = ({ links }) => {
+const OrderOptions = ({ links }) => {
   return (
     <Options>
       {links.map((link) => 
-        <Option to={link.route}>
+        <Option to={link.route} key={link.key}>
           <IconContainer>{link.icon}</IconContainer>
           <p>{link.label}</p>
         </Option>
@@ -53,4 +54,4 @@ const DineOption = ({ links }) => {
   );
 };
 
-export default DineOption;
+export default OrderOptions;

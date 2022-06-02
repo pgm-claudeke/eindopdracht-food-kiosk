@@ -47,10 +47,10 @@ const MealImage = styled.img`
     object-position: center;
 `;
 
-const Meal = ({key, image, name, handleFunction, id, scale}) => {
+const Meal = ({image, name, handleFunction, id, scale}) => {
   return (
     <MealContainer>
-        <MealBtn key={key} onClick={handleFunction} id={id}>
+        <MealBtn onClick={handleFunction} id={id}>
             <MealImageBox style={{height: scale, width: scale}}>
                 <MealImage src={image}/>
             </MealImageBox>

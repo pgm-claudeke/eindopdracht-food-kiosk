@@ -3,7 +3,7 @@ import DineOptions from "./DineOptions";
 import Menu from "./Menu";
 import PayOptions from "./PayOptions";
 import Order from "./Order"
-import MealOptions from "./MealOptions";
+import ValidateOrder from "./ValidateOrder";
 
 export {
   Home,
@@ -11,5 +11,5 @@ export {
   Menu,
   PayOptions,
   Order,
-  MealOptions
+  ValidateOrder
 }

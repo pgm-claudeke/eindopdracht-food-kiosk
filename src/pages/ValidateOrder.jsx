@@ -26,16 +26,16 @@ const OrderBox = styled.div`
 `;
 
 
-const Order = () => {
+const ValidateOrder = () => {
   return (
     <OrderContainer>
         <OrderBox>
-            <OrderQuestion question='Is you order compleet?'></OrderQuestion>
-            <OrderList option={true}/>
+            <OrderQuestion question='Is your order correct?'></OrderQuestion>
+            <OrderList option={false}/>
         </OrderBox>
-        <OrderTotal nav={ROUTES.VALIDATE} navName="Validate"/>
+        <OrderTotal nav={ROUTES.VALIDATE} navName="Pay"/>
     </OrderContainer>
   )
 }
 
-export default Order
+export default ValidateOrder

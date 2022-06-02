@@ -44,7 +44,7 @@ const Meals = ({category, filter, handleFunction}) => {
     console.log(filteredData)
 
   return (
-    <MealsContainer initial={{x: '100rem'}} animate={{x: 0}} transition={{duration: 0.2, delay: 0.2, type: 'spring', stiffness: 20}}>
+    <MealsContainer initial={{x: '100rem'}} animate={{x: 0}} transition={{duration: 0.1, delay: 0.1, type: 'spring', stiffness: 20}}>
         <MealsTitle>{category}</MealsTitle>
         <MealsList>
             {

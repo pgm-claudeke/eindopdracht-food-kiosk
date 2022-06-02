@@ -1,6 +1,6 @@
 import React from 'react';
 import ROUTES from '../constants/routes';
-import { Header, DineOption, Footer } from '../components';
+import { Header, OrderOptions, Footer } from '../components';
 import { FaCreditCard, FaQrcode } from 'react-icons/fa';
 
 const LINKS = [
@@ -20,7 +20,7 @@ const PayOptions = () => {
   return (
     <>
     <Header/>
-    <DineOption links={LINKS}/>
+    <OrderOptions links={LINKS}/>
     <Footer/>
     </>
   )
