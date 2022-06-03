@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import { colors, fontsWeights, radius } from '../constants/styles';
 import Meal from './Meal';
 import { CgClose } from 'react-icons/cg';
+import ButtonClose from './ButtonClose';
 
 const MealTypeContainer = styled.div`
     backdrop-filter: blur(12px)  grayscale(15%);
@@ -48,30 +49,11 @@ const TypesList = styled.ul`
     gap: 1.5rem;
 `;
 
-const CloseBtn = styled.button`
-    background-color: ${colors.secondary};
-    border-radius: ${radius.main}; 
-    border: solid ${colors.base} 0.25rem; 
-    position: absolute;
-    top: -1.8rem;
-    right: -1.8rem;
-    padding: 0.4rem;
-
-    font-size: 3.5rem;
-    color: ${colors.base};
-
-    display: flex;
-    justify-content: center; 
-    align-items: center;
-`;
-
 const MealType = ({handleClose, data, mealName, handleFunction}) => {
   return (
     <MealTypeContainer>
         <MealTypeBox>
-            <CloseBtn>
-                <CgClose onClick={handleClose}/>
-            </CloseBtn>
+            <ButtonClose handleClose={handleClose}/>
             <MealName>{mealName}</MealName>
             <TypesList>
                 {

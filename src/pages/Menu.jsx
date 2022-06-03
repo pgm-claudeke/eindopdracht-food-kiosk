@@ -74,9 +74,8 @@ const Menu = ({ order }) => {
     setOptions(selectedType);
   };
 
-  const handleCancel = () => {
+  const handleCloseOptions = () => {
       setOptions(null);
-      setTypes(null)
   }
 
   return (
@@ -102,7 +101,7 @@ const Menu = ({ order }) => {
       </MenuContainer>
       <CurrentOrder/>
       {options && (
-          <MealOptions data={options} handleCancel={handleCancel}/>
+          <MealOptions data={options} handleClose={handleCloseOptions}/>
       )
       }
     </>

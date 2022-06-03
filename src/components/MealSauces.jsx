@@ -1,10 +1,10 @@
 import React from 'react';
 import MealOptionList from './MealOptionList';
 
-const MealSauces = () => {
+const MealSauces = ({title}) => {
   return (
     <div>
-        <MealOptionList title="Choose your sauce" filter="dipping sauces"/>
+        <MealOptionList title={title} filter="dipping sauces"/>
     </div>
   )
 }

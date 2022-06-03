@@ -6,6 +6,7 @@ import Button from './Button';
 import MealDrinks from './MealDrinks';
 import MealSauces from './MealSauces';
 import MealSides from './MealSides';
+import ButtonClose from './ButtonClose';
 
 
 const MealOptionContainer = styled.div`
@@ -26,6 +27,7 @@ const MealOptionBox = styled.div`
     border-radius: ${radius.main};
     max-height: 94%;
     width: 92%;
+    position: relative;
 
     padding: 4rem;
     display: flex;
@@ -83,23 +85,24 @@ const ButtonContainer = styled.div`
 const btnwidth = "18rem";
 
 const OptionContainer = styled.div`
+    overflow: scroll;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
 `;
 
-const OptionList = styled.ul`
-    list-style: none;
-    padding-left: 0;
-`
 
-const MealOptions = ({data, handleCancel}) => {
+const MealOptions = ({data, handleClose}) => {
     const mealData = data;
-    console.log(mealData?.options);
 
     const image = require(`../assets/images/meals/${mealData.image}`);
     
+    const sauces = mealData?.options.sauce
 
   return (
     <MealOptionContainer>
         <MealOptionBox>
+            <ButtonClose handleClose={handleClose}/>
             <MealInfoContainer>
                 <MealImageBox>
                     <MealImage src={image}/>
@@ -109,20 +112,25 @@ const MealOptions = ({data, handleCancel}) => {
                     <MealPrice>€ {mealData.price}</MealPrice>
                 </MealInfoBox>
             </MealInfoContainer>
+            <OptionContainer>
                 {
-                    mealData.options.side &&
+                    mealData?.options.side &&
                     <MealSides/>
                 }
                 {
-                    mealData.options.sauce &&
-                    <MealSauces/>
+                    mealData?.options.sauce &&
+                    [...Array(sauces)].map((sauce, index) => {
+                        return(
+                            <MealSauces key={index} title={`Choose sauce ${index + 1}`}/>
+                        )
+                    })
                 }
                 {
-                    mealData.options.drink &&
+                    mealData?.options.drink &&
                     <MealDrinks/>
                 }
+            </OptionContainer>
             <ButtonContainer>
-                <Button btnColor={colors.secondary} handleFunction={handleCancel} btnWidth={btnwidth}>Cancel</Button>
                 <AmountCounter color={colors.secondary}/>
                 <Button btnColor={colors.secondary} btnWidth={btnwidth}>Add</Button>
             </ButtonContainer>
