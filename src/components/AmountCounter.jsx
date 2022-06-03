@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 import { FaMinus, FaPlus } from 'react-icons/fa';
 import { colors, fontsWeights, radius } from '../constants/styles';
@@ -56,11 +56,25 @@ const Amount = styled.div`
 `;
 
 const AmountCounter = ({color}) => {
+    const [count, setCount] = useState(0);
+
+    const  handleAdd = () => {
+        setCount(count + 1)
+    };
+
+    const  handleSubtract = () => {
+        setCount(count - 1)
+
+        if (count < 1) {
+            setCount(0);
+        }
+    };
+
   return (
     <Container>
-        <BtnSubtract style={{backgroundColor: color}}><FaMinus/></BtnSubtract>
-        <Amount style={{outline: color}}>1</Amount>
-        <BtnAdd style={{backgroundColor: color}}><FaPlus/></BtnAdd>
+        <BtnSubtract style={{backgroundColor: color}} onClick={handleSubtract}><FaMinus/></BtnSubtract>
+        <Amount style={{outline: color}}>{count}</Amount>
+        <BtnAdd style={{backgroundColor: color}} onClick={handleAdd}><FaPlus/></BtnAdd>
     </Container>
   )
 }

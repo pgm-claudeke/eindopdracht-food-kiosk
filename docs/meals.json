@@ -50,12 +50,7 @@
                 "name": "Chicken Burger",
                 "image": "chicken_burger/chicken_burger.jpeg",
                 "price": 3.99,
-                "id": "4.1",
-                "options":{
-                    "side": false,
-                    "sauce": 0,
-                    "drink": false
-                }
+                "id": "4.1"
             },
             {
                 "label": "Menu",
@@ -83,12 +78,7 @@
                 "name": "Spicy Chicken Burger",
                 "image": "chicken_burger/spicy_chicken_burger.jpeg",
                 "price": 4.19,
-                "id": "5.1",
-                "options":{
-                    "side": false,
-                    "sauce": 0,
-                    "drink": false
-                }
+                "id": "5.1"
             },
             {
                 "label": "Menu",
@@ -116,12 +106,7 @@
                 "name": "Tropical Chicken Burger",
                 "image": "chicken_burger/tropical_chicken_burger.jpeg",
                 "price": 6.2,
-                "id": "6.1",
-                "options":{
-                    "side": false,
-                    "sauce": 0,
-                    "drink": false
-                }
+                "id": "6.1"
             },
             {
                 "label": "Menu",
@@ -149,11 +134,6 @@
                 "name": "Double Chicken Burger",
                 "image": "chicken_burger/double_chicken_burger.jpeg",
                 "price": 6.4,
-                "options":{
-                    "side": false,
-                    "sauce": 0,
-                    "drink": false
-                },
                 "id": "7.1"
             },
             {
@@ -182,11 +162,6 @@
                 "name": "3 Piece Chicken Tenders",
                 "image": "tenders/3_piece_tender.jpeg",
                 "price": 4.4,
-                "options":{
-                    "side": false,
-                    "sauce": 0,
-                    "drink": false
-                },
                 "id": "8.1"
             },
             {
@@ -215,11 +190,6 @@
                 "name": "5 Piece Chicken Tenders",
                 "image": "tenders/5_piece_tender.jpeg",
                 "price": 5.7,
-                "options":{
-                    "side": false,
-                    "sauce": 0,
-                    "drink": false
-                },
                 "id": "9.1"
             },
             {
@@ -241,11 +211,6 @@
         "name": "Chicken Wrap",
         "image": "wraps_bowls/chicken_wrap.jpeg",
         "category": "wraps & bowls",
-        "options":{
-            "side": false,
-            "sauce": 0,
-            "drink": false
-        },
         "id": "10",
         "price": 5
     },
@@ -254,11 +219,6 @@
         "name": "Chicken Rice Bowl",
         "image": "wraps_bowls/rice_bowl.jpeg",
         "category": "wraps & bowls",
-        "options":{
-            "side": false,
-            "sauce": 0,
-            "drink": false
-        },
         "id": "11",
         "price": 5
     },
@@ -274,11 +234,6 @@
                 "name": "Yumburger Classic",
                 "image": "classics/yamburger.jpeg",
                 "price": 2.10,
-                "options":{
-                    "side": false,
-                    "sauce": 0,
-                    "drink": false
-                },
                 "id": "12.1"
             },
             {
@@ -286,11 +241,6 @@
                 "name": "Yumburger with Cheese",
                 "image": "classics/yamburger_cheese.jpeg",
                 "price": 2.20,
-                "options":{
-                    "side": false,
-                    "sauce": 0,
-                    "drink": false
-                },
                 "id": "12.2"
             },
             {
@@ -298,11 +248,6 @@
                 "name": "Double Yumburger with Cheese",
                 "image": "classics/double_yamburger.jpeg",
                 "price": 8.45,
-                "options":{
-                    "side": false,
-                    "sauce": 0,
-                    "drink": false
-                },
                 "id": "12.3"
             }
         ]
@@ -312,11 +257,6 @@
         "name": "Jolly Spaghetti",
         "image": "classics/spaghetti.jpeg",
         "category": "classics",
-        "options":{
-            "side": false,
-            "sauce": 0,
-            "drink": false
-        },
         "id": "13",
         "price": 4.6
     },
@@ -326,11 +266,6 @@
         "image": "loaded_fries/siracha_chicken_loaded_fries.jpg",
         "category": "loaded fries",
         "id": "14", 
-        "options":{
-            "side": false,
-            "sauce": 0,
-            "drink": false
-        },
         "price": 3.99
     },
     {
@@ -339,11 +274,6 @@
         "image": "loaded_fries/gravy_loaded_fries.jpg",
         "category": "loaded fries",
         "id": "15",
-        "options":{
-            "side": false,
-            "sauce": 0,
-            "drink": false
-        },
         "price": 3.99
     },
     {
@@ -352,11 +282,6 @@
         "image": "loaded_fries/ice_cream_loaded_fries.jpg",
         "category": "loaded fries",
         "id": "16",
-        "options":{
-            "side": false,
-            "sauce": 0,
-            "drink": false
-        },
         "price": 3.99
     },
     {
@@ -365,11 +290,6 @@
         "image": "sides/fries.jpeg",
         "category": "sides",
         "id": "17",
-        "options":{
-            "side": false,
-            "sauce": 0,
-            "drink": false
-        },
         "price": 2.3
     },
     {
@@ -378,11 +298,6 @@
         "image": "sides/rice.jpeg",
         "category": "sides",
         "id": "18",
-        "options":{
-            "side": false,
-            "sauce": 0,
-            "drink": false
-        },
         "price": 1.75
     },
     {
@@ -397,11 +312,6 @@
                 "name": "Mango Coconut Sundae",
                 "image": "desserts/mango_coconut_sundae.png",
                 "price": 2.5,
-                "options":{
-                    "side": false,
-                    "sauce": 0,
-                    "drink": false
-                },
                 "id": "19.1"
             },
             {
@@ -409,11 +319,6 @@
                 "name": "Chocolate Coconut Sundae",
                 "image": "desserts/chocolate_coconut_sundae.png",
                 "price": 2.5,
-                "options":{
-                    "side": false,
-                    "sauce": 0,
-                    "drink": false
-                },
                 "id": "19.2"
             },
             {
@@ -421,11 +326,6 @@
                 "name": "Cookies 'n Cream Sundae",
                 "image": "desserts/cookies_cream_sundae.jpeg",
                 "price": 2.5,
-                "options":{
-                    "side": false,
-                    "sauce": 0,
-                    "drink": false
-                },
                 "id": "19.3"
             }
         ]
@@ -435,11 +335,6 @@
         "name": "Siracha Mayonnaise",
         "image": "sauces/siracha_mayonnaise.jpeg",
         "category": "dipping sauces",
-        "options":{
-            "side": false,
-            "sauce": 0,
-            "drink": false
-        },
         "id": "20"
     },
     {
@@ -447,11 +342,6 @@
         "name": "Sweet Chilli Sauce",
         "image": "sauces/sweet_chilli.jpeg",
         "category": "dipping sauces",
-        "options":{
-            "side": false,
-            "sauce": 0,
-            "drink": false
-        },
         "id": "21"
     },
     {
@@ -459,11 +349,6 @@
         "name": "Asian Ginger Chilli Sauce",
         "image": "sauces/asian_ginger_chilli.jpeg",
         "category": "dipping sauces",
-        "options":{
-                    "side": false,
-                    "sauce": 0,
-                    "drink": false
-                },
         "id": "22"
     },
     {
@@ -471,11 +356,6 @@
         "name": "Gravy",
         "image": "sauces/gravy.jpeg",
         "category": "dipping sauces",
-        "options":{
-                    "side": false,
-                    "sauce": 0,
-                    "drink": false
-                },
         "id": "23"
     },
     {
@@ -483,11 +363,6 @@
         "name": "Big Bucket Gravy",
         "image": "sauces/gravy_big.jpeg",
         "category": "dipping sauces",
-        "options":{
-                    "side": false,
-                    "sauce": 0,
-                    "drink": false
-                },
         "id": "24"
     },
     {
@@ -495,11 +370,6 @@
         "name": "Pepsi Max 40cl",
         "image": "drinks/drink_brown.webp",
         "category": "drinks",
-        "options":{
-                    "side": false,
-                    "sauce": 0,
-                    "drink": false
-                },
         "id": "25"
     },
     {
@@ -507,11 +377,6 @@
         "name": "Pepsi 40cl",
         "image": "drinks/drink_brown.webp",
         "category": "drinks",
-        "options":{
-                    "side": false,
-                    "sauce": 0,
-                    "drink": false
-                },
         "id": "26"
     },
     {
@@ -519,11 +384,6 @@
         "name": "Iced Tea 40cl",
         "image": "drinks/drink_brown.webp",
         "category": "drinks",
-        "options":{
-                    "side": false,
-                    "sauce": 0,
-                    "drink": false
-                },
         "id": "27"
     }
 ]

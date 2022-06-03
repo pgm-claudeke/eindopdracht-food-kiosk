@@ -97,7 +97,7 @@ const MealOptions = ({data, handleClose}) => {
 
     const image = require(`../assets/images/meals/${mealData.image}`);
     
-    const sauces = mealData?.options.sauce
+    const sauces = mealData.options.sauce
 
   return (
     <MealOptionContainer>
@@ -112,24 +112,29 @@ const MealOptions = ({data, handleClose}) => {
                     <MealPrice>€ {mealData.price}</MealPrice>
                 </MealInfoBox>
             </MealInfoContainer>
-            <OptionContainer>
+            {
+                mealData?.options && 
+                <OptionContainer>
                 {
                     mealData?.options.side &&
                     <MealSides/>
                 }
                 {
-                    mealData?.options.sauce &&
+                    mealData?.options.sauce === 0 ?
                     [...Array(sauces)].map((sauce, index) => {
                         return(
                             <MealSauces key={index} title={`Choose sauce ${index + 1}`}/>
                         )
                     })
+                    :
+                    <></>
                 }
                 {
                     mealData?.options.drink &&
                     <MealDrinks/>
                 }
-            </OptionContainer>
+                </OptionContainer>
+            }
             <ButtonContainer>
                 <AmountCounter color={colors.secondary}/>
                 <Button btnColor={colors.secondary} btnWidth={btnwidth}>Add</Button>
