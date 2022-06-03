@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import { colors, fontsWeights, radius } from '../constants/styles';
 import useFetch from '../hooks/fetch';
-
+import { motion, AnimateSharedLayout } from "framer-motion";
 
 const CategoryList = styled.ul`
     width: 20%;
@@ -12,7 +12,7 @@ const CategoryList = styled.ul`
     display: flex;
     flex-direction: column;
     gap: 1rem;
-    height: 94%;
+    height: 100%;
 
     overflow: scroll;
 `;
@@ -66,7 +66,7 @@ const ImageContainer = styled.div`
 
 
 
-const Categories = ({handleMenu}) => {
+const Categories = ({handleMenu, handleSelected}) => {
     const { data, loading, error } = useFetch('https://pgm-claudeke.github.io/eindopdracht-food-kiosk/categories.json');
 
     if (loading) return <h1>LOADING...</h1>
@@ -74,6 +74,7 @@ const Categories = ({handleMenu}) => {
     if (error) console.log(error)
 
   return (
+    <AnimateSharedLayout>
     <CategoryList>
         {
             data.map(data => {
@@ -81,7 +82,7 @@ const Categories = ({handleMenu}) => {
             
             return(
             <CategoryItem key={data.name}>
-                <CategoryBtn onClick={handleMenu} value={data.name}>
+                <CategoryBtn onClick={handleMenu} value={data.name} isSelected={handleSelected}>
                     <CategoryContainer>
                         <ImageContainer>
                             <CategoryImage src={image}/>
@@ -95,6 +96,7 @@ const Categories = ({handleMenu}) => {
         }
         
     </CategoryList>
+    </AnimateSharedLayout>
   )
 }
 

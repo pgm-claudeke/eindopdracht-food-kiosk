@@ -94,10 +94,9 @@ const OptionContainer = styled.div`
 
 const MealOptions = ({data, handleClose}) => {
     const mealData = data;
+    const options = mealData.options
 
     const image = require(`../assets/images/meals/${mealData.image}`);
-    
-    const sauces = mealData.options.sauce
 
   return (
     <MealOptionContainer>
@@ -113,15 +112,15 @@ const MealOptions = ({data, handleClose}) => {
                 </MealInfoBox>
             </MealInfoContainer>
             {
-                mealData?.options && 
+                options && 
                 <OptionContainer>
                 {
-                    mealData?.options.side &&
+                    options.side &&
                     <MealSides/>
                 }
                 {
-                    mealData?.options.sauce === 0 ?
-                    [...Array(sauces)].map((sauce, index) => {
+                    options.sauce !== 0 ?
+                    [...Array(options.sauce)].map((sauce, index) => {
                         return(
                             <MealSauces key={index} title={`Choose sauce ${index + 1}`}/>
                         )
@@ -130,7 +129,7 @@ const MealOptions = ({data, handleClose}) => {
                     <></>
                 }
                 {
-                    mealData?.options.drink &&
+                    options.drink &&
                     <MealDrinks/>
                 }
                 </OptionContainer>

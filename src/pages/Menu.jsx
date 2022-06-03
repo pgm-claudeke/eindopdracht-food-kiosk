@@ -25,6 +25,7 @@ const MenuContainer = styled.div`
 const Menu = ({ order }) => {
   const [category, setCategory] = useState(null);
   const [filter, setFilter] = useState(null);
+  const [selectedCategory, setSelectedCategory] = useState(false);
 
   const [types, setTypes] = useState(null);
   const [selectedMeal, setSelectedMeal] = useState(null);
@@ -78,13 +79,18 @@ const Menu = ({ order }) => {
       setOptions(null);
   }
 
+  const handleSelected = () => {
+    setSelectedCategory(true)
+  }
+
   return (
     <>
       <Header />
       <MenuContainer>
-        <Categories handleMenu={handleMenuList} />
+        <Categories handleMenu={handleMenuList} handleSelected={handleSelected}/>
         {category && (
         <Meals
+          key={filter}
           category={category}
           filter={filter}
           handleFunction={handleMealTypes}
