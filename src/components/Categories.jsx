@@ -2,10 +2,10 @@ import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import { colors, fontsWeights, radius } from '../constants/styles';
 import useFetch from '../hooks/fetch';
-import { motion, AnimateSharedLayout } from "framer-motion";
+import { motion} from "framer-motion";
 
 const CategoryList = styled.ul`
-    width: 20%;
+    width: 22%;
     list-style: none; 
     padding-left: 0;
 
@@ -15,16 +15,17 @@ const CategoryList = styled.ul`
     height: 100%;
 
     overflow: scroll;
+    
 `;
 
 const CategoryItem = styled.li`
 
 `;
 
-const CategoryBtn = styled.button`
+const CategoryBtn = styled(motion.button)`
     min-height: 13.3rem;
-    width: 98%;
-    background-color: ${colors.primary};
+    width: ${props => props.isActive ? '100%' : '92%'};
+    background-color: ${props => props.isActive ? colors.secondary : colors.primary};
     border: none;
     border-radius: 0rem ${radius.main} ${radius.main} 0rem;
     padding: 2rem 0rem;
@@ -66,23 +67,22 @@ const ImageContainer = styled.div`
 
 
 
-const Categories = ({handleMenu, handleSelected}) => {
+const Categories = ({handleMenu}) => {
     const { data, loading, error } = useFetch('https://pgm-claudeke.github.io/eindopdracht-food-kiosk/categories.json');
+    const [selected, setSelected] = useState(null);
 
     if (loading) return <h1>LOADING...</h1>
 
     if (error) console.log(error)
 
   return (
-    <AnimateSharedLayout>
     <CategoryList>
         {
             data.map(data => {
             const image = require('../assets/images/categories/' + data.image)
-            
             return(
-            <CategoryItem key={data.name}>
-                <CategoryBtn onClick={handleMenu} value={data.name} isSelected={handleSelected}>
+            <CategoryItem onClick={() => setSelected(data.name)} key={data.name}>
+                <CategoryBtn isActive={selected === data.name} onClick={handleMenu} value={data.name}> 
                     <CategoryContainer>
                         <ImageContainer>
                             <CategoryImage src={image}/>
@@ -96,7 +96,6 @@ const Categories = ({handleMenu, handleSelected}) => {
         }
         
     </CategoryList>
-    </AnimateSharedLayout>
   )
 }
 

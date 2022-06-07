@@ -10,7 +10,6 @@ import {
 } from "../components";
 import useFetch from "../hooks/fetch";
 import ROUTES from "../constants/routes";
-import { AnimateSharedLayout, AnimatePresence } from "framer-motion";
 import { useNavigate } from "react-router-dom";
 
 const MenuContainer = styled.div`
@@ -25,7 +24,6 @@ const MenuContainer = styled.div`
 const Menu = ({ order }) => {
   const [category, setCategory] = useState(null);
   const [filter, setFilter] = useState(null);
-  const [selectedCategory, setSelectedCategory] = useState(false);
 
   const [types, setTypes] = useState(null);
   const [selectedMeal, setSelectedMeal] = useState(null);
@@ -79,15 +77,11 @@ const Menu = ({ order }) => {
       setOptions(null);
   }
 
-  const handleSelected = () => {
-    setSelectedCategory(true)
-  }
-
   return (
     <>
       <Header />
       <MenuContainer>
-        <Categories handleMenu={handleMenuList} handleSelected={handleSelected}/>
+        <Categories handleMenu={handleMenuList}/>
         {category && (
         <Meals
           key={filter}
