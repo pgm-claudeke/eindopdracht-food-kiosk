@@ -74,7 +74,12 @@ const BtnBox = styled.div`
 const btnWidth = "49%"
 
 const CurrentOrder = () => {
-    const [cart, setCart] = useContext(ShoppingCartContext);
+    const [cart] = useContext(ShoppingCartContext);
+
+    const currentAmount = Object.values(cart).length;
+
+
+    console.log()
   return (
     <OrderContainer>
         <OrderTitle>
@@ -82,7 +87,7 @@ const CurrentOrder = () => {
         </OrderTitle>
         <OrderBox>
             <p>Total: € 2,00</p>
-            <p>Amount: 1</p>
+            <p>Amount: {currentAmount}</p>
             <OrderShowBox to={ROUTES.ORDER}>
                 Show order
                 <FaChevronRight style={{fontSize:"2rem"}}/>

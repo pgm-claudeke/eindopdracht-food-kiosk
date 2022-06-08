@@ -23,6 +23,8 @@ const MenuContainer = styled.div`
 `;
 
 const Menu = ({ order }) => {
+const [cart, setCart] = useContext(ShoppingCartContext); 
+
   const [category, setCategory] = useState(null);
   const [filter, setFilter] = useState(null);
 
@@ -70,6 +72,10 @@ const Menu = ({ order }) => {
       setOptions(null);
   }
 
+  const handleCart = (e) => {
+    console.log(e.target)
+  }
+
   return (
     <>
       <Header />
@@ -94,7 +100,7 @@ const Menu = ({ order }) => {
       </MenuContainer>
       <CurrentOrder/>
       {options && (
-          <MealOptions data={options} handleClose={handleCloseOptions} key={options}/>
+          <MealOptions data={options} handleClose={handleCloseOptions} key={options} handleCart={handleCart} mealInfo={options} />
       )
       }
     </>

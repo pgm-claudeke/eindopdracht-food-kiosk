@@ -75,6 +75,8 @@ const AmountCounter = ({color, defaultAmount = 0}) => {
         setAmountMeal({e})
     }
 
+    setAmountMeal(count);
+
   return (
       
     <Container>

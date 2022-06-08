@@ -10,7 +10,7 @@ export const CurrentCount = createContext();
 const App = () => {
 
   const [cart, setCart] = useState({});
-  const [count, setCount] = useState({});
+  const [count, setCount] = useState(null);
 
   console.log('cart = ' + cart);
   console.log('count = ' + count);

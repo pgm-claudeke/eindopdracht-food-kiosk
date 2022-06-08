@@ -1,8 +1,9 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import styled from 'styled-components';
 import { colors, fontsWeights } from '../constants/styles';
 import Button from './Button';
 import AmountCounter from './AmountCounter';
+import { ShoppingCartContext } from '../App';
 
 const ListContainer = styled.ul`
     padding: 0;
@@ -10,6 +11,7 @@ const ListContainer = styled.ul`
 
     display: flex;
     flex-direction: column;
+    gap: 2rem;
 `;
 
 const ListItem = styled.li`
@@ -54,16 +56,21 @@ const OrderOptions = styled.div`
 const btnWidth = "30%"
 
 const OrderList = ({option}) => {
+    const [cart] = useContext(ShoppingCartContext); 
     const options = option;
+
+    console.log(cart)
   return (
     <ListContainer>
-        <ListItem>
+        {
+            Object.values(cart).map(meal => 
+            <ListItem>
                 <OrderInfoBox>
                     <OrderInfo>
-                        <p>1x</p>
-                        <p>Chicken Wrap</p>
+                        <p>{meal.amount}x</p>
+                        <p>{meal.name}</p>
                     </OrderInfo>
-                    <p>€ 2,45</p>
+                    <p>€ {meal.price}</p>
                 </OrderInfoBox>
                 { options &&
                     <OrderOptions>
@@ -73,7 +80,9 @@ const OrderList = ({option}) => {
                     </OrderOptions>
                 }
                 
-        </ListItem>
+            </ListItem>
+            )
+        }
     </ListContainer>
   )
 }

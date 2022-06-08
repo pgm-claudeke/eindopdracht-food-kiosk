@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import { colors, fontsWeights, radius } from '../constants/styles';
 import useFetch from '../hooks/fetch';
 import { motion, useTransform, useViewportScroll} from "framer-motion";
+import API from '../constants/api';
 
 const CategoryList = styled(motion.ul)`
     width: 22%;
@@ -68,7 +69,7 @@ const ImageContainer = styled.div`
 
 
 const Categories = ({handleMenu}) => {
-    const { data, loading, error } = useFetch('https://pgm-claudeke.github.io/eindopdracht-food-kiosk/categories.json');
+    const { data, loading, error } = useFetch(API.CATEGORIES);
     const [selected, setSelected] = useState(null);
 
     if (loading) return <h1>LOADING...</h1>

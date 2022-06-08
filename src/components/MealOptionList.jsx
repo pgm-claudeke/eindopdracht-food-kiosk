@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import { colors, fontsWeights } from '../constants/styles';
 import Meal from './Meal';
 import useFetch from '../hooks/fetch';
+import API from '../constants/api';
 
 const OptionContainer = styled.div`
 `;
@@ -26,7 +27,7 @@ const List = styled.ul`
 `;
 
 const MealOptionList = ({title, filter}) => {
-    const {data} = useFetch('https://pgm-claudeke.github.io/eindopdracht-food-kiosk/meals.json');
+    const {data} = useFetch(API.MEALS);
     const  optionsData = data.filter(data => data.category === filter);
 
     const [selected, setSelected] = useState(null)

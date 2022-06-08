@@ -7,7 +7,7 @@ import MealDrinks from './MealDrinks';
 import MealSauces from './MealSauces';
 import MealSides from './MealSides';
 import ButtonClose from './ButtonClose';
-import { ShoppingCartContext } from '../App';
+import { CurrentCount, ShoppingCartContext } from '../App';
 import { motion } from 'framer-motion';
 import { containerMotion } from '../constants/animations';
 
@@ -97,7 +97,8 @@ const OptionContainer = styled.div`
     }
 
     ::-webkit-scrollbar-thumb {
-        background-color: ${colors.secondary}
+        background-color: ${colors.secondary};
+        border-radius: ${radius.main}
     }
 `;
 
@@ -118,8 +119,9 @@ const boxMotion = {
 
 
 
-const MealOptions = ({data, handleClose}) => {
+const MealOptions = ({data, handleClose, mealInfo}) => {
     const [cart, setCart] = useContext(ShoppingCartContext); 
+    const [amount] = useContext(CurrentCount);
 
     const mealData = data;
     const options = mealData.options;
@@ -127,7 +129,15 @@ const MealOptions = ({data, handleClose}) => {
     const image = require(`../assets/images/meals/${mealData.image}`);
 
     const handleCart = () => {
-        setCart({...cart, name: data.name})
+        setCart({
+            ...cart,
+            [mealInfo.id]: {
+                id: mealInfo.id,
+                name: mealInfo.name,
+                price: mealInfo.price,
+                amount: amount,
+            }
+        })
     }
 
   return (
