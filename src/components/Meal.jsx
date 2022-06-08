@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 import { colors, fontsWeights, radius } from '../constants/styles';
 import { AnimateSharedLayout, AnimatePresence } from "framer-motion";
@@ -49,16 +49,16 @@ const MealImage = styled.img`
     object-position: center;
 `;
 
-const Meal = ({image, name, handleFunction, id, scale}) => {
+const Meal = ({image, name, handleFunction, id, scale, handleActive}) => {
   return (
     <MealContainer>
-        <MealBtn onClick={handleFunction} id={id}>
+        <MealBtn onClick={handleFunction} id={id} isActive={handleActive}>
             <MealImageBox style={{height: scale, width: scale}}>
                 <MealImage src={image}/>
             </MealImageBox>
             {name}
         </MealBtn>
-    </MealContainer> 
+    </MealContainer>  
   )
 }
 

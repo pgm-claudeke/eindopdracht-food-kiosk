@@ -42,16 +42,14 @@ const sideMotion = {
         x: 0,
         transition: {
             type: 'Tween', 
-            ease: "circOut",
+            ease: "easeOut",
             duration: 0.4
         }
     }
 }
 
 const Meals = ({category, filter, handleFunction, handleSelection}) => {
-    const {data, loading, error} = useFetch('https://pgm-claudeke.github.io/eindopdracht-food-kiosk/meals.json');
-    if (loading) return <h1>LOADING...</h1>
-    if (error) console.log(error)
+    const {data} = useFetch('https://pgm-claudeke.github.io/eindopdracht-food-kiosk/meals.json');
 
     const filteredData = data.filter(data => data.category === filter);
 

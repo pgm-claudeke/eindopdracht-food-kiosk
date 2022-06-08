@@ -25,26 +25,38 @@ const List = styled.ul`
     overflow: scroll;
 `;
 
+const Chosen = styled.ul`
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+`;
+
 
 const MealOptionList = ({title, filter}) => {
     const {data} = useFetch('https://pgm-claudeke.github.io/eindopdracht-food-kiosk/meals.json');
     const  optionsData = data.filter(data => data.category === filter);
+
     const [selected, setSelected] = useState(null)
-    console.log(selected)
+
+    const handleChoice = (e) => {
+        setSelected(e.target.id)
+    }
+
   return (
     <OptionContainer>
         <OptionTitle>{title}</OptionTitle>
-        <List>
+            <List> 
             {
                 optionsData.map(option => {
                     const image = require(`../assets/images/meals/${option.image}`);
 
                     return(
-                    <Meal handleFunction={() => setSelected(data.id)} isActive={selected === data.id} key={option.id} scale="14rem" name={option.label} id={option.id} image={image}/>
+                    <Meal handleFunction={handleChoice} key={option.id} scale="14rem" name={option.label} id={option.id} image={image} handleActive={selected === option.id}/>
                     )
                 })
             }
-        </List>
+            </List>
     </OptionContainer>
   )
 }

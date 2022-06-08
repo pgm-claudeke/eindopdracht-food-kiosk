@@ -5,8 +5,9 @@ export const containerMotion = {
   show: {
       opacity: 1,
       transition: {
-          type: 'spring',
-          mass: 0.4,
+          type: 'tween',
+          ease: "easeInOut",
+          duration: 0.1,
           when: "beforeChildren"
       }
   }
@@ -19,7 +20,9 @@ export const boxMotion = {
   show: {
       scale: 1,
       transition: {
-          delay: 0.2
+          type: "spring",
+          bounce: 0.35,
+          duration: 0.4
       }
   }
 }

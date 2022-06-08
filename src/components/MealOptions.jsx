@@ -96,7 +96,7 @@ const OptionContainer = styled.div`
 
 
 const MealOptions = ({data, handleClose}) => {
-    const [cart, setCart] = useContext(ShoppingCartContext);
+    const [cart, setCart] = useContext(ShoppingCartContext); 
 
     const mealData = data;
     const options = mealData.options;
