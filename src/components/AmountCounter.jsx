@@ -55,7 +55,7 @@ const Amount = styled.input`
     text-align: center;
 `;
 
-const AmountCounter = ({color, defaultAmount = 0, meal}) => {
+const AmountCounter = ({color, defaultAmount = 1, meal}) => {
     const [cart, setCart] = useContext(ShoppingCartContext);
     //const selectedMeal = Object.values(cart).find(cart => cart.orderId === meal.orderId);
     const [count, setCount] = useState(meal ? meal.amount : defaultAmount);

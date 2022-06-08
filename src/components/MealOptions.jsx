@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { createContext, useContext } from 'react';
 import styled from 'styled-components';
 import { colors, fontsWeights, radius } from '../constants/styles';
 import AmountCounter from './AmountCounter';
@@ -124,7 +124,7 @@ const MealOptions = ({data, handleClose, handleCart}) => {
     const [cart, setCart] = useContext(ShoppingCartContext); 
 
     const mealData = data;
-    const options = mealData.options;
+    const options = mealData.options; 
     
 
     const image = require(`../assets/images/meals/${mealData.image}`);

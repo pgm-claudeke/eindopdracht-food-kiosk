@@ -4,6 +4,7 @@ import { colors, fontsWeights } from '../constants/styles';
 import Button from './Button';
 import AmountCounter from './AmountCounter';
 import { ShoppingCartContext } from '../App';
+import { FaTrashAlt } from 'react-icons/fa';
 
 const ListContainer = styled.ul`
     padding: 0;
@@ -50,20 +51,29 @@ const OrderOptions = styled.div`
 
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    gap: 2rem;
 `;
 
-const btnWidth = "30%"
-
 const OrderList = ({option}) => {
-    const [cart] = useContext(ShoppingCartContext); 
+    const [cart, setCart] = useContext(ShoppingCartContext); 
     const options = option;
+
+    const deleteMeal = (e) => {
+        console.log(e.target.value)
+        const cartData = Object.values(cart);
+        console.log(cartData)
+    }
 
   return (
     <ListContainer>
         {
-            Object.values(cart).map(meal => 
-            <ListItem>
+            Object.values(cart).map(meal => {
+
+                const options = meal.options;
+                console.log(options)
+
+            return (
+            <ListItem key={meal.orderId}>
                 <OrderInfoBox>
                     <OrderInfo>
                         <p>{meal.amount}x</p>
@@ -73,14 +83,14 @@ const OrderList = ({option}) => {
                 </OrderInfoBox>
                 { options &&
                     <OrderOptions>
-                        <Button btnWidth={btnWidth} btnColor={colors.secondary}>Edit</Button>
                         <AmountCounter meal={meal}/>
-                        <Button btnWidth={btnWidth} btnColor={colors.primary}>Delete</Button>
+                        <Button btnColor={colors.primary} handleFunction={deleteMeal} value={meal.orderId}><FaTrashAlt style={{marginTop: '0.5rem'}}/></Button>
                     </OrderOptions>
                 }
-                
-            </ListItem>
+            </ListItem>)
+            }
             )
+
         }
     </ListContainer>
   )

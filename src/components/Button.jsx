@@ -15,9 +15,9 @@ const Btn = styled.button`
     padding: 0 2rem;
 `;
 
-const Button = ({children, btnColor, btnWidth, handleFunction}) => {
+const Button = ({children, btnColor, btnWidth, handleFunction, value}) => {
   return (
-    <Btn style={{backgroundColor:btnColor, width:btnWidth}} onClick={handleFunction}>
+    <Btn style={{backgroundColor:btnColor, width:btnWidth}} onClick={handleFunction} value={value}>
         {children}
     </Btn>
   )

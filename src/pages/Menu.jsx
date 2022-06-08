@@ -11,7 +11,7 @@ import {
 import useFetch from "../hooks/fetch";
 import ROUTES from "../constants/routes";
 import { useNavigate } from "react-router-dom";
-import { CurrentCount, ShoppingCartContext } from "../App";
+import { CurrentCount, CurrentOptions, ShoppingCartContext } from "../App";
 import { v4 as uuid } from 'uuid';
 
 const MenuContainer = styled.div`
@@ -26,6 +26,7 @@ const MenuContainer = styled.div`
 const Menu = ({ order }) => {
   const [cart, setCart] = useContext(ShoppingCartContext); 
   const [amount] = useContext(CurrentCount);
+  const [selectedOptions] = useContext(CurrentOptions)
 
   const [category, setCategory] = useState(null);
   const [filter, setFilter] = useState(null);
@@ -75,17 +76,22 @@ const Menu = ({ order }) => {
   }
 
   const handleCart = (e) => {
-    setCart({
-        ...cart,
-        [uuid()]: {
-            orderId: uuid(),
-            id: options.id,
-            name: options.name,
-            price: (options.price * amount),
-            amount: amount
-        }
-    });
-
+      if (amount === 0) {
+        console.log('cart will not be added')
+      } else {
+        setCart({
+            ...cart,
+            [uuid()]: {
+                orderId: uuid(),
+                id: options.id,
+                name: options.name,
+                price: (options.price * amount),
+                amount: amount,
+                options: selectedOptions
+            }
+        });
+      }
+    
     setOptions(null);
     setTypes(null)
   }
