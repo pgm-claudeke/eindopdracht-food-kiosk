@@ -10,6 +10,7 @@ import ButtonClose from './ButtonClose';
 import { CurrentCount, ShoppingCartContext } from '../App';
 import { motion } from 'framer-motion';
 import { containerMotion } from '../constants/animations';
+import { v4 as uuid } from 'uuid';
 
 const MealOptionContainer = styled(motion.div)`
     backdrop-filter: blur(12px)  grayscale(15%);
@@ -119,26 +120,14 @@ const boxMotion = {
 
 
 
-const MealOptions = ({data, handleClose, mealInfo}) => {
+const MealOptions = ({data, handleClose, handleCart}) => {
     const [cart, setCart] = useContext(ShoppingCartContext); 
-    const [amount] = useContext(CurrentCount);
 
     const mealData = data;
     const options = mealData.options;
+    
 
     const image = require(`../assets/images/meals/${mealData.image}`);
-
-    const handleCart = () => {
-        setCart({
-            ...cart,
-            [mealInfo.id]: {
-                id: mealInfo.id,
-                name: mealInfo.name,
-                price: mealInfo.price,
-                amount: amount,
-            }
-        })
-    }
 
   return (
     <MealOptionContainer variants={containerMotion} initial="hidden" animate="show">

@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import styled from 'styled-components';
+import { ShoppingCartContext } from '../App';
 import ROUTES from '../constants/routes';
 import { colors, fontsWeights } from '../constants/styles';
 import Button from './Button';
@@ -32,9 +33,11 @@ const BtnContainer = styled.div`
 const btnWidth = '49%';
 
 const OrderTotal = ({nav, navName}) => {
+    const [cart] = useContext(ShoppingCartContext)
+    const currentTotal = Object.values(cart).reduce((sum, {price}) => sum  + price, 0)
   return (
     <Container>
-        <p>Total: € 4,9</p>
+        <p>Total: € {currentTotal}</p>
         <BtnContainer>
             <ButtonLink link={ROUTES.MENU} btnColor={colors.secondary} btnWidth={btnWidth}>Go Back</ButtonLink>
             <ButtonLink link={nav} btnColor={colors.secondary} btnWidth={btnWidth}>{navName}</ButtonLink>

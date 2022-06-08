@@ -15,7 +15,7 @@ const ListContainer = styled.ul`
 `;
 
 const ListItem = styled.li`
-    width: 69rem;
+    width: 76rem;
 
     background-color: ${colors.base};
     padding: 3.3rem;
@@ -59,7 +59,6 @@ const OrderList = ({option}) => {
     const [cart] = useContext(ShoppingCartContext); 
     const options = option;
 
-    console.log(cart)
   return (
     <ListContainer>
         {
@@ -75,7 +74,7 @@ const OrderList = ({option}) => {
                 { options &&
                     <OrderOptions>
                         <Button btnWidth={btnWidth} btnColor={colors.secondary}>Edit</Button>
-                        <AmountCounter></AmountCounter>
+                        <AmountCounter meal={meal}/>
                         <Button btnWidth={btnWidth} btnColor={colors.primary}>Delete</Button>
                     </OrderOptions>
                 }

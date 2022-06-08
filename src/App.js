@@ -1,5 +1,5 @@
 import './App.css';
-import React, { createContext, useState } from 'react';
+import React, { createContext, useEffect, useState } from 'react';
 import { Routes, Route } from "react-router-dom";
 import ROUTES from "./constants/routes";
 import { DineOptions, Home, Menu, PayOptions, Order, ValidateOrder } from './pages';
@@ -12,8 +12,10 @@ const App = () => {
   const [cart, setCart] = useState({});
   const [count, setCount] = useState(null);
 
-  console.log('cart = ' + cart);
   console.log('count = ' + count);
+  useEffect(() => {
+    //save to local storage
+  }, [cart]);
 
   return (
     <ShoppingCartContext.Provider value={[cart, setCart]}>

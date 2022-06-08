@@ -77,16 +77,15 @@ const CurrentOrder = () => {
     const [cart] = useContext(ShoppingCartContext);
 
     const currentAmount = Object.values(cart).length;
+    const currentTotal = Object.values(cart).reduce((sum, {price}) => sum  + price, 0)
 
-
-    console.log()
   return (
     <OrderContainer>
         <OrderTitle>
             <p>Your order</p>
         </OrderTitle>
         <OrderBox>
-            <p>Total: € 2,00</p>
+            <p>Total: € {currentTotal}</p>
             <p>Amount: {currentAmount}</p>
             <OrderShowBox to={ROUTES.ORDER}>
                 Show order

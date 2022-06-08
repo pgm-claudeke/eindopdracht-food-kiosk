@@ -57,9 +57,9 @@ const commerceMotion = {
     show: {
         x: 0,
         transition: {
-            type: 'tween', 
-            ease: 'easeInOut',
-            duration: 3
+            type: 'spring', 
+            stiffness: 20,
+            duration: 1
         }
     }
 }

@@ -2,7 +2,7 @@ import React, { useContext, useState } from 'react';
 import styled from 'styled-components';
 import { FaMinus, FaPlus } from 'react-icons/fa';
 import { colors, fontsWeights, radius } from '../constants/styles';
-import { CurrentCount } from '../App';
+import { CurrentCount, ShoppingCartContext } from '../App';
 
 const Container = styled.div`
     display: flex;
@@ -55,15 +55,17 @@ const Amount = styled.input`
     text-align: center;
 `;
 
-const AmountCounter = ({color, defaultAmount = 0}) => {
-    const [count, setCount] = useState(0);
+const AmountCounter = ({color, defaultAmount = 0, meal}) => {
+    const [cart, setCart] = useContext(ShoppingCartContext);
+    //const selectedMeal = Object.values(cart).find(cart => cart.orderId === meal.orderId);
+    const [count, setCount] = useState(meal ? meal.amount : defaultAmount);
     const [amountMeal, setAmountMeal] = useContext(CurrentCount);
 
     const  handleAdd = () => {
         setCount(count + 1)
     };
 
-    const  handleSubtract = () => {
+    const  handleSubtract = (e) => {
         setCount(count - 1)
 
         if (count <= 1) {
@@ -73,6 +75,7 @@ const AmountCounter = ({color, defaultAmount = 0}) => {
 
     const setAmount = (e) => {
         setAmountMeal({e})
+
     }
 
     setAmountMeal(count);
