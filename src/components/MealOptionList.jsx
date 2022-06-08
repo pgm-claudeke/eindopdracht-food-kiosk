@@ -20,18 +20,10 @@ const List = styled.ul`
 
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
 
     width: 100%;
-    overflow: scroll;
 `;
-
-const Chosen = styled.ul`
-    list-style: none;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-`;
-
 
 const MealOptionList = ({title, filter}) => {
     const {data} = useFetch('https://pgm-claudeke.github.io/eindopdracht-food-kiosk/meals.json');

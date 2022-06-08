@@ -50,6 +50,20 @@ const CommercialImg = styled.img`
     object-position: center;
 `;
 
+const commerceMotion = {
+    hidden: {
+        x: '100rem'
+    }, 
+    show: {
+        x: 0,
+        transition: {
+            type: 'tween', 
+            ease: 'easeInOut',
+            duration: 3
+        }
+    }
+}
+
 const Header = () => {
   return (
     <HeaderContainer>
@@ -57,7 +71,7 @@ const Header = () => {
             <LogoImage src={logoInverted}/>
         </LogoContainer>
         
-        <CommercialContainer initial={{x: '100rem'}} animate={{x: 0}} transition={{duration: 0.8, type: 'spring', stiffness: 20}}>
+        <CommercialContainer variants={commerceMotion} initial="hidden" animate="show">
             <CommercialImg src={commercialOne}/>
         </CommercialContainer>
     </HeaderContainer>

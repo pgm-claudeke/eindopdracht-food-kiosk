@@ -359,31 +359,24 @@
         "id": "23"
     },
     {
-        "label": "Big Bucket Gravy",
-        "name": "Big Bucket Gravy",
-        "image": "sauces/gravy_big.jpeg",
-        "category": "dipping sauces",
-        "id": "24"
-    },
-    {
         "label": "Pepsi Max",
         "name": "Pepsi Max 40cl",
         "image": "drinks/drink_brown.webp",
         "category": "drinks",
-        "id": "25"
+        "id": "24"
     },
     {
         "label": "Pepsi",
         "name": "Pepsi 40cl",
         "image": "drinks/drink_brown.webp",
         "category": "drinks",
-        "id": "26"
+        "id": "25"
     },
     {
         "label": "Iced Tea",
         "name": "Iced Tea 40cl",
         "image": "drinks/drink_brown.webp",
         "category": "drinks",
-        "id": "27"
+        "id": "26"
     }
 ]

@@ -5,7 +5,7 @@ import Meal from './Meal';
 import { CgClose } from 'react-icons/cg';
 import ButtonClose from './ButtonClose';
 import { motion } from 'framer-motion';
-import { containerMotion, boxMotion } from '../constants/animations';
+import { containerMotion } from '../constants/animations';
 
 const MealTypeContainer = styled(motion.div)`
     backdrop-filter: blur(12px)  grayscale(15%);
@@ -50,6 +50,20 @@ const TypesList = styled.ul`
     justify-content: center;
     gap: 1.5rem;
 `;
+
+const boxMotion = {
+    hidden: {
+        scale: 0
+    },
+    show: {
+        scale: 1,
+        transition: {
+            type: "spring",
+            bounce: 0.35,
+            duration: 0.6
+        }
+    }
+}
 
 const MealType = ({handleClose, data, mealName, handleFunction}) => {
   return (

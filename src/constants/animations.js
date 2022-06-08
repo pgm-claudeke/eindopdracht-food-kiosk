@@ -12,17 +12,3 @@ export const containerMotion = {
       }
   }
 }
-
-export const boxMotion = {
-  hidden: {
-      scale: 0
-  },
-  show: {
-      scale: 1,
-      transition: {
-          type: "spring",
-          bounce: 0.35,
-          duration: 0.4
-      }
-  }
-}

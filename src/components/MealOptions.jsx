@@ -9,7 +9,7 @@ import MealSides from './MealSides';
 import ButtonClose from './ButtonClose';
 import { ShoppingCartContext } from '../App';
 import { motion } from 'framer-motion';
-import { containerMotion, boxMotion } from '../constants/animations';
+import { containerMotion } from '../constants/animations';
 
 const MealOptionContainer = styled(motion.div)`
     backdrop-filter: blur(12px)  grayscale(15%);
@@ -91,7 +91,30 @@ const OptionContainer = styled.div`
     display: flex;
     flex-direction: column;
     gap: 2rem;
+
+    ::-webkit-scrollbar {
+        width: 20px
+    }
+
+    ::-webkit-scrollbar-thumb {
+        background-color: ${colors.secondary}
+    }
 `;
+
+
+const boxMotion = {
+    hidden: {
+        scale: 0
+    },
+    show: {
+        scale: 1,
+        transition: {
+            type: "spring",
+            bounce: 0.35,
+            duration: 0.4
+        }
+    }
+}
 
 
 

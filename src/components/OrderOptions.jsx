@@ -1,8 +1,9 @@
-import React from "react";
+import React, { useContext } from "react";
 import styled from "styled-components";
 import { colors, fontsWeights, radius } from "../constants/styles";
 import { Link } from 'react-router-dom';
 import { FaLinkedin } from "react-icons/fa";
+import { ShoppingCartContext } from "../App";
 
 const Options = styled.div`
   height: 81vh;

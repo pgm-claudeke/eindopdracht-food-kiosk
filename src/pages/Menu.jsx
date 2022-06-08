@@ -17,14 +17,12 @@ const MenuContainer = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  align-items: center;
+  align-items: center; 
 
   height: 70vh;
 `;
 
 const Menu = ({ order }) => {
-  const [cart, setCart] = useContext(ShoppingCartContext);
-  
   const [category, setCategory] = useState(null);
   const [filter, setFilter] = useState(null);
 
@@ -32,15 +30,7 @@ const Menu = ({ order }) => {
   const [selectedMeal, setSelectedMeal] = useState(null);
   const [selectedMealId, setSelectedMealId] = useState(null);
   
-  
-  const [menu, setMenu] = useState(null);
-  
-  
-  const [totalPrice, setTotalPrice] = useState(null);
-  const [totalAmount, setTotalAmount] = useState(null);
   const [options, setOptions] = useState(null);
-  
-  let navigate = useNavigate();
 
   const { data, loading, error } = useFetch(
     "https://pgm-claudeke.github.io/eindopdracht-food-kiosk/meals.json"
