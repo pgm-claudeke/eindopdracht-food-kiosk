@@ -1,7 +1,8 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import styled from 'styled-components';
 import { FaMinus, FaPlus } from 'react-icons/fa';
 import { colors, fontsWeights, radius } from '../constants/styles';
+import { CurrentCount } from '../App';
 
 const Container = styled.div`
     display: flex;
@@ -39,24 +40,24 @@ const BtnSubtract = styled.button`
     justify-content: center;
 `;
 
-const Amount = styled.div`
+const Amount = styled.input`
     height: 5.6rem;
-    min-width: 5.6rem;
+    width: 5.6rem;
     outline: ${colors.primary} solid 1px;
     outline-offset: -1px;
     background-color: ${colors.base};
+    border: none;
 
     font-size: 3rem;
     font-weight: ${fontsWeights.bold};
     color: ${colors.tertiare};
 
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    text-align: center;
 `;
 
-const AmountCounter = ({color}) => {
+const AmountCounter = ({color, defaultAmount = 0}) => {
     const [count, setCount] = useState(0);
+    const [amountMeal, setAmountMeal] = useContext(CurrentCount);
 
     const  handleAdd = () => {
         setCount(count + 1)
@@ -65,15 +66,20 @@ const AmountCounter = ({color}) => {
     const  handleSubtract = () => {
         setCount(count - 1)
 
-        if (count < 1) {
+        if (count <= 1) {
             setCount(0);
         }
     };
 
+    const setAmount = (e) => {
+        setAmountMeal({e})
+    }
+
   return (
+      
     <Container>
         <BtnSubtract style={{backgroundColor: color}} onClick={handleSubtract}><FaMinus/></BtnSubtract>
-        <Amount style={{outline: color}}>{count}</Amount>
+        <Amount type="number" value={count} style={{outline: color}} onChange={setAmount}/>
         <BtnAdd style={{backgroundColor: color}} onClick={handleAdd}><FaPlus/></BtnAdd>
     </Container>
   )

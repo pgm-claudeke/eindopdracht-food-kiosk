@@ -34,6 +34,20 @@ const MealsList = styled.ul`
     row-gap: 2rem;
 `;
 
+const sideMotion = {
+    hidden: {
+        x: '100rem'
+    }, 
+    show: {
+        x: 0,
+        transition: {
+            type: 'Tween', 
+            ease: "circOut",
+            duration: 0.4
+        }
+    }
+}
+
 const Meals = ({category, filter, handleFunction, handleSelection}) => {
     const {data, loading, error} = useFetch('https://pgm-claudeke.github.io/eindopdracht-food-kiosk/meals.json');
     if (loading) return <h1>LOADING...</h1>
@@ -42,7 +56,7 @@ const Meals = ({category, filter, handleFunction, handleSelection}) => {
     const filteredData = data.filter(data => data.category === filter);
 
   return (
-    <MealsContainer initial={{x: '100rem'}} animate={{x: 0}} transition={{type: 'spring', stiffness: 20}}>
+    <MealsContainer variants={sideMotion} initial="hidden" animate="show">
         <MealsTitle>{category}</MealsTitle>
             <MealsList>
                 {

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import styled from 'styled-components';
 import { colors } from '../constants/styles';
 import { FaChevronRight } from 'react-icons/fa';
@@ -6,6 +6,7 @@ import Button from './Button';
 import ButtonLink from './ButtonLink';
 import { Link } from 'react-router-dom';
 import ROUTES from '../constants/routes';
+import { ShoppingCartContext } from '../App';
 
 const OrderContainer = styled.section`
     height: 18vh;
@@ -73,6 +74,7 @@ const BtnBox = styled.div`
 const btnWidth = "49%"
 
 const CurrentOrder = () => {
+    const [cart, setCart] = useContext(ShoppingCartContext);
   return (
     <OrderContainer>
         <OrderTitle>

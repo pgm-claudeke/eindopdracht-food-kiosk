@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import styled from 'styled-components';
 import { colors, fontsWeights, radius } from '../constants/styles';
 import AmountCounter from './AmountCounter';
@@ -7,9 +7,11 @@ import MealDrinks from './MealDrinks';
 import MealSauces from './MealSauces';
 import MealSides from './MealSides';
 import ButtonClose from './ButtonClose';
+import { ShoppingCartContext } from '../App';
+import { motion } from 'framer-motion';
+import { containerMotion, boxMotion } from '../constants/animations';
 
-
-const MealOptionContainer = styled.div`
+const MealOptionContainer = styled(motion.div)`
     backdrop-filter: blur(12px)  grayscale(15%);
     height: 100vh;
     width: 100%;
@@ -22,7 +24,7 @@ const MealOptionContainer = styled.div`
     align-items: center;
 `;
 
-const MealOptionBox = styled.div`
+const MealOptionBox = styled(motion.div)`
     background-color: ${colors.primary};
     border-radius: ${radius.main};
     max-height: 94%;
@@ -92,15 +94,22 @@ const OptionContainer = styled.div`
 `;
 
 
+
 const MealOptions = ({data, handleClose}) => {
+    const [cart, setCart] = useContext(ShoppingCartContext);
+
     const mealData = data;
-    const options = mealData.options
+    const options = mealData.options;
 
     const image = require(`../assets/images/meals/${mealData.image}`);
 
+    const handleCart = () => {
+        setCart({...cart, name: data.name})
+    }
+
   return (
-    <MealOptionContainer>
-        <MealOptionBox>
+    <MealOptionContainer variants={containerMotion} initial="hidden" animate="show">
+        <MealOptionBox variants={boxMotion} initial="hidden" animate="show"> 
             <ButtonClose handleClose={handleClose}/>
             <MealInfoContainer>
                 <MealImageBox>
@@ -136,7 +145,7 @@ const MealOptions = ({data, handleClose}) => {
             }
             <ButtonContainer>
                 <AmountCounter color={colors.secondary}/>
-                <Button btnColor={colors.secondary} btnWidth={btnwidth}>Add</Button>
+                <Button btnColor={colors.secondary} btnWidth={btnwidth} handleFunction={handleCart}>Add</Button>
             </ButtonContainer>
         </MealOptionBox>
     </MealOptionContainer>

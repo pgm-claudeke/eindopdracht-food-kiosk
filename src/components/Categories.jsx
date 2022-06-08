@@ -1,10 +1,10 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import styled from 'styled-components';
 import { colors, fontsWeights, radius } from '../constants/styles';
 import useFetch from '../hooks/fetch';
-import { motion} from "framer-motion";
+import { motion, useTransform, useViewportScroll} from "framer-motion";
 
-const CategoryList = styled.ul`
+const CategoryList = styled(motion.ul)`
     width: 22%;
     list-style: none; 
     padding-left: 0;
@@ -18,7 +18,7 @@ const CategoryList = styled.ul`
     
 `;
 
-const CategoryItem = styled.li`
+const CategoryItem = styled(motion.li)`
 
 `;
 
@@ -68,6 +68,10 @@ const ImageContainer = styled.div`
 
 
 const Categories = ({handleMenu}) => {
+    const { scrollYProgress } = useViewportScroll();
+    const scale = useTransform(scrollYProgress, [0, 1], [0.5, 1]);
+
+
     const { data, loading, error } = useFetch('https://pgm-claudeke.github.io/eindopdracht-food-kiosk/categories.json');
     const [selected, setSelected] = useState(null);
 
@@ -81,8 +85,8 @@ const Categories = ({handleMenu}) => {
             data.map(data => {
             const image = require('../assets/images/categories/' + data.image)
             return(
-            <CategoryItem onClick={() => setSelected(data.name)} key={data.name}>
-                <CategoryBtn isActive={selected === data.name} onClick={handleMenu} value={data.name}> 
+            <CategoryItem onClick={() => setSelected(data.id)} key={data.name}>
+                <CategoryBtn isActive={selected === data.id} onClick={handleMenu} value={data.name}> 
                     <CategoryContainer>
                         <ImageContainer>
                             <CategoryImage src={image}/>

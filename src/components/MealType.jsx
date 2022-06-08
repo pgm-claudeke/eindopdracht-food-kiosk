@@ -4,10 +4,12 @@ import { colors, fontsWeights, radius } from '../constants/styles';
 import Meal from './Meal';
 import { CgClose } from 'react-icons/cg';
 import ButtonClose from './ButtonClose';
+import { motion } from 'framer-motion';
+import { containerMotion, boxMotion } from '../constants/animations';
 
-const MealTypeContainer = styled.div`
+const MealTypeContainer = styled(motion.div)`
     backdrop-filter: blur(12px)  grayscale(15%);
-    height: 69vh;
+    height: 70.5vh;
     width: 100%;
 
     position: fixed;
@@ -19,7 +21,7 @@ const MealTypeContainer = styled.div`
     align-items: center;
 `;
 
-const MealTypeBox = styled.div`
+const MealTypeBox = styled(motion.div)`
     min-height: 20rem;
     min-width: 20rem;
     border-radius: ${radius.main};
@@ -51,8 +53,8 @@ const TypesList = styled.ul`
 
 const MealType = ({handleClose, data, mealName, handleFunction}) => {
   return (
-    <MealTypeContainer>
-        <MealTypeBox>
+    <MealTypeContainer variants={containerMotion} initial="hidden" animate="show">
+        <MealTypeBox variants={boxMotion} initial="hidden" animate="show">
             <ButtonClose handleClose={handleClose}/>
             <MealName>{mealName}</MealName>
             <TypesList>

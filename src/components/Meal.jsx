@@ -8,8 +8,10 @@ const MealContainer = styled.li`
 `;
 
 const MealBtn = styled.button`
-    background-color: transparent;
-    border: none; 
+    background-color: ${props => props.isActive ? colors.secondary : 'transparent'};
+    border: none;
+    border-radius: ${radius.main};
+    padding: 1rem;
 
     color: ${colors.base};
     font-size: 2rem;

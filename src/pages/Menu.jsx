@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import styled from "styled-components";
 import {
   Categories,
@@ -11,6 +11,7 @@ import {
 import useFetch from "../hooks/fetch";
 import ROUTES from "../constants/routes";
 import { useNavigate } from "react-router-dom";
+import { ShoppingCartContext } from "../App";
 
 const MenuContainer = styled.div`
   display: flex;
@@ -22,6 +23,8 @@ const MenuContainer = styled.div`
 `;
 
 const Menu = ({ order }) => {
+  const [cart, setCart] = useContext(ShoppingCartContext);
+  
   const [category, setCategory] = useState(null);
   const [filter, setFilter] = useState(null);
 
@@ -81,7 +84,7 @@ const Menu = ({ order }) => {
     <>
       <Header />
       <MenuContainer>
-        <Categories handleMenu={handleMenuList}/>
+        <Categories handleMenu={handleMenuList}/> 
         {category && (
         <Meals
           key={filter}
@@ -101,7 +104,7 @@ const Menu = ({ order }) => {
       </MenuContainer>
       <CurrentOrder/>
       {options && (
-          <MealOptions data={options} handleClose={handleCloseOptions}/>
+          <MealOptions data={options} handleClose={handleCloseOptions} key={options}/>
       )
       }
     </>

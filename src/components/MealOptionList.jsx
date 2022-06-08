@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 import { colors, fontsWeights } from '../constants/styles';
 import Meal from './Meal';
@@ -29,6 +29,8 @@ const List = styled.ul`
 const MealOptionList = ({title, filter}) => {
     const {data} = useFetch('https://pgm-claudeke.github.io/eindopdracht-food-kiosk/meals.json');
     const  optionsData = data.filter(data => data.category === filter);
+    const [selected, setSelected] = useState(null)
+    console.log(selected)
   return (
     <OptionContainer>
         <OptionTitle>{title}</OptionTitle>
@@ -38,7 +40,7 @@ const MealOptionList = ({title, filter}) => {
                     const image = require(`../assets/images/meals/${option.image}`);
 
                     return(
-                    <Meal key={option.id} scale="14rem" name={option.label} id={option.id} image={image}/>
+                    <Meal handleFunction={() => setSelected(data.id)} isActive={selected === data.id} key={option.id} scale="14rem" name={option.label} id={option.id} image={image}/>
                     )
                 })
             }
