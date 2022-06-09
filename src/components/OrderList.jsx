@@ -78,11 +78,11 @@ const OrderList = ({option}) => {
 
     const deleteMeal = (e) => {
         console.log(e.target.value)
-        const cartData = Object.values(cart);
-        console.log(cartData)
-
-        const newCart = cartData.find(cart => cart.orderId !== e.target.value)
-        setCart([newCart])
+        //const newCart = Object.values(cart).filter(cart => cart.orderId !== e.target.value);
+        delete cart[e.target.value];
+        const newCart = {...cart};
+        setCart(newCart);
+        console.log(newCart)
     }
 
   return (

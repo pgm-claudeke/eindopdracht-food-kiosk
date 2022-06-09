@@ -74,6 +74,7 @@ const AmountCounter = ({color, defaultAmount = 1, meal, saveOnChange = true, han
         setCount(newCount);
         if (saveOnChange) {            
             setCart({
+            ...cart,
             [mealData.orderId]: {
                 ...mealData,
                 amount: newCount
@@ -102,12 +103,13 @@ const AmountCounter = ({color, defaultAmount = 1, meal, saveOnChange = true, han
 
 
     const handleSave = () => {
+        const id = uuid()
         handleModals()
         console.log(cart)
         setCart({
             ...cart,
-            [uuid()]: {
-                orderId: uuid(),
+            [id]: {
+                orderId: id,
                 id: mealData.id,
                 name: mealData.name,
                 price: mealData.price,

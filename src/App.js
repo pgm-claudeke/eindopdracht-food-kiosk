@@ -10,13 +10,16 @@ export const CurrentOptions = createContext({});
 
 const App = () => {
 
-  const [cart, setCart] = useState({});
+  const lS = JSON.parse(localStorage.getItem('cart'));
+  const [cart, setCart] = useState({...lS});
   const [selectedOptions, setSelectedOptions] = useState([]);
 
   console.log('options = ' + Object.values(selectedOptions));
-  console.log('cart = ' + Object.values(cart))
+  console.log(cart)
+
   useEffect(() => {
     //save to local storage
+    localStorage.setItem('cart', JSON.stringify(cart))
   }, [cart]);
 
   return (

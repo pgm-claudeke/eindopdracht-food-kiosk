@@ -13,6 +13,10 @@ const Btn = styled.button`
     color: ${colors.base};
 
     padding: 0 2rem;
+
+    > * {
+        pointer-events: none;
+    }
 `;
 
 const Button = ({children, btnColor, btnWidth, handleFunction, value}) => {
