@@ -60,6 +60,8 @@ const AmountCounter = ({color, defaultAmount = 1, meal}) => {
     //const selectedMeal = Object.values(cart).find(cart => cart.orderId === meal.orderId);
     const [count, setCount] = useState(meal ? meal.amount : defaultAmount);
     const [amountMeal, setAmountMeal] = useContext(CurrentCount);
+    
+    const mealData = meal;
 
     const  handleAdd = () => {
         setCount(count + 1)
@@ -74,8 +76,16 @@ const AmountCounter = ({color, defaultAmount = 1, meal}) => {
     };
 
     const setAmount = (e) => {
-        setAmountMeal({e})
+        setAmountMeal(e.target.value)
 
+        if (mealData) {
+            setCart({
+            [mealData.orderId]: {
+                amount: e.target.value
+            }
+            })
+        }
+        
     }
 
     setAmountMeal(count);

@@ -40,7 +40,10 @@ const MealOptionList = ({title, filter}) => {
         setSelected(e.target.id)
         setSelectedOption({
             ...selectedOption,
-            option: [e.target.value]
+            option: {
+                id: e.target.id,
+                name: e.target.value
+            }
         })
     }
 

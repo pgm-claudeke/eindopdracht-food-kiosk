@@ -23,6 +23,14 @@ const ListItem = styled.li`
     border-radius: 1.5rem;
 `;
 
+const OrderInfoContainer = styled.div`
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 2rem;
+
+    border-bottom: solid ${colors.primary} 2px;
+`;
+
 const OrderInfoBox = styled.div`
     color: ${colors.tertiare};
     font-size: 3rem;
@@ -31,14 +39,24 @@ const OrderInfoBox = styled.div`
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    
-    border-bottom: solid ${colors.primary} 2px;
 
     p {
         margin: 0;
         line-height: 2.2;
     }
 `;
+
+const OptionsList = styled.ul`
+    color: ${colors.tertiare};
+    font-size:  2.2 direm;
+    font-weight: ${fontsWeights.bold};
+
+    margin-left: 5rem;
+    list-style: inside;
+`;
+
+const OptionItem = styled.li`
+`
 
 const OrderInfo = styled.div`
     display: flex;
@@ -69,18 +87,25 @@ const OrderList = ({option}) => {
         {
             Object.values(cart).map(meal => {
 
-                const options = meal.options;
-                console.log(options)
+                const mealOptions = Object.values(meal.options);
+                console.log(mealOptions)
 
             return (
             <ListItem key={meal.orderId}>
-                <OrderInfoBox>
-                    <OrderInfo>
-                        <p>{meal.amount}x</p>
-                        <p>{meal.name}</p>
-                    </OrderInfo>
-                    <p>€ {meal.price}</p>
-                </OrderInfoBox>
+                <OrderInfoContainer>
+                    <OrderInfoBox>
+                        <OrderInfo>
+                            <p>{meal.amount}x</p>
+                            <p>{meal.name}</p>
+                        </OrderInfo>
+                        <p>€ {meal.price}</p>
+                    </OrderInfoBox>
+                    <OptionsList>
+                        {
+                            mealOptions.map(option => <OptionItem key={option.name}>{option.name}</OptionItem>)
+                        }
+                    </OptionsList>
+                </OrderInfoContainer>
                 { options &&
                     <OrderOptions>
                         <AmountCounter meal={meal}/>
