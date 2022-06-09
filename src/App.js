@@ -5,17 +5,14 @@ import ROUTES from "./constants/routes";
 import { DineOptions, Home, Menu, PayOptions, Order, ValidateOrder } from './pages';
 
 export const ShoppingCartContext = createContext();
-export const CurrentCount = createContext();
 export const CurrentOptions = createContext({});
 
 
 const App = () => {
 
   const [cart, setCart] = useState({});
-  const [count, setCount] = useState(null);
   const [selectedOptions, setSelectedOptions] = useState([]);
 
-  console.log('count = ' + count);
   console.log('options = ' + Object.values(selectedOptions));
   console.log('cart = ' + Object.values(cart))
   useEffect(() => {
@@ -24,7 +21,6 @@ const App = () => {
 
   return (
     <ShoppingCartContext.Provider value={[cart, setCart]}>
-    <CurrentCount.Provider value={[count, setCount]}>
     <CurrentOptions.Provider value={[selectedOptions, setSelectedOptions]}>
       <Routes>
           <Route path={ROUTES.HOME} element={<Home/>}></Route>
@@ -35,7 +31,6 @@ const App = () => {
           <Route path={ROUTES.PAY} element={<PayOptions/>}></Route>
       </Routes>
     </CurrentOptions.Provider>
-    </CurrentCount.Provider>
     </ShoppingCartContext.Provider>
   )
 }

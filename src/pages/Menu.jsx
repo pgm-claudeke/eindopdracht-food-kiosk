@@ -11,8 +11,8 @@ import {
 import useFetch from "../hooks/fetch";
 import ROUTES from "../constants/routes";
 import { useNavigate } from "react-router-dom";
-import { CurrentCount, CurrentOptions, ShoppingCartContext } from "../App";
-import { v4 as uuid } from 'uuid';
+import { CurrentOptions, ShoppingCartContext } from "../App";
+
 
 const MenuContainer = styled.div`
   display: flex;
@@ -23,11 +23,7 @@ const MenuContainer = styled.div`
   height: 70vh;
 `;
 
-const Menu = ({ order }) => {
-  const [cart, setCart] = useContext(ShoppingCartContext); 
-  const [amount] = useContext(CurrentCount);
-  const [selectedOptions] = useContext(CurrentOptions)
-
+const Menu = () => {
   const [category, setCategory] = useState(null);
   const [filter, setFilter] = useState(null);
 
@@ -75,23 +71,7 @@ const Menu = ({ order }) => {
       setOptions(null);
   }
 
-  const handleCart = (e) => {
-      if (amount === 0) {
-        console.log('cart will not be added')
-      } else {
-        setCart({
-            ...cart,
-            [uuid()]: {
-                orderId: uuid(),
-                id: options.id,
-                name: options.name,
-                price: (options.price * amount),
-                amount: amount,
-                options: selectedOptions
-            }
-        });
-      }
-    
+  const handleModals = (e) => {    
     setOptions(null);
     setTypes(null)
   }
@@ -120,7 +100,7 @@ const Menu = ({ order }) => {
       </MenuContainer>
       <CurrentOrder/>
       {options && (
-          <MealOptions data={options} handleClose={handleCloseOptions} key={options} handleCart={handleCart} mealInfo={options} />
+          <MealOptions data={options} handleClose={handleCloseOptions} key={options} handleModals={handleModals} mealInfo={options} />
       )
       }
     </>

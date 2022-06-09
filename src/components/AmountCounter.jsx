@@ -1,14 +1,22 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import styled from 'styled-components';
 import { FaMinus, FaPlus } from 'react-icons/fa';
 import { colors, fontsWeights, radius } from '../constants/styles';
 import { CurrentCount, ShoppingCartContext } from '../App';
+import Button from './Button';
+import { v4 as uuid } from 'uuid';
 
 const Container = styled.div`
     display: flex;
     flex-direction: row;
 
+    gap: 3rem;
 `;
+
+const Counter = styled.div`
+    display: flex;
+    flex-direction: row;
+`
 
 const BtnAdd = styled.button`
     font-size: 2.5rem;
@@ -55,47 +63,70 @@ const Amount = styled.input`
     text-align: center;
 `;
 
-const AmountCounter = ({color, defaultAmount = 1, meal}) => {
+const AmountCounter = ({color, defaultAmount = 1, meal, saveOnChange = true, handleModals}) => {
     const [cart, setCart] = useContext(ShoppingCartContext);
     //const selectedMeal = Object.values(cart).find(cart => cart.orderId === meal.orderId);
-    const [count, setCount] = useState(meal ? meal.amount : defaultAmount);
-    const [amountMeal, setAmountMeal] = useContext(CurrentCount);
+    const [count, setCount] = useState(meal && meal.amount ? meal.amount : defaultAmount);
     
     const mealData = meal;
 
+    const changeCount = (newCount) => {
+        setCount(newCount);
+        if (saveOnChange) {            
+            setCart({
+            [mealData.orderId]: {
+                ...mealData,
+                amount: newCount
+            }
+            })
+        } 
+    }
+    
+
     const  handleAdd = () => {
-        setCount(count + 1)
+        changeCount(count + 1)
     };
 
     const  handleSubtract = (e) => {
-        setCount(count - 1)
+        changeCount(count - 1)
 
         if (count <= 1) {
-            setCount(0);
+            changeCount(0);
         }
     };
 
-    const setAmount = (e) => {
-        setAmountMeal(e.target.value)
-
-        if (mealData) {
-            setCart({
-            [mealData.orderId]: {
-                amount: e.target.value
-            }
-            })
-        }
-        
+    const handleChange = (e) => {
+        changeCount(parseInt(e.target.value));
     }
 
-    setAmountMeal(count);
+
+
+    const handleSave = () => {
+        handleModals()
+        console.log(cart)
+        setCart({
+            ...cart,
+            [uuid()]: {
+                orderId: uuid(),
+                id: mealData.id,
+                name: mealData.name,
+                price: mealData.price,
+                amount: count
+            }
+        });
+    }
 
   return (
       
     <Container>
-        <BtnSubtract style={{backgroundColor: color}} onClick={handleSubtract}><FaMinus/></BtnSubtract>
-        <Amount type="number" value={count} style={{outline: color}} onChange={setAmount}/>
-        <BtnAdd style={{backgroundColor: color}} onClick={handleAdd}><FaPlus/></BtnAdd>
+        <Counter>
+            <BtnSubtract style={{backgroundColor: color}} onClick={handleSubtract}><FaMinus/></BtnSubtract>
+            <Amount type="number" value={count} style={{outline: color}} onChange={handleChange}/>
+            <BtnAdd style={{backgroundColor: color}} onClick={handleAdd}><FaPlus/></BtnAdd>
+        </Counter>
+        {
+            !saveOnChange && <Button btnWidth='18rem' btnColor={colors.secondary} handleFunction={handleSave}>Add</Button>
+        }
     </Container>
   )
 }

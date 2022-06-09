@@ -7,7 +7,7 @@ import MealDrinks from './MealDrinks';
 import MealSauces from './MealSauces';
 import MealSides from './MealSides';
 import ButtonClose from './ButtonClose';
-import { CurrentCount, ShoppingCartContext } from '../App';
+import { ShoppingCartContext } from '../App';
 import { motion } from 'framer-motion';
 import { containerMotion } from '../constants/animations';
 import { v4 as uuid } from 'uuid';
@@ -120,7 +120,7 @@ const boxMotion = {
 
 
 
-const MealOptions = ({data, handleClose, handleCart}) => {
+const MealOptions = ({data, handleClose, handleModals}) => {
     const [cart, setCart] = useContext(ShoppingCartContext); 
 
     const mealData = data;
@@ -166,8 +166,7 @@ const MealOptions = ({data, handleClose, handleCart}) => {
                 </OptionContainer>
             }
             <ButtonContainer>
-                <AmountCounter color={colors.secondary}/>
-                <Button btnColor={colors.secondary} btnWidth={btnwidth} handleFunction={handleCart}>Add</Button>
+                <AmountCounter saveOnChange={false} color={colors.secondary} meal={mealData} handleModals={handleModals}/>
             </ButtonContainer>
         </MealOptionBox>
     </MealOptionContainer>

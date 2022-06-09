@@ -80,16 +80,16 @@ const OrderList = ({option}) => {
         console.log(e.target.value)
         const cartData = Object.values(cart);
         console.log(cartData)
+
+        const newCart = cartData.find(cart => cart.orderId !== e.target.value)
+        setCart([newCart])
     }
 
   return (
     <ListContainer>
         {
             Object.values(cart).map(meal => {
-
-                const mealOptions = Object.values(meal.options);
-                console.log(mealOptions)
-
+            
             return (
             <ListItem key={meal.orderId}>
                 <OrderInfoContainer>
@@ -98,11 +98,11 @@ const OrderList = ({option}) => {
                             <p>{meal.amount}x</p>
                             <p>{meal.name}</p>
                         </OrderInfo>
-                        <p>€ {meal.price}</p>
+                        <p>€ {(meal.price * meal.amount).toFixed(2)}</p>
                     </OrderInfoBox>
                     <OptionsList>
                         {
-                            mealOptions.map(option => <OptionItem key={option.name}>{option.name}</OptionItem>)
+                            meal && meal.options && Object.values(meal.options).map(option => <OptionItem key={option.name}>{option.name}</OptionItem>)
                         }
                     </OptionsList>
                 </OrderInfoContainer>
