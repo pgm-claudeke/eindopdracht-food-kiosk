@@ -5,8 +5,8 @@ import ROUTES from '../constants/routes';
 import posterOne from '../assets/images/posters/Poster_01.png';
 import logo from '../assets/images/logos/Logo.jpg';
 import { Link } from 'react-router-dom';
-
-import useFetch from '../hooks/fetch';
+import { motion } from 'framer-motion';
+import { pageSwitch } from '../constants/animations';
 
 
 
@@ -48,15 +48,15 @@ const PosterImage = styled.img`
 const Home = () => {
 
   return (
-    <>
-        <HomeContainer  to={ROUTES.DINE}>
-            <ImgBox>
-                <Logo src={logo}/>
-                <PosterImage src={posterOne}/>
-            </ImgBox>
-            <TextBox>Tab the screen to order</TextBox>
-        </HomeContainer>
-    </>
+    <motion.div>
+    <HomeContainer to={ROUTES.DINE}>
+        <ImgBox>
+            <Logo src={logo}/>
+            <PosterImage src={posterOne}/>
+        </ImgBox>
+        <TextBox>Tab the screen to order</TextBox>
+    </HomeContainer>
+    </motion.div>
   )
 }
 

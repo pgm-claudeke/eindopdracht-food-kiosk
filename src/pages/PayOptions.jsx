@@ -7,12 +7,12 @@ const LINKS = [
     {
         label: 'Payconiq',
         icon: <FaQrcode/>,
-        route: ROUTES.MENU
+        route: ROUTES.CODEPAY
     },
     {
         label: 'Bancontact',
         icon: <FaCreditCard />,
-        route: ROUTES.MENU
+        route: ROUTES.CARDPAY
     },
 ]
 

@@ -102,8 +102,6 @@ const AmountCounter = ({color, defaultAmount = 1, meal, saveOnChange = true, han
         changeCount(parseInt(e.target.value));
     }
 
-
-
     const handleSave = () => {
         const id = uuid()
         handleModals()

@@ -12,6 +12,7 @@ import MealOptions from "./MealOptions";
 import MealType from "./MealType";
 import Button from "./Button";
 import Loading from "./Loading";
+import Payment from "./Payment";
 
 export {
   Header, 

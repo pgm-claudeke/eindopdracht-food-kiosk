@@ -12,3 +12,22 @@ export const containerMotion = {
       }
   }
 }
+
+export const pageSwitch = {
+  hidden: {
+      y: '100vh'
+  },
+  show: {
+      y: 0,
+      transition: {
+        type: 'tween',
+        duration: 0.5,
+      }
+  },
+  exit: {
+    y: '-100vh',
+    transition: {
+      delay: 0.5
+    }
+  }
+}

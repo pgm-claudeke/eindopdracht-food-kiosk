@@ -4,6 +4,8 @@ import { colors } from '../constants/styles';
 import logoInverted from '../assets/images/logos/Logo_inverted.png';
 import commercialOne from '../assets/images/commercercials/commercial_01.jpeg';
 import { motion } from "framer-motion";
+import { Link } from 'react-router-dom';
+import ROUTES from '../constants/routes';
 
 const HeaderContainer = styled.header`
     background-color: ${colors.primary};
@@ -15,7 +17,7 @@ const HeaderContainer = styled.header`
     justify-content: space-between;
 `;
 
-const LogoContainer = styled.div`
+const LogoContainer = styled(Link)`
     color: #fff;
     font-size: 5rem;
     font-weight: 900;
@@ -67,11 +69,11 @@ const commerceMotion = {
 const Header = () => {
   return (
     <HeaderContainer>
-        <LogoContainer>
+        <LogoContainer to={ROUTES.HOME}>
             <LogoImage src={logoInverted}/>
         </LogoContainer>
         
-        <CommercialContainer variants={commerceMotion} initial="hidden" animate="show">
+        <CommercialContainer>
             <CommercialImg src={commercialOne}/>
         </CommercialContainer>
     </HeaderContainer>

@@ -9,8 +9,9 @@ const QuestionContainer = styled.div`
     align-items: center;
     gap: 2.2rem;
 
+    text-align: center;
     color: ${colors.base};
-    font-size: 5.6rem;
+    font-size: 5rem;
     font-weight: ${fontsWeights.bold};
 
     p {

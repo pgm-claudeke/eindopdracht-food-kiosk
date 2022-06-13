@@ -4,7 +4,7 @@ import { colors } from '../constants/styles';
 import { FaChevronRight } from 'react-icons/fa';
 import Button from './Button';
 import ButtonLink from './ButtonLink';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import ROUTES from '../constants/routes';
 import { ShoppingCartContext } from '../App';
 
@@ -77,7 +77,14 @@ const CurrentOrder = () => {
     const [cart] = useContext(ShoppingCartContext);
 
     const currentAmount = Object.values(cart).length;
-    const currentTotal = Object.values(cart).reduce((sum, {price}) => sum  + price, 0)
+    const currentTotal = Object.values(cart).reduce((sum, {price}) => sum  + price, 0);
+
+    const navigate = useNavigate();
+
+    const handleCancelation = () => {
+        navigate('/');
+        localStorage.removeItem("cart");
+    };
 
   return (
     <OrderContainer>
@@ -85,7 +92,7 @@ const CurrentOrder = () => {
             <p>Your order</p>
         </OrderTitle>
         <OrderBox>
-            <p>Total: € {currentTotal}</p>
+            <p>Total: € {currentTotal.toFixed(2)}</p>
             <p>Amount: {currentAmount}</p>
             <OrderShowBox to={ROUTES.ORDER}>
                 Show order
@@ -93,7 +100,7 @@ const CurrentOrder = () => {
             </OrderShowBox>
         </OrderBox>
         <BtnBox>
-            <Button btnColor={colors.secondary} btnWidth={btnWidth}>Cancel order</Button>
+            <Button handleFunction={handleCancelation} btnColor={colors.secondary} btnWidth={btnWidth}>Cancel order</Button>
             <ButtonLink link={ROUTES.VALIDATE} btnColor={colors.primary} btnWidth={btnWidth}>Validate order</ButtonLink>
         </BtnBox>
     </OrderContainer>

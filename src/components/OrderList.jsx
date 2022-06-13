@@ -102,7 +102,11 @@ const OrderList = ({option}) => {
                     </OrderInfoBox>
                     <OptionsList>
                         {
-                            meal && meal.options && Object.values(meal.options).map(option => <OptionItem key={option}>{option}</OptionItem>)
+                            meal && meal.options && Object.values(meal.options).map(option => {
+                                if (option) {
+                                    return <OptionItem key={option}>{option}</OptionItem>
+                                }
+                            })
                         }
                     </OptionsList>
                 </OrderInfoContainer>

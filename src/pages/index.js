@@ -4,6 +4,10 @@ import Menu from "./Menu";
 import PayOptions from "./PayOptions";
 import Order from "./Order"
 import ValidateOrder from "./ValidateOrder";
+import Presence from "./Presence";
+import CardPayment from "./CardPayment";
+import CodePayment from "./CodePayment";
+import Success from "./Success";
 
 export {
   Home,
@@ -11,5 +15,9 @@ export {
   Menu,
   PayOptions,
   Order,
-  ValidateOrder
+  ValidateOrder,
+  Presence,
+  CardPayment,
+  CodePayment,
+  Success
 }

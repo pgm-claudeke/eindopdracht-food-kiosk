@@ -13,6 +13,8 @@ import useFetch from "../hooks/fetch";
 import ROUTES from "../constants/routes";
 import { useNavigate } from "react-router-dom";
 import { CurrentOptions, ShoppingCartContext } from "../App";
+import { pageSwitch } from "../constants/animations";
+import { motion } from "framer-motion";
 
 
 const MenuContainer = styled.div`
@@ -78,7 +80,7 @@ const Menu = () => {
   }
 
   return (
-    <>
+    <motion.div>
       <Header />
       <MenuContainer>
         <Categories handleMenu={handleMenuList}/> 
@@ -105,7 +107,7 @@ const Menu = () => {
       )
       }
        
-    </>
+    </motion.div>
   );
 };
 

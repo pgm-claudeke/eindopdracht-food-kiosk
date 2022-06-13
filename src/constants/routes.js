@@ -3,9 +3,13 @@ const ROUTES = Object.freeze({
   DINE: '/dine-options',
   MENU: '/menu',
   PAY: '/pay-options',
+  CARDPAY: '/card-payment',
+  CODEPAY: '/code-payment',
   ORDER: '/order',
   VALIDATE: '/validate',
-  MEAL: '/meal-options'
+  MEAL: '/meal-options',
+  PRESENCE: '/presence-validation',
+  SUCCESS: '/success'
 });
 
 export default ROUTES

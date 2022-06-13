@@ -7,7 +7,7 @@ import { colors, fontsWeights, radius } from '../constants/styles';
 import useFetch from '../hooks/fetch';
 import logo from '../assets/images/logos/Logo.jpg';
 import Meal from './Meal';
-import { motion } from "framer-motion"
+import { AnimatePresence, motion } from "framer-motion"
 
 const MealsContainer = styled(motion.div)`
     overflow: hidden;
@@ -45,16 +45,20 @@ const sideMotion = {
             ease: "easeOut",
             duration: 0.4
         }
+    },
+    exit: {
+        x: '100rem'
     }
 }
 
-const Meals = ({category, filter, handleFunction, handleSelection}) => {
+const Meals = ({category, filter, handleFunction}) => {
     const {data} = useFetch('https://pgm-claudeke.github.io/eindopdracht-food-kiosk/meals.json');
 
     const filteredData = data.filter(data => data.category === filter);
 
   return (
-    <MealsContainer variants={sideMotion} initial="hidden" animate="show">
+    <AnimatePresence>
+    <MealsContainer variants={sideMotion} initial="hidden" animate="show" exit="exit">
         <MealsTitle>{category}</MealsTitle>
             <MealsList>
                 {
@@ -72,6 +76,7 @@ const Meals = ({category, filter, handleFunction, handleSelection}) => {
                 }
             </MealsList>
     </MealsContainer>
+    </AnimatePresence>
   )
 }
 
