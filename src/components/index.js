@@ -11,6 +11,7 @@ import OrderTotal from "./OrderTotal";
 import MealOptions from "./MealOptions";
 import MealType from "./MealType";
 import Button from "./Button";
+import Loading from "./Loading";
 
 export {
   Header, 
@@ -25,5 +26,6 @@ export {
   OrderTotal,
   MealOptions, 
   MealType,
-  Button
+  Button,
+  Loading
 }

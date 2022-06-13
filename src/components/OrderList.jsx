@@ -48,15 +48,15 @@ const OrderInfoBox = styled.div`
 
 const OptionsList = styled.ul`
     color: ${colors.tertiare};
-    font-size:  2.2 direm;
-    font-weight: ${fontsWeights.bold};
+    font-size: 2.2rem;
+    font-weight: ${fontsWeights.regular};
 
     margin-left: 5rem;
     list-style: inside;
 `;
 
 const OptionItem = styled.li`
-`
+`;
 
 const OrderInfo = styled.div`
     display: flex;
@@ -102,7 +102,7 @@ const OrderList = ({option}) => {
                     </OrderInfoBox>
                     <OptionsList>
                         {
-                            meal && meal.options && Object.values(meal.options).map(option => <OptionItem key={option.name}>{option.name}</OptionItem>)
+                            meal && meal.options && Object.values(meal.options).map(option => <OptionItem key={option}>{option}</OptionItem>)
                         }
                     </OptionsList>
                 </OrderInfoContainer>

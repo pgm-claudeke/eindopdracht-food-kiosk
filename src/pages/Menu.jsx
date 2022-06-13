@@ -6,7 +6,8 @@ import {
   CurrentOrder,
   Meals,
   MealType,
-  MealOptions
+  MealOptions,
+  Loading
 } from "../components";
 import useFetch from "../hooks/fetch";
 import ROUTES from "../constants/routes";
@@ -36,7 +37,7 @@ const Menu = () => {
   const { data, loading, error } = useFetch(
     "https://pgm-claudeke.github.io/eindopdracht-food-kiosk/meals.json"
   );
-  if (loading) return <h1>LOADING...</h1>;
+  if (loading) return <Loading/>;
   if (error) console.log(error); // loading en error veranderen
 
   const handleMenuList = (e) => {
@@ -103,6 +104,7 @@ const Menu = () => {
           <MealOptions data={options} handleClose={handleCloseOptions} key={options} handleModals={handleModals} mealInfo={options} />
       )
       }
+       
     </>
   );
 };

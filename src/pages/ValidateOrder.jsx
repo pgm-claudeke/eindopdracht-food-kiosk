@@ -33,7 +33,7 @@ const ValidateOrder = () => {
             <OrderQuestion question='Is your order correct?'></OrderQuestion>
             <OrderList option={false}/>
         </OrderBox>
-        <OrderTotal nav={ROUTES.VALIDATE} navName="Pay"/>
+        <OrderTotal nav={ROUTES.PAY} navName="Pay"/>
     </OrderContainer>
   )
 }

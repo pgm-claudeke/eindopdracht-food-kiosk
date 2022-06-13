@@ -5,6 +5,7 @@ import { colors, fontsWeights, radius } from '../constants/styles';
 import { CurrentCount, ShoppingCartContext } from '../App';
 import Button from './Button';
 import { v4 as uuid } from 'uuid';
+import { CgOptions } from 'react-icons/cg';
 
 const Container = styled.div`
     display: flex;
@@ -63,7 +64,7 @@ const Amount = styled.input`
     text-align: center;
 `;
 
-const AmountCounter = ({color, defaultAmount = 1, meal, saveOnChange = true, handleModals}) => {
+const AmountCounter = ({color, defaultAmount = 1, meal, saveOnChange = true, handleModals, drink, side}) => {
     const [cart, setCart] = useContext(ShoppingCartContext);
     //const selectedMeal = Object.values(cart).find(cart => cart.orderId === meal.orderId);
     const [count, setCount] = useState(meal && meal.amount ? meal.amount : defaultAmount);
@@ -77,12 +78,13 @@ const AmountCounter = ({color, defaultAmount = 1, meal, saveOnChange = true, han
             ...cart,
             [mealData.orderId]: {
                 ...mealData,
-                amount: newCount
+                amount: newCount, 
             }
             })
         } 
     }
     
+    console.log(cart)
 
     const  handleAdd = () => {
         changeCount(count + 1)
@@ -113,7 +115,8 @@ const AmountCounter = ({color, defaultAmount = 1, meal, saveOnChange = true, han
                 id: mealData.id,
                 name: mealData.name,
                 price: mealData.price,
-                amount: count
+                amount: count,
+                options: [drink, side]
             }
         });
     }

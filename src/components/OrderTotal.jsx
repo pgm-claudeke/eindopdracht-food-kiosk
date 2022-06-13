@@ -1,4 +1,5 @@
 import React, { useContext } from 'react';
+import { useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
 import { ShoppingCartContext } from '../App';
 import ROUTES from '../constants/routes';
@@ -34,7 +35,7 @@ const btnWidth = '49%';
 
 const OrderTotal = ({nav, navName}) => {
     const [cart] = useContext(ShoppingCartContext)
-    const currentTotal = Object.values(cart).reduce((sum, {price}) => sum  + price, 0)
+    const currentTotal = Object.values(cart).reduce((sum, {amount, price}) => sum  + (amount * price), 0).toFixed(2)
   return (
     <Container>
         <p>Total: € {currentTotal}</p>

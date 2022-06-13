@@ -1,4 +1,4 @@
-import React, { createContext, useContext } from 'react';
+import React, { createContext, useContext, useState } from 'react';
 import styled from 'styled-components';
 import { colors, fontsWeights, radius } from '../constants/styles';
 import AmountCounter from './AmountCounter';
@@ -7,7 +7,7 @@ import MealDrinks from './MealDrinks';
 import MealSauces from './MealSauces';
 import MealSides from './MealSides';
 import ButtonClose from './ButtonClose';
-import { ShoppingCartContext } from '../App';
+import { CurrentOptions, ShoppingCartContext } from '../App';
 import { motion } from 'framer-motion';
 import { containerMotion } from '../constants/animations';
 import { v4 as uuid } from 'uuid';
@@ -122,12 +122,36 @@ const boxMotion = {
 
 const MealOptions = ({data, handleClose, handleModals}) => {
     const [cart, setCart] = useContext(ShoppingCartContext); 
+    const [selectedDrink, setSelectedDrink] = useState(null);
+    const [activeDrink, setActiveDrink] = useState(null)
+    const [selectedSide, setSelectedSide] = useState(null);
+    const [activeSide, setActiveSide] = useState(null)
+    const [selectedSauce, setSelectedSauce] = useState(null);
+    const [activeSauce, setActiveSauce] = useState(null);
 
     const mealData = data;
     const options = mealData.options; 
     
 
     const image = require(`../assets/images/meals/${mealData.image}`);
+
+    const handleSideChoice =  (e) => {
+        setActiveSide(e.target.id);
+        setSelectedSide(e.target.value);
+    }
+
+    const handleSauceChoice = (e) => {
+        setActiveSauce(e.target.id);
+        setSelectedSauce(e.target.value);
+    }
+
+    const handleDrinkChoice = (e) => {
+        setActiveDrink(e.target.id);
+        setSelectedDrink(e.target.value);
+    }
+
+    console.log(selectedSide);
+    console.log(selectedDrink);
 
   return (
     <MealOptionContainer variants={containerMotion} initial="hidden" animate="show">
@@ -147,13 +171,13 @@ const MealOptions = ({data, handleClose, handleModals}) => {
                 <OptionContainer>
                 {
                     options.side &&
-                    <MealSides/>
+                    <MealSides handleChoice={handleSideChoice} handleActive={activeSide}/>
                 }
                 {
                     options.sauce !== 0 ?
                     [...Array(options.sauce)].map((sauce, index) => {
                         return(
-                            <MealSauces key={index} title={`Choose sauce ${index + 1}`}/>
+                            <MealSauces key={index} title={`Choose sauce ${index + 1}`} handleChoice={handleSauceChoice} handleActive={activeSauce}/>
                         )
                     })
                     :
@@ -161,12 +185,12 @@ const MealOptions = ({data, handleClose, handleModals}) => {
                 }
                 {
                     options.drink &&
-                    <MealDrinks/>
+                    <MealDrinks handleChoice={handleDrinkChoice} handleActive={activeDrink}/>
                 }
                 </OptionContainer>
             }
             <ButtonContainer>
-                <AmountCounter saveOnChange={false} color={colors.secondary} meal={mealData} handleModals={handleModals}/>
+                <AmountCounter saveOnChange={false} color={colors.secondary} meal={mealData} handleModals={handleModals} drink={selectedDrink} side={selectedSide}/>
             </ButtonContainer>
         </MealOptionBox>
     </MealOptionContainer>
