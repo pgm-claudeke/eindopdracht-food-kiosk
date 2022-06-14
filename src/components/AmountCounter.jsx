@@ -2,7 +2,7 @@ import React, { useContext, useEffect, useState } from 'react';
 import styled from 'styled-components';
 import { FaMinus, FaPlus } from 'react-icons/fa';
 import { colors, fontsWeights, radius } from '../constants/styles';
-import { CurrentCount, ShoppingCartContext } from '../App';
+import { CurrentCount, MealSauceContext, ShoppingCartContext } from '../App';
 import Button from './Button';
 import { v4 as uuid } from 'uuid';
 import { CgOptions } from 'react-icons/cg';
@@ -66,6 +66,7 @@ const Amount = styled.input`
 
 const AmountCounter = ({color, defaultAmount = 1, meal, saveOnChange = true, handleModals, drink, side}) => {
     const [cart, setCart] = useContext(ShoppingCartContext);
+    const [sauces, setSauces] = useContext(MealSauceContext)
     //const selectedMeal = Object.values(cart).find(cart => cart.orderId === meal.orderId);
     const [count, setCount] = useState(meal && meal.amount ? meal.amount : defaultAmount);
     
@@ -112,10 +113,12 @@ const AmountCounter = ({color, defaultAmount = 1, meal, saveOnChange = true, han
                 name: mealData.name,
                 price: mealData.price,
                 amount: count,
-                options: [drink, side]
+                options: [drink, side, ...Object.values(sauces)]
             }
         });
+        setSauces(null);
     }
+
 
   return (
       

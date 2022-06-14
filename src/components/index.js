@@ -12,7 +12,7 @@ import MealOptions from "./MealOptions";
 import MealType from "./MealType";
 import Button from "./Button";
 import Loading from "./Loading";
-import Payment from "./Payment";
+import Error from "./Error";
 
 export {
   Header, 
@@ -28,5 +28,6 @@ export {
   MealOptions, 
   MealType,
   Button,
-  Loading
+  Loading,
+  Error
 }

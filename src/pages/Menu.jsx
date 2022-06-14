@@ -8,6 +8,7 @@ import {
   MealType,
   MealOptions,
   Loading,
+  Error,
 } from "../components";
 import useFetch from "../hooks/fetch";
 import ROUTES from "../constants/routes";
@@ -51,18 +52,18 @@ const Menu = () => {
   );
 
   if (loading) return <Loading />;
-  if (error) console.log(error); // loading en error veranderen
+  if (error) return <Error/>
 
   const handleMenuList = (e) => {
     setCategory(e.target.value);
     setFilter(e.target.value.toLowerCase());
   };
 
-  const handleMealTypes = (e) => {
-    const selectedMeal = data.find((data) => data.id === e.target.id);
+  const handleMealTypes = (e, id) => {
+    const selectedMeal = data.find((data) => data.id === id);
     setTypes(selectedMeal.types);
     setSelectedMeal(selectedMeal.name);
-    setSelectedMealId(e.target.id);
+    setSelectedMealId(id);
 
     if (!selectedMeal.types) {
       setOptions(selectedMeal);
@@ -73,10 +74,10 @@ const Menu = () => {
     setTypes(null);
   };
 
-  const handleRedirect = (e) => {
+  const handleRedirect = (e, id) => {
     const selectedMeal = data.find((data) => data.id === selectedMealId);
     const mealTypes = selectedMeal.types;
-    const selectedType = mealTypes.find((type) => type.id === e.target.id);
+    const selectedType = mealTypes.find((type) => type.id === id);
 
     setOptions(selectedType);
   };

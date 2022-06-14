@@ -7,7 +7,7 @@ import MealDrinks from './MealDrinks';
 import MealSauces from './MealSauces';
 import MealSides from './MealSides';
 import ButtonClose from './ButtonClose';
-import { CurrentOptions, ShoppingCartContext } from '../App';
+import { CurrentOptions, MealSauceContext, ShoppingCartContext } from '../App';
 import { motion } from 'framer-motion';
 import { containerMotion } from '../constants/animations';
 import { v4 as uuid } from 'uuid';
@@ -120,14 +120,13 @@ const boxMotion = {
 
 const MealOptions = ({data, handleClose, handleModals}) => {
     const [cart, setCart] = useContext(ShoppingCartContext); 
+    const [sauces, setSauces] = useContext(MealSauceContext);
     const [selectedDrink, setSelectedDrink] = useState(null);
     const [selectedSide, setSelectedSide] = useState(null);
     const [selectedSauce, setSelectedSauce] = useState(null);
 
-
     const mealData = data;
     const options = mealData.options; 
-    
 
     const image = require(`../assets/images/meals/${mealData.image}`);
 
@@ -137,6 +136,7 @@ const MealOptions = ({data, handleClose, handleModals}) => {
 
     const handleSauceChoice = (e) => {
         setSelectedSauce(e.target.value);
+        console.log(`selected: ${e.target.value}`)
     }
 
     const handleDrinkChoice = (e) => {

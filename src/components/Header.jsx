@@ -4,7 +4,7 @@ import { colors } from '../constants/styles';
 import logoInverted from '../assets/images/logos/Logo_inverted.png';
 import commercialOne from '../assets/images/commercercials/commercial_01.jpeg';
 import { motion } from "framer-motion";
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import ROUTES from '../constants/routes';
 
 const HeaderContainer = styled.header`
@@ -17,7 +17,9 @@ const HeaderContainer = styled.header`
     justify-content: space-between;
 `;
 
-const LogoContainer = styled(Link)`
+const LogoContainer = styled(motion.button)`
+    background-color: transparent;
+    border: none;
     color: #fff;
     font-size: 5rem;
     font-weight: 900;
@@ -67,9 +69,15 @@ const commerceMotion = {
 }
 
 const Header = () => {
+    const navigate = useNavigate();
+
+    const handleToHome = () => {
+        navigate(ROUTES.HOME);
+        localStorage.removeItem("cart");
+    }
   return (
     <HeaderContainer>
-        <LogoContainer to={ROUTES.HOME}>
+        <LogoContainer onClick={handleToHome}>
             <LogoImage src={logoInverted}/>
         </LogoContainer>
         

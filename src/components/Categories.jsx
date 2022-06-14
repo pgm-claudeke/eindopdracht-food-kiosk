@@ -4,6 +4,7 @@ import { colors, fontsWeights, radius } from "../constants/styles";
 import useFetch from "../hooks/fetch";
 import { AnimatePresence, motion, useTransform, useViewportScroll } from "framer-motion";
 import API from "../constants/api";
+import Loading from "./Loading";
 
 const CategoryList = styled(motion.ul)`
   width: 22%;
@@ -68,16 +69,16 @@ const Categories = ({ handleMenu }) => {
   const { data, loading, error } = useFetch(API.CATEGORIES);
   const [selected, setSelected] = useState(null);
 
-  if (loading) return <h1>LOADING...</h1>;
+  if (loading) return <Loading/>;
 
   if (error) console.log(error);
 
   return (
     <CategoryList>
-      {data.map((data) => {
+      {data.map((data, index) => {
         const image = require("../assets/images/categories/" + data.image);
         return (
-          <CategoryItem onClick={() => setSelected(data.id)} key={data.name}>
+          <CategoryItem onClick={() => setSelected(data.id)} key={data.name} initial={{x: '-20rem'}} animate={{x: 0}} transition={{type: "tween", ease: 'easeOut', delay: index * 0.3}}>
             <CategoryBtn
               isSelected={selected === data.id}
               onClick={handleMenu}

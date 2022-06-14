@@ -4,7 +4,7 @@ import { colors, fontsWeights } from "../constants/styles";
 import Meal from "./Meal";
 import useFetch from "../hooks/fetch";
 import API from "../constants/api";
-import { CurrentOptions } from "../App";
+import { CurrentOptions, MealOptionsContext, MealSauceContext } from "../App";
 
 const OptionContainer = styled.div``;
 
@@ -32,27 +32,27 @@ const MealOptionList = ({
   handleChoice,
   handleActive,
   idPrefix = null,
+  optionType
 }) => {
+
   const { data } = useFetch(API.MEALS);
   const optionsData = data.filter((data) => data.category === filter);
 
   const [selected, setSelected] = useState(null);
+  const [sauceOptions, setSauceOptions] = useContext(MealSauceContext);
 
   const handleSelect = (e, id) => {
       handleChoice(e);
       setSelected(id)
+      if (optionType === "sauce") {
+          setSauceOptions({
+          ...sauceOptions,
+          [idPrefix]: e.target.value
+        })
+      }
   }
 
-  //const handleChoice = (e) => {
-  //    setSelected(e.target.id)
-  //    setSelectedOption({
-  //        ...selectedOption,
-  //        option: {
-  //            id: e.target.id,
-  //            name: e.target.value
-  //        }
-  //    })
-  //}
+  console.log(sauceOptions)
 
   return (
     <OptionContainer>

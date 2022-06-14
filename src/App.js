@@ -6,11 +6,13 @@ import { DineOptions, Home, Menu, PayOptions, Order, ValidateOrder, CardPayment,
 import { AnimatePresence } from 'framer-motion';
 
 export const ShoppingCartContext = createContext();
+export const MealSauceContext = createContext();
 
 
 const App = () => {
   const lS = JSON.parse(localStorage.getItem('cart'));
   const [cart, setCart] = useState({...lS});
+  const [options, setOptions] = useState({});
 
   useEffect(() => {
     localStorage.setItem('cart', JSON.stringify(cart))
@@ -20,6 +22,7 @@ const App = () => {
 
   return (
     <ShoppingCartContext.Provider value={[cart, setCart]}>
+    <MealSauceContext.Provider value={[options, setOptions]}>
       <AnimatePresence exitBeforeEnter>
         <Routes location={location} key={location.key}>
             <Route path={ROUTES.HOME} element={<Home/>}></Route>
@@ -34,6 +37,7 @@ const App = () => {
             <Route path={ROUTES.SUCCESS} element={<Success/>}></Route>
         </Routes>
       </AnimatePresence>
+    </MealSauceContext.Provider>
     </ShoppingCartContext.Provider>
   )
 }

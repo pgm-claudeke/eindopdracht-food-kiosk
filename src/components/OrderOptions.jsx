@@ -1,9 +1,7 @@
-import React, { useContext } from "react";
+import React from "react";
 import styled from "styled-components";
 import { colors, fontsWeights, radius } from "../constants/styles";
 import { Link } from 'react-router-dom';
-import { FaLinkedin } from "react-icons/fa";
-import { ShoppingCartContext } from "../App";
 import { motion } from "framer-motion";
 
 const Options = styled.div`
@@ -62,8 +60,8 @@ const OrderOptions = ({ links }) => {
   return (
     <Options>
       {links.map((link, index) => 
-        <motion.div initial={{scale: 0}} animate={{ scale: 1}} transition={{duration: 0.6, delay: index * 0.5}}>
-            <Option to={link.route} key={link.key}>
+        <motion.div initial={{scale: 0}} animate={{ scale: 1}} transition={{duration: 0.6, delay: index * 0.5}} key={link.key}>
+            <Option to={link.route}>
               <IconContainer>{link.icon}</IconContainer>
               <p>{link.label}</p>
             </Option>
