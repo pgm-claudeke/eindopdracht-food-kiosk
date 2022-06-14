@@ -118,16 +118,12 @@ const boxMotion = {
     }
 }
 
-
-
 const MealOptions = ({data, handleClose, handleModals}) => {
     const [cart, setCart] = useContext(ShoppingCartContext); 
     const [selectedDrink, setSelectedDrink] = useState(null);
-    const [activeDrink, setActiveDrink] = useState(null)
     const [selectedSide, setSelectedSide] = useState(null);
-    const [activeSide, setActiveSide] = useState(null)
     const [selectedSauce, setSelectedSauce] = useState(null);
-    const [activeSauce, setActiveSauce] = useState(null);
+
 
     const mealData = data;
     const options = mealData.options; 
@@ -136,17 +132,14 @@ const MealOptions = ({data, handleClose, handleModals}) => {
     const image = require(`../assets/images/meals/${mealData.image}`);
 
     const handleSideChoice =  (e) => {
-        setActiveSide(e.target.id);
         setSelectedSide(e.target.value);
     }
 
     const handleSauceChoice = (e) => {
-        setActiveSauce(e.target.id);
         setSelectedSauce(e.target.value);
     }
 
     const handleDrinkChoice = (e) => {
-        setActiveDrink(e.target.id);
         setSelectedDrink(e.target.value);
     }
 
@@ -171,13 +164,13 @@ const MealOptions = ({data, handleClose, handleModals}) => {
                 <OptionContainer>
                 {
                     options.side &&
-                    <MealSides handleChoice={handleSideChoice} handleActive={activeSide}/>
+                    <MealSides handleChoice={handleSideChoice} />
                 }
                 {
-                    options.sauce !== 0 ?
+                    options.sauce ?
                     [...Array(options.sauce)].map((sauce, index) => {
                         return(
-                            <MealSauces key={index} title={`Choose sauce ${index + 1}`} handleChoice={handleSauceChoice} handleActive={activeSauce}/>
+                            <MealSauces key={index} number={index + 1} handleChoice={handleSauceChoice}/>
                         )
                     })
                     :
@@ -185,7 +178,7 @@ const MealOptions = ({data, handleClose, handleModals}) => {
                 }
                 {
                     options.drink &&
-                    <MealDrinks handleChoice={handleDrinkChoice} handleActive={activeDrink}/>
+                    <MealDrinks handleChoice={handleDrinkChoice}/>
                 }
                 </OptionContainer>
             }

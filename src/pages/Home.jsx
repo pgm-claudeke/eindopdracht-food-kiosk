@@ -48,7 +48,7 @@ const PosterImage = styled.img`
 const Home = () => {
 
   return (
-    <motion.div>
+    <motion.div variants={pageSwitch} initial='hidden' animate='show' exit='exit'>
     <HomeContainer to={ROUTES.DINE}>
         <ImgBox>
             <Logo src={logo}/>

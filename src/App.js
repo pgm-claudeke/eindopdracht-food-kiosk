@@ -20,7 +20,7 @@ const App = () => {
 
   return (
     <ShoppingCartContext.Provider value={[cart, setCart]}>
-      <AnimatePresence>
+      <AnimatePresence exitBeforeEnter>
         <Routes location={location} key={location.key}>
             <Route path={ROUTES.HOME} element={<Home/>}></Route>
             <Route path={ROUTES.DINE} element={<DineOptions/>}></Route>

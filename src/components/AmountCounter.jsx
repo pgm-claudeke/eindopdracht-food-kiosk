@@ -83,8 +83,6 @@ const AmountCounter = ({color, defaultAmount = 1, meal, saveOnChange = true, han
             })
         } 
     }
-    
-    console.log(cart)
 
     const  handleAdd = () => {
         changeCount(count + 1)

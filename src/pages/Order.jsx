@@ -3,9 +3,11 @@ import styled from 'styled-components';
 import { OrderQuestion, OrderList, OrderTotal } from '../components';
 import { colors } from '../constants/styles';
 import ROUTES from '../constants/routes';
+import { motion } from 'framer-motion';
+import { pageSwitch } from '../constants/animations';
 
 
-const OrderContainer = styled.div`
+const OrderContainer = styled(motion.div)`
     height: 100vh;
     width: 100%;
     background-color: ${colors.primary};
@@ -28,7 +30,7 @@ const OrderBox = styled.div`
 
 const Order = () => {
   return (
-    <OrderContainer>
+    <OrderContainer variants={pageSwitch} initial='hidden' animate='show' exit='exit'>
         <OrderBox>
             <OrderQuestion question='Is you order compleet?'></OrderQuestion>
             <OrderList option={true}/>

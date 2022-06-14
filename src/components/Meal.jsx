@@ -52,7 +52,7 @@ const MealImage = styled.img`
 const Meal = ({image, name, handleFunction, id, scale, handleActive, value}) => {
   return (
     <MealContainer>
-        <MealBtn onClick={handleFunction} id={id} isActive={handleActive} value={value}>
+        <MealBtn onClick={(e) => handleFunction(e, id)} id={id} isActive={handleActive} value={value}>
             <MealImageBox style={{height: scale, width: scale}}>
                 <MealImage src={image}/>
             </MealImageBox>

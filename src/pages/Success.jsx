@@ -7,8 +7,9 @@ import { colors } from '../constants/styles';
 import { OrderQuestion } from '../components';
 import { motion } from 'framer-motion';
 import { useNavigate } from 'react-router-dom';
+import { pageSwitch } from '../constants/animations';
 
-const Container = styled.div`
+const Container = styled(motion.div)`
     background-color: ${colors.primary};
     height: 100vh;
     width: 100%;
@@ -50,12 +51,12 @@ const Success = () => {
     useEffect(() => {
         setTimeout(() => {
             navigate('/');
-            localStorage.removeItem("cart")
+            localStorage.removeItem("cart");
         }, 6000);
     }, [navigate])
 
   return (
-    <Container>
+    <Container variants={pageSwitch} exit='exit'>
         <OrderQuestion question="Payment succefull."/>
         <Lottie options={defaultOptions} height={800} width={800}/>
     </Container>

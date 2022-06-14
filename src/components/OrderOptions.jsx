@@ -4,16 +4,19 @@ import { colors, fontsWeights, radius } from "../constants/styles";
 import { Link } from 'react-router-dom';
 import { FaLinkedin } from "react-icons/fa";
 import { ShoppingCartContext } from "../App";
+import { motion } from "framer-motion";
 
 const Options = styled.div`
   height: 81vh;
-  margin: 0rem 6.25rem;
+  padding: 0rem 6.25rem;
+  background-color: ${colors.base};
 
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
 `;
+
 const Option = styled(Link)`
   height: 36rem;
   width: 33rem;
@@ -42,14 +45,29 @@ const IconContainer = styled.div`
   height: 18rem;
 `;
 
+const scaleMotion = {
+    hidden: {
+        scale: 0,
+    },
+    show: {
+        scale: 1,
+        transition: {
+            duration: 0.6,
+            delay: 0.8
+        }
+    }
+}
+
 const OrderOptions = ({ links }) => {
   return (
     <Options>
-      {links.map((link) => 
-        <Option to={link.route} key={link.key}>
-          <IconContainer>{link.icon}</IconContainer>
-          <p>{link.label}</p>
-        </Option>
+      {links.map((link, index) => 
+        <motion.div initial={{scale: 0}} animate={{ scale: 1}} transition={{duration: 0.6, delay: index * 0.5}}>
+            <Option to={link.route} key={link.key}>
+              <IconContainer>{link.icon}</IconContainer>
+              <p>{link.label}</p>
+            </Option>
+        </motion.div>
       )}
     </Options>
   );

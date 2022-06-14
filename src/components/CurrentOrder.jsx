@@ -82,7 +82,7 @@ const CurrentOrder = () => {
     const navigate = useNavigate();
 
     const handleCancelation = () => {
-        navigate('/');
+        navigate(ROUTES.HOME);
         localStorage.removeItem("cart");
     };
 

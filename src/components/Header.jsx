@@ -73,7 +73,7 @@ const Header = () => {
             <LogoImage src={logoInverted}/>
         </LogoContainer>
         
-        <CommercialContainer>
+        <CommercialContainer variants={commerceMotion} initial="hidden" animate="show">
             <CommercialImg src={commercialOne}/>
         </CommercialContainer>
     </HeaderContainer>

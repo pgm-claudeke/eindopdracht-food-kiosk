@@ -1,12 +1,12 @@
 import React from 'react';
 import MealOptionList from './MealOptionList';
 
-const MealSauces = ({title, handleChoice, handleActive}) => {
+const MealSauces = ({handleChoice, handleActive, number}) => {
   return (
     <div>
-        <MealOptionList title={title} filter="dipping sauces" handleChoice={handleChoice} handleActive={handleActive}/>
+        <MealOptionList title={`Choose Sauce ${number}`} filter="dipping sauces" handleChoice={handleChoice} handleActive={handleActive} idPrefix={number}/>
     </div>
   )
 }
 
-export default MealSauces
+export default MealSauces 
