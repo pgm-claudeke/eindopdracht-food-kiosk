@@ -1,7 +1,6 @@
 import React, { useEffect } from 'react';
 import Lottie from 'react-lottie';
 import succesAnimation from '../assets/lotties/lf30_editor_qicv165r.json';
-import logoInverted from '../assets/images/logos/Logo_inverted.png';
 import styled from 'styled-components';
 import { colors } from '../constants/styles';
 import { OrderQuestion } from '../components';
@@ -21,21 +20,6 @@ const Container = styled(motion.div)`
     gap: 6rem;
 `;
 
-const textBox = styled(motion.div)`
-`;
-
-const opacityMotion = {
-    hidden: {
-        opacity: 0
-    },
-    show: {
-        opacity: 1,
-        transition: {
-
-        }
-    }
-}
-
 const Success = () => {
     const defaultOptions = {
         loop: false,
@@ -49,15 +33,20 @@ const Success = () => {
     const navigate = useNavigate();
 
     useEffect(() => {
-        setTimeout(() => {
+        const idleTimer = setTimeout(() => {
             navigate('/');
             localStorage.removeItem("cart");
+            window.location.reload();
         }, 6000);
+
+        return () => {
+            clearTimeout(idleTimer);
+        }
     }, [navigate])
 
   return (
     <Container variants={pageSwitch} exit='exit'>
-        <OrderQuestion question="Payment succefull."/>
+        <OrderQuestion>Payment succefull.</OrderQuestion>
         <Lottie options={defaultOptions} height={800} width={800}/>
     </Container>
   )

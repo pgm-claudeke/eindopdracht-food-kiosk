@@ -50,8 +50,9 @@ const scaleMotion = {
     show: {
         scale: 1,
         transition: {
-            duration: 0.6,
-            delay: 0.8
+            type: "spring",
+            duration: 0.5,
+            delay: 0.6
         }
     }
 }
@@ -60,7 +61,7 @@ const OrderOptions = ({ links }) => {
   return (
     <Options>
       {links.map((link, index) => 
-        <motion.div initial={{scale: 0}} animate={{ scale: 1}} transition={{duration: 0.6, delay: index * 0.5}} key={link.key}>
+        <motion.div variants={scaleMotion} initial="hidden" animate="show" key={link.key}>
             <Option to={link.route}>
               <IconContainer>{link.icon}</IconContainer>
               <p>{link.label}</p>

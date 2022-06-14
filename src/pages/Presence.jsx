@@ -1,7 +1,7 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
-import { Button, OrderQuestion } from '../components';
+import { OrderQuestion } from '../components';
 import ButtonLink from '../components/ButtonLink';
 import ROUTES from '../constants/routes';
 import { colors, radius } from '../constants/styles';
@@ -54,7 +54,7 @@ const Presence = () => {
   return (
     <Container>
         <Modal>
-            <OrderQuestion question="Do you want to proceed with your order?"></OrderQuestion>
+            <OrderQuestion>Do you want to proceed with your order?</OrderQuestion>
             <ButtonContainer>
                 <ButtonLink link={ROUTES.HOME} btnColor={colors.secondary} btnWidth={btnWidth}>Cancel</ButtonLink>
                 <ButtonLink link={ROUTES.MENU} btnColor={colors.secondary} btnWidth={btnWidth}>Proceed</ButtonLink>

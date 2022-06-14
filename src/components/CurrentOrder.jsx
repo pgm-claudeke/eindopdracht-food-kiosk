@@ -76,8 +76,8 @@ const btnWidth = "49%"
 const CurrentOrder = () => {
     const [cart] = useContext(ShoppingCartContext);
 
-    const currentAmount = Object.values(cart).length;
-    const currentTotal = Object.values(cart).reduce((sum, {price}) => sum  + price, 0);
+    const currentAmount = Object.values(cart).reduce((sum, {amount}) => sum  + amount, 0);
+    const currentTotal = Object.values(cart).reduce((sum, {amount, price}) => sum  + (amount * price), 0); 
 
     const navigate = useNavigate();
 
@@ -93,7 +93,7 @@ const CurrentOrder = () => {
         </OrderTitle>
         <OrderBox>
             <p>Total: € {currentTotal.toFixed(2)}</p>
-            <p>Amount: {currentAmount}</p>
+            <p>Amount: {currentAmount.toFixed(0)}</p>
             <OrderShowBox to={ROUTES.ORDER}>
                 Show order
                 <FaChevronRight style={{fontSize:"2rem"}}/>

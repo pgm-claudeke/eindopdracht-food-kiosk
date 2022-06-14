@@ -1,8 +1,7 @@
-import React, { useState } from 'react';
+import React from 'react';
 import styled from 'styled-components';
 import { colors, fontsWeights, radius } from '../constants/styles';
 import Meal from './Meal';
-import { CgClose } from 'react-icons/cg';
 import ButtonClose from './ButtonClose';
 import { motion } from 'framer-motion';
 import { containerMotion } from '../constants/animations';
@@ -62,12 +61,15 @@ const boxMotion = {
             bounce: 0.35,
             duration: 0.6
         }
+    },
+    exit: {
+        scale: 0
     }
 }
 
 const MealType = ({handleClose, data, mealName, handleFunction}) => {
   return (
-    <MealTypeContainer variants={containerMotion} initial="hidden" animate="show">
+    <MealTypeContainer variants={containerMotion} initial="hidden" animate="show" exit="exit">
         <MealTypeBox variants={boxMotion} initial="hidden" animate="show">
             <ButtonClose handleClose={handleClose}/>
             <MealName>{mealName}</MealName>

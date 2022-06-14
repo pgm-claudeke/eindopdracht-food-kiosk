@@ -1,11 +1,8 @@
-import React, { useState } from 'react';
+import React from 'react';
 import styled from 'styled-components';
 import { colors, fontsWeights, radius } from '../constants/styles';
-import { AnimateSharedLayout, AnimatePresence } from "framer-motion";
 
-const MealContainer = styled.li`
-
-`;
+const MealContainer = styled.li``;
 
 const MealBtn = styled.button`
     background-color: ${props => props.isActive ? colors.secondary : 'transparent'};

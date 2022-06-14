@@ -1,7 +1,4 @@
-//display: grid;
-//grid-template-columns: repeat(3, 1fr);
-
-import React, { useState } from 'react';
+import React from 'react';
 import styled from 'styled-components';
 import { colors, fontsWeights, radius } from '../constants/styles';
 import useFetch from '../hooks/fetch';

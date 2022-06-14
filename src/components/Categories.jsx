@@ -1,10 +1,11 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useState} from "react";
 import styled from "styled-components";
 import { colors, fontsWeights, radius } from "../constants/styles";
 import useFetch from "../hooks/fetch";
-import { AnimatePresence, motion, useTransform, useViewportScroll } from "framer-motion";
+import {motion } from "framer-motion";
 import API from "../constants/api";
 import Loading from "./Loading";
+import Error from "./Error";
 
 const CategoryList = styled(motion.ul)`
   width: 22%;
@@ -19,7 +20,15 @@ const CategoryList = styled(motion.ul)`
   overflow: scroll;
 `;
 
-const CategoryItem = styled(motion.li)``;
+const CategoryItem = styled(motion.li)`
+    :first-child {
+        margin-top: 1rem;
+    };
+
+    :last-child {
+        margin-bottom: 1rem;
+    }
+`;
 
 const CategoryBtn = styled(motion.button)`
   min-height: 13.3rem;
@@ -69,16 +78,17 @@ const Categories = ({ handleMenu }) => {
   const { data, loading, error } = useFetch(API.CATEGORIES);
   const [selected, setSelected] = useState(null);
 
+
   if (loading) return <Loading/>;
 
-  if (error) console.log(error);
+  if (error) return <Error/>;
 
   return (
     <CategoryList>
       {data.map((data, index) => {
         const image = require("../assets/images/categories/" + data.image);
         return (
-          <CategoryItem onClick={() => setSelected(data.id)} key={data.name} initial={{x: '-20rem'}} animate={{x: 0}} transition={{type: "tween", ease: 'easeOut', delay: index * 0.3}}>
+          <CategoryItem onClick={() => setSelected(data.id)} key={data.name} initial={{x: '-20rem'}} animate={{x: 0}} transition={{type: "spring", damping: 20, bounce: 0.8, mass: 0.95, ease: 'easeOut', delay: index * 0.3}}>
             <CategoryBtn
               isSelected={selected === data.id}
               onClick={handleMenu}

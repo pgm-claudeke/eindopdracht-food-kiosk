@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import {
   Categories,
@@ -11,11 +11,8 @@ import {
   Error,
 } from "../components";
 import useFetch from "../hooks/fetch";
-import ROUTES from "../constants/routes";
-import { useNavigate } from "react-router-dom";
-import { CurrentOptions, ShoppingCartContext } from "../App";
 import { pageSwitch } from "../constants/animations";
-import { motion } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 import { colors } from "../constants/styles";
 
 const MenuContainer = styled.div`
@@ -37,15 +34,7 @@ const Menu = () => {
   const [selectedMeal, setSelectedMeal] = useState(null);
   const [selectedMealId, setSelectedMealId] = useState(null);
 
-  const navigate = useNavigate();
-
   const [options, setOptions] = useState(null);
-
-  //useEffect(() => {
-  //  setTimeout(() => {
-  //      navigate(ROUTES.PRESENCE);
-  //  },60000)
-  //},[navigate])
 
   const { data, loading, error } = useFetch(
     "https://pgm-claudeke.github.io/eindopdracht-food-kiosk/meals.json"
@@ -91,9 +80,6 @@ const Menu = () => {
     setTypes(null);
   };
 
-  
-
-
   return (
     <motion.div variants={pageSwitch} initial='hidden' animate='show' exit='exit'>
       <Header />
@@ -107,6 +93,7 @@ const Menu = () => {
             handleFunction={handleMealTypes}
           />
         )}
+        <AnimatePresence>
         {types && (
           <MealType
             handleClose={handleClose}
@@ -115,6 +102,7 @@ const Menu = () => {
             handleFunction={handleRedirect}
           />
         )}
+        </AnimatePresence>
       </MenuContainer>
       <CurrentOrder />
       {options && (

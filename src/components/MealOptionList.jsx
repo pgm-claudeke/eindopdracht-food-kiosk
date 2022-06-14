@@ -4,7 +4,7 @@ import { colors, fontsWeights } from "../constants/styles";
 import Meal from "./Meal";
 import useFetch from "../hooks/fetch";
 import API from "../constants/api";
-import { CurrentOptions, MealOptionsContext, MealSauceContext } from "../App";
+import { MealSauceContext } from "../App";
 
 const OptionContainer = styled.div``;
 
@@ -51,8 +51,6 @@ const MealOptionList = ({
         })
       }
   }
-
-  console.log(sauceOptions)
 
   return (
     <OptionContainer>

@@ -8,11 +8,14 @@ import { FaTrashAlt } from 'react-icons/fa';
 
 const ListContainer = styled.ul`
     padding: 0;
+    max-height: 90%;
     list-style: none;
 
     display: flex;
     flex-direction: column;
     gap: 2rem;
+
+    overflow: scroll;
 `;
 
 const ListItem = styled.li`
@@ -77,12 +80,9 @@ const OrderList = ({option}) => {
     const options = option;
 
     const deleteMeal = (e) => {
-        console.log(e.target.value)
-        //const newCart = Object.values(cart).filter(cart => cart.orderId !== e.target.value);
         delete cart[e.target.value];
         const newCart = {...cart};
         setCart(newCart);
-        console.log(newCart)
     }
 
   return (
@@ -102,9 +102,23 @@ const OrderList = ({option}) => {
                     </OrderInfoBox>
                     <OptionsList>
                         {
-                            meal && meal.options && Object.values(meal.options).map(option => {
+                            meal && meal.options.side && meal.options.side.map((option, index) => {
                                 if (option) {
-                                    return <OptionItem key={option}>{option}</OptionItem>
+                                    return <OptionItem key={`${index}-${option}`}>{option}</OptionItem>
+                                }
+                            })
+                        }
+                        {
+                            meal && meal.options.drink && meal.options.drink.map((option, index) => {
+                                if (option) {
+                                    return <OptionItem key={`${index}-${option}`}>{option}</OptionItem>
+                                }
+                            })
+                        }
+                        {
+                            meal && meal.options.sauce && meal.options.sauce.map((option, index) => {
+                                if (option) {
+                                    return <OptionItem key={`${index}-${option}`}>{option}</OptionItem>
                                 }
                             })
                         }

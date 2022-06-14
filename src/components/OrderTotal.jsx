@@ -1,10 +1,8 @@
 import React, { useContext } from 'react';
-import { useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
 import { ShoppingCartContext } from '../App';
 import ROUTES from '../constants/routes';
 import { colors, fontsWeights } from '../constants/styles';
-import Button from './Button';
 import ButtonLink from './ButtonLink';
 
 const Container = styled.div`
@@ -14,11 +12,11 @@ const Container = styled.div`
 
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
+    justify-content: flex-end;
     gap: 2rem;
 
     width: 74rem;
-    margin-bottom: 4rem;
+    height: 10vh;
 
     p {
         margin: 0;
@@ -35,7 +33,7 @@ const btnWidth = '49%';
 
 const OrderTotal = ({nav, navName}) => {
     const [cart] = useContext(ShoppingCartContext)
-    const currentTotal = Object.values(cart).reduce((sum, {amount, price}) => sum  + (amount * price), 0).toFixed(2)
+    const currentTotal = Object.values(cart).reduce((sum, {amount, price}) => sum  + (amount * price), 0).toFixed(2) 
   return (
     <Container>
         <p>Total: € {currentTotal}</p>

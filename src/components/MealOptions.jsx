@@ -1,16 +1,14 @@
-import React, { createContext, useContext, useState } from 'react';
+import React, { useContext, useState } from 'react';
 import styled from 'styled-components';
 import { colors, fontsWeights, radius } from '../constants/styles';
 import AmountCounter from './AmountCounter';
-import Button from './Button';
 import MealDrinks from './MealDrinks';
 import MealSauces from './MealSauces';
 import MealSides from './MealSides';
 import ButtonClose from './ButtonClose';
-import { CurrentOptions, MealSauceContext, ShoppingCartContext } from '../App';
+import { MealSauceContext, ShoppingCartContext } from '../App';
 import { motion } from 'framer-motion';
 import { containerMotion } from '../constants/animations';
-import { v4 as uuid } from 'uuid';
 
 const MealOptionContainer = styled(motion.div)`
     backdrop-filter: blur(12px)  grayscale(15%);
@@ -85,8 +83,6 @@ const ButtonContainer = styled.div`
     justify-content: center;
 `;
 
-const btnwidth = "18rem";
-
 const OptionContainer = styled.div`
     overflow: scroll;
     display: flex;
@@ -119,8 +115,6 @@ const boxMotion = {
 }
 
 const MealOptions = ({data, handleClose, handleModals}) => {
-    const [cart, setCart] = useContext(ShoppingCartContext); 
-    const [sauces, setSauces] = useContext(MealSauceContext);
     const [selectedDrink, setSelectedDrink] = useState(null);
     const [selectedSide, setSelectedSide] = useState(null);
     const [selectedSauce, setSelectedSauce] = useState(null);
@@ -136,15 +130,11 @@ const MealOptions = ({data, handleClose, handleModals}) => {
 
     const handleSauceChoice = (e) => {
         setSelectedSauce(e.target.value);
-        console.log(`selected: ${e.target.value}`)
     }
 
     const handleDrinkChoice = (e) => {
         setSelectedDrink(e.target.value);
     }
-
-    console.log(selectedSide);
-    console.log(selectedDrink);
 
   return (
     <MealOptionContainer variants={containerMotion} initial="hidden" animate="show">

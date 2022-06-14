@@ -23,11 +23,11 @@ const LogoImage = styled.img`
     width: 34rem;
 `;
 
-const OrderQuestion = ({question}) => {
+const OrderQuestion = ({children}) => {
   return (
     <QuestionContainer>
         <LogoImage src={logoInverted}/>
-        <p>{question}</p>
+        <p>{children}</p>
     </QuestionContainer>
   )
 }

@@ -1,4 +1,4 @@
-import React, { Children } from 'react'
+import React from 'react'
 import { Link } from 'react-router-dom';
 import styled from 'styled-components'
 import { colors, radius } from '../constants/styles';
@@ -17,12 +17,12 @@ const Btn = styled(Link)`
     justify-content: center; 
     align-items: center;
 
-    padding: 0 2rem;
+    padding: 0rem 2rem;
 `;
 
-const ButtonLink = ({children, btnColor, btnWidth, link}) => {
+const ButtonLink = ({children, btnColor, btnWidth, link, fontSize, btnHeight}) => {
   return (
-    <Btn to={link} style={{backgroundColor:btnColor, width:btnWidth}}>
+    <Btn to={link} style={{backgroundColor:btnColor, width:btnWidth, height:btnHeight, fontSize:fontSize}}>
         {children}
     </Btn>
   )

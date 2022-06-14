@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import styled from 'styled-components';
 import { colors, fontsWeights } from '../constants/styles';
 import ROUTES from '../constants/routes';
@@ -46,7 +46,6 @@ const PosterImage = styled.img`
 `;
 
 const Home = () => {
-
   return (
     <motion.div variants={pageSwitch} initial='hidden' animate='show' exit='exit'>
     <HomeContainer to={ROUTES.DINE}>
@@ -60,4 +59,4 @@ const Home = () => {
   )
 }
 
-export default Home
+export default Home;

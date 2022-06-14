@@ -1,7 +1,6 @@
-import React, { useContext, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { ShoppingCartContext } from '../App';
-import scanAnimation from '../assets/lotties/79187-card-payment-success.json';
+import scanAnimation from '../assets/lotties/76940-credit-card.json';
 import Payment from '../components/Payment';
 import { motion } from 'framer-motion';
 import { pageSwitch } from '../constants/animations';

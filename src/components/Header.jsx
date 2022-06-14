@@ -4,7 +4,7 @@ import { colors } from '../constants/styles';
 import logoInverted from '../assets/images/logos/Logo_inverted.png';
 import commercialOne from '../assets/images/commercercials/commercial_01.jpeg';
 import { motion } from "framer-motion";
-import { Link, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import ROUTES from '../constants/routes';
 
 const HeaderContainer = styled.header`
