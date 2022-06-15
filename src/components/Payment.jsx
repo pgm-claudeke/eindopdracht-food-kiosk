@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { colors, fontsWeights, radius } from '../constants/styles';
 import Lottie from 'react-lottie';
+import logoInverted from '../assets/images/logos/Logo_inverted.png';
 
 const Container = styled.div`
     height: 100vh;
@@ -29,6 +30,10 @@ const AnimationBox = styled.div`
     border-radius: ${radius.main};
 `;
 
+const LogoImage = styled.img`
+    width: 34rem;
+`;
+
 const Payment = ({lottieAni, children}) => {
     const defaultOptions = {
         loop: true,
@@ -40,6 +45,7 @@ const Payment = ({lottieAni, children}) => {
 }
   return (
     <Container>
+        <LogoImage src={logoInverted}/>
         <Instructions>{children}</Instructions>
         <AnimationBox>
             <Lottie options={defaultOptions} height={1000} width={1000}/>

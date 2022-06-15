@@ -9,11 +9,11 @@ import { pageSwitch } from '../constants/animations';
 const CardPayment = () => {
     const navigate = useNavigate();
 
-    useEffect(() => {
-        setTimeout(() => {
-            navigate('/success')
-        }, 6000);
-    }, [navigate]);
+   useEffect(() => {
+       setTimeout(() => {
+           navigate('/success')
+       }, 6000);
+   }, [navigate]);
 
   return (
       <motion.div variants={pageSwitch} initial='hidden' animate='show'>
