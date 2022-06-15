@@ -63,7 +63,8 @@ const commerceMotion = {
         transition: {
             type: 'spring', 
             stiffness: 20,
-            duration: 1
+            duration: 1,
+            delay: 0.5
         }
     }
 }

@@ -10,6 +10,15 @@ export const containerMotion = {
           duration: 0.1,
           when: "beforeChildren"
       }
+  },
+  exit: {
+    opacity: 0,
+      transition: {
+          type: 'tween',
+          ease: "easeInOut",
+          duration: 0.1,
+          when: "beforeChildren"
+      }
   }
 }
 

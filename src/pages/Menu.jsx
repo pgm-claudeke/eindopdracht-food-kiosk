@@ -85,26 +85,29 @@ const Menu = () => {
       <Header />
       <MenuContainer>
         <Categories handleMenu={handleMenuList} />
-        {category && (
-          <Meals
-            key={filter}
-            category={category}
-            filter={filter}
-            handleFunction={handleMealTypes}
-          />
-        )}
-        <AnimatePresence>
-        {types && (
-          <MealType
-            handleClose={handleClose}
-            data={types}
-            mealName={selectedMeal}
-            handleFunction={handleRedirect}
-          />
-        )}
+        <AnimatePresence exitBeforeEnter>
+            {category && (
+              <Meals
+                key={filter}
+                category={category}
+                filter={filter}
+                handleFunction={handleMealTypes}
+              />
+            )}
+        </AnimatePresence>
+        <AnimatePresence exitBeforeEnter>
+            {types && (
+              <MealType
+                handleClose={handleClose}
+                data={types}
+                mealName={selectedMeal}
+                handleFunction={handleRedirect}
+              />
+            )}
         </AnimatePresence>
       </MenuContainer>
       <CurrentOrder />
+      <AnimatePresence exitBeforeEnter>
       {options && (
         <MealOptions
           data={options}
@@ -114,6 +117,7 @@ const Menu = () => {
           mealInfo={options}
         />
       )}
+      </AnimatePresence>
     </motion.div>
   );
 };

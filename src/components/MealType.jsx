@@ -63,14 +63,20 @@ const boxMotion = {
         }
     },
     exit: {
-        scale: 0
+        opacity: 0,
+        transition: {
+            type: "tween",
+            ease: "easeInOut",
+            duration: 0.1,
+            when: "beforeChildren"
+        }
     }
 }
 
 const MealType = ({handleClose, data, mealName, handleFunction}) => {
   return (
     <MealTypeContainer variants={containerMotion} initial="hidden" animate="show" exit="exit">
-        <MealTypeBox variants={boxMotion} initial="hidden" animate="show">
+        <MealTypeBox variants={boxMotion} initial="hidden" animate="show" exit="exit">
             <ButtonClose handleClose={handleClose}/>
             <MealName>{mealName}</MealName>
             <TypesList>

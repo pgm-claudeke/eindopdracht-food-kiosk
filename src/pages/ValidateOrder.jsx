@@ -41,7 +41,7 @@ const ValidateOrder = () => {
         <OrderBox>
             <OrderQuestion>
             { 
-                    cartAmount === 0 ? 'Your cart is empty.' : 'Is your order correct?'
+                    cartAmount === 0 ? 'You have no orders yet.' : 'Is your order correct?'
             }
             </OrderQuestion>
             <OrderList option={false}/>

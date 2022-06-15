@@ -41,7 +41,7 @@ const Order = () => {
         <OrderBox>
             <OrderQuestion>
                 { 
-                    cartAmount === 0 ? 'Your cart is empty.' : 'Is you order compleet?'
+                    cartAmount === 0 ? 'You have no orders yet.' : 'Is you order compleet?'
                 }
             </OrderQuestion>
             <OrderList option={true}/>

@@ -4,7 +4,7 @@ import { colors, fontsWeights, radius } from '../constants/styles';
 import useFetch from '../hooks/fetch';
 import logo from '../assets/images/logos/Logo.jpg';
 import Meal from './Meal';
-import { AnimatePresence, motion } from "framer-motion"
+import { motion } from "framer-motion"
 
 const MealsContainer = styled(motion.div)`
     overflow: hidden;
@@ -44,7 +44,12 @@ const sideMotion = {
         }
     },
     exit: {
-        x: '100rem'
+        x: '100rem',
+        transition: {
+            type: 'Tween', 
+            ease: "easeOut",
+            duration: 0.4
+        }
     }
 }
 
@@ -54,7 +59,6 @@ const Meals = ({category, filter, handleFunction}) => {
     const filteredData = data.filter(data => data.category === filter);
 
   return (
-    <AnimatePresence>
     <MealsContainer variants={sideMotion} initial="hidden" animate="show" exit="exit">
         <MealsTitle>{category}</MealsTitle>
             <MealsList>
@@ -73,7 +77,6 @@ const Meals = ({category, filter, handleFunction}) => {
                 }
             </MealsList>
     </MealsContainer>
-    </AnimatePresence>
   )
 }
 

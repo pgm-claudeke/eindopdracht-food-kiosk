@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 import { colors, fontsWeights, radius } from '../constants/styles';
 import AmountCounter from './AmountCounter';
@@ -6,7 +6,6 @@ import MealDrinks from './MealDrinks';
 import MealSauces from './MealSauces';
 import MealSides from './MealSides';
 import ButtonClose from './ButtonClose';
-import { MealSauceContext, ShoppingCartContext } from '../App';
 import { motion } from 'framer-motion';
 import { containerMotion } from '../constants/animations';
 
@@ -111,10 +110,19 @@ const boxMotion = {
             bounce: 0.35,
             duration: 0.4
         }
+    },
+    exit: {
+        opacity: 0,
+        transition: {
+            type: "tween",
+            ease: "easeInOut",
+            duration: 0.05,
+            when: "beforeChildren"
+        }
     }
 }
 
-const MealOptions = ({data, handleClose, handleModals}) => {
+const MealOptions = ({data, handleClose, handleModals}) => { 
     const [selectedDrink, setSelectedDrink] = useState(null);
     const [selectedSide, setSelectedSide] = useState(null);
     const [selectedSauce, setSelectedSauce] = useState(null);
@@ -137,8 +145,8 @@ const MealOptions = ({data, handleClose, handleModals}) => {
     }
 
   return (
-    <MealOptionContainer variants={containerMotion} initial="hidden" animate="show">
-        <MealOptionBox variants={boxMotion} initial="hidden" animate="show"> 
+    <MealOptionContainer variants={containerMotion} initial="hidden" animate="show" exit="exit">
+        <MealOptionBox variants={boxMotion} initial="hidden" animate="show" exit="exit"> 
             <ButtonClose handleClose={handleClose}/>
             <MealInfoContainer>
                 <MealImageBox>
@@ -146,7 +154,7 @@ const MealOptions = ({data, handleClose, handleModals}) => {
                 </MealImageBox>
                 <MealInfoBox>
                     <MealName>{mealData.name}</MealName>
-                    <MealPrice>€ {mealData.price}</MealPrice>
+                    <MealPrice>€ {mealData.price.toFixed(2)}</MealPrice>
                 </MealInfoBox>
             </MealInfoContainer>
             {
