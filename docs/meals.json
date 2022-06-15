@@ -335,48 +335,55 @@
         "name": "Siracha Mayonnaise",
         "image": "sauces/siracha_mayonnaise.jpeg",
         "category": "dipping sauces",
-        "id": "20"
+        "id": "20",
+        "price": 0.6
     },
     {
         "label": "Sweet Chilli Sauce",
         "name": "Sweet Chilli Sauce",
         "image": "sauces/sweet_chilli.jpeg",
         "category": "dipping sauces",
-        "id": "21"
+        "id": "21",
+        "price": 0.6
     },
     {
         "label": "Asian Ginger Chilli Sauce",
         "name": "Asian Ginger Chilli Sauce",
         "image": "sauces/asian_ginger_chilli.jpeg",
         "category": "dipping sauces",
-        "id": "22"
+        "id": "22",
+        "price": 0.6
     },
     {
         "label": "Gravy",
         "name": "Gravy",
         "image": "sauces/gravy.jpeg",
         "category": "dipping sauces",
-        "id": "23"
+        "id": "23",
+        "price": 0.6
     },
     {
         "label": "Pepsi Max",
         "name": "Pepsi Max 40cl",
         "image": "drinks/drink_brown.webp",
         "category": "drinks",
-        "id": "24"
+        "id": "24",
+        "price": 1.6
     },
     {
         "label": "Pepsi",
         "name": "Pepsi 40cl",
         "image": "drinks/drink_brown.webp",
         "category": "drinks",
-        "id": "25"
+        "id": "25",
+        "price": 1.6
     },
     {
         "label": "Iced Tea",
         "name": "Iced Tea 40cl",
         "image": "drinks/drink_brown.webp",
         "category": "drinks",
-        "id": "26"
+        "id": "26",
+        "price": 1.6
     }
 ]

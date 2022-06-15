@@ -20,4 +20,4 @@ const CodePayment = () => {
   );
 };
 
-export default CodePayment;
+export default CodePayment; 

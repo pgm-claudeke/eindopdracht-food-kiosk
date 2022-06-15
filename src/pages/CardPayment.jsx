@@ -22,4 +22,4 @@ const CardPayment = () => {
   )
 }
 
-export default CardPayment
+export default CardPayment 
