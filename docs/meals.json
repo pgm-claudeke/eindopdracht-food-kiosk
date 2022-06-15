@@ -18,7 +18,7 @@
         "image": "buckets/8_piece_bucket.jpg",
         "category": "buckets",
         "id": "2",
-        "price": 15.6,     
+        "price": 15.60,     
         "options":{
             "side": false,
             "sauce": 4,
@@ -31,7 +31,7 @@
         "image": "buckets/12_piece_bucket.jpg",
         "category": "buckets",
         "id": "3",
-        "price": 22.2,       
+        "price": 22.20,       
         "options":{
             "side": false,
             "sauce": 6,
@@ -105,14 +105,14 @@
                 "label": "Burger Only",
                 "name": "Tropical Chicken Burger",
                 "image": "chicken_burger/tropical_chicken_burger.jpeg",
-                "price": 6.2,
+                "price": 6.20,
                 "id": "6.1"
             },
             {
                 "label": "Menu",
                 "name": "Tropical Chicken Burger Menu",
                 "image": "chicken_burger/tropical_chicken_burger_menu.jpeg",
-                "price": 8.8,
+                "price": 8.80,
                 "options":{
                     "side": true,
                     "sauce": 0,
@@ -133,14 +133,14 @@
                 "label": "Burger Only",
                 "name": "Double Chicken Burger",
                 "image": "chicken_burger/double_chicken_burger.jpeg",
-                "price": 6.4,
+                "price": 6.40,
                 "id": "7.1"
             },
             {
                 "label": "Menu",
                 "name": "Double Chicken Burger Menu",
                 "image": "chicken_burger/double_chicken_burger_menu.jpeg",
-                "price": 9.5,
+                "price": 9.50,
                 "options":{
                     "side": true,
                     "sauce": 0,
@@ -161,7 +161,7 @@
                 "label": "Tenders Only",
                 "name": "3 Piece Chicken Tenders",
                 "image": "tenders/3_piece_tender.jpeg",
-                "price": 4.4,
+                "price": 4.40,
                 "id": "8.1"
             },
             {
@@ -189,7 +189,7 @@
                 "label": "Tenders Only",
                 "name": "5 Piece Chicken Tenders",
                 "image": "tenders/5_piece_tender.jpeg",
-                "price": 5.7,
+                "price": 5.70,
                 "id": "9.1"
             },
             {
@@ -258,7 +258,7 @@
         "image": "classics/spaghetti.jpeg",
         "category": "classics",
         "id": "13",
-        "price": 4.6
+        "price": 4.60
     },
     {
         "label": "Siracha Chicken",
@@ -290,7 +290,7 @@
         "image": "sides/fries.jpeg",
         "category": "sides",
         "id": "17",
-        "price": 2.3
+        "price": 2.30
     },
     {
         "label": "Plain Rice",
@@ -311,21 +311,21 @@
                 "label": "Mango Coconut",
                 "name": "Mango Coconut Sundae",
                 "image": "desserts/mango_coconut_sundae.png",
-                "price": 2.5,
+                "price": 2.50,
                 "id": "19.1"
             },
             {
                 "label": "Chocolate Coconut",
                 "name": "Chocolate Coconut Sundae",
                 "image": "desserts/chocolate_coconut_sundae.png",
-                "price": 2.5,
+                "price": 2.50,
                 "id": "19.2"
             },
             {
                 "label": "Cookies 'n Cream",
                 "name": "Cookies 'n Cream Sundae",
                 "image": "desserts/cookies_cream_sundae.jpeg",
-                "price": 2.5,
+                "price": 2.50,
                 "id": "19.3"
             }
         ]
@@ -336,7 +336,7 @@
         "image": "sauces/siracha_mayonnaise.jpeg",
         "category": "dipping sauces",
         "id": "20",
-        "price": 0.6
+        "price": 0.60
     },
     {
         "label": "Sweet Chilli Sauce",
@@ -344,7 +344,7 @@
         "image": "sauces/sweet_chilli.jpeg",
         "category": "dipping sauces",
         "id": "21",
-        "price": 0.6
+        "price": 0.60
     },
     {
         "label": "Asian Ginger Chilli Sauce",
@@ -352,7 +352,7 @@
         "image": "sauces/asian_ginger_chilli.jpeg",
         "category": "dipping sauces",
         "id": "22",
-        "price": 0.6
+        "price": 0.60
     },
     {
         "label": "Gravy",
@@ -360,7 +360,7 @@
         "image": "sauces/gravy.jpeg",
         "category": "dipping sauces",
         "id": "23",
-        "price": 0.6
+        "price": 0.60
     },
     {
         "label": "Pepsi Max",
@@ -368,7 +368,7 @@
         "image": "drinks/drink_brown.webp",
         "category": "drinks",
         "id": "24",
-        "price": 1.6
+        "price": 1.60
     },
     {
         "label": "Pepsi",
@@ -376,7 +376,7 @@
         "image": "drinks/drink_brown.webp",
         "category": "drinks",
         "id": "25",
-        "price": 1.6
+        "price": 1.60
     },
     {
         "label": "Iced Tea",
@@ -384,6 +384,6 @@
         "image": "drinks/drink_brown.webp",
         "category": "drinks",
         "id": "26",
-        "price": 1.6
+        "price": 1.60
     }
 ]
